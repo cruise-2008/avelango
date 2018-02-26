@@ -1,0 +1,1676 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AvelangoDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ChatMessages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublicKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BelongToChat" Type="int" />
+          <Property Name="IsNew" Type="bit" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="AttachmentMin" Type="nvarchar" MaxLength="200" />
+          <Property Name="AttachmentMax" Type="nvarchar" MaxLength="200" />
+          <Property Name="Owner" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Chats">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublicKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BelongsToUserA" Type="int" Nullable="false" />
+          <Property Name="BelongsToUserB" Type="int" Nullable="false" />
+          <Property Name="LastAction" Type="datetime" Nullable="false" />
+          <Property Name="IsBidirectional" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CommonAdvertising">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublicKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CompanyRate" Type="int" Nullable="false" />
+          <Property Name="Expired" Type="datetime" Nullable="false" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="FirstData" Type="nvarchar" MaxLength="50" />
+          <Property Name="SecondData" Type="nvarchar" MaxLength="50" />
+          <Property Name="Icon" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CommonNews">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublicKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Html" Type="nvarchar(max)" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Lang" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="Theme" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Decrtiption" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserPk" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Datetime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Mails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Recipient" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmailSubject" Type="nvarchar" MaxLength="50" />
+          <Property Name="Datetime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Notifications">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublicKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BelongsToTask" Type="int" />
+          <Property Name="BelongsToUser" Type="int" />
+          <Property Name="BelongsToFromUser" Type="int" />
+          <Property Name="Reviewed" Type="bit" Nullable="false" />
+          <Property Name="NotificationType" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PortfolioJobImages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublicKey" Type="uniqueidentifier" />
+          <Property Name="BelongsToPortfolioJob" Type="int" />
+          <Property Name="Small" Type="nvarchar(max)" />
+          <Property Name="Large" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PortfolioJobs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublicKey" Type="uniqueidentifier" />
+          <Property Name="BelongsToPortfolio" Type="int" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Portfolios">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublicKey" Type="uniqueidentifier" />
+          <Property Name="BelongsToUser" Type="int" />
+          <Property Name="Title" Type="nvarchar" MaxLength="200" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="RialtoAction">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BidTime" Type="datetime" Nullable="false" />
+          <Property Name="Bid" Type="float" Nullable="false" />
+          <Property Name="AveRate" Type="float" Nullable="false" />
+          <Property Name="BelongsToUser" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RialtoChat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SenderName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RialtoState">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TotalAveCount" Type="float" Nullable="false" />
+          <Property Name="AveRate" Type="float" Nullable="false" />
+          <Property Name="Benefit" Type="float" Nullable="false" />
+          <Property Name="Shoulder" Type="int" Nullable="false" />
+          <Property Name="BenefitPersent" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RialtoUserAssets">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Value" Type="float" Nullable="false" />
+          <Property Name="Rate" Type="float" Nullable="false" />
+          <Property Name="Benefit" Type="float" Nullable="false" />
+          <Property Name="Sign" Type="bit" Nullable="false" />
+          <Property Name="BelongsToUser" Type="int" />
+          <Property Name="PublicKey" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="RialtoUsersStates">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ballance" Type="float" Nullable="false" />
+          <Property Name="BelongsToUser" Type="int" Nullable="false" />
+          <Property Name="Equity" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SmsSending">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublicKey" Type="uniqueidentifier" />
+          <Property Name="Ip" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Counter" Type="int" Nullable="false" />
+          <Property Name="ResetTime" Type="datetime" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TaskAttachments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublicKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BelongsToTask" Type="int" />
+          <Property Name="Url" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Extention" Type="nvarchar" MaxLength="5" />
+          <Property Name="FileTitle" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TaskBids">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublicKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BelongsToTask" Type="int" />
+          <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Denied" Type="bit" Nullable="false" />
+          <Property Name="BelongsToWorker" Type="int" />
+        </EntityType>
+        <EntityType Name="TaskOffers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublicKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BelongsToTask" Type="int" />
+          <Property Name="BelongsToWorker" Type="int" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Message" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TaskPreWorkers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublicKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BelongsToTask" Type="int" />
+          <Property Name="BelongsToWorker" Type="int" />
+          <Property Name="Message" Type="nvarchar(max)" />
+          <Property Name="Approved" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tasks">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublicKey" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Customer" Type="int" Nullable="false" />
+          <Property Name="Worker" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="TopicalTo" Type="datetime" Nullable="false" />
+          <Property Name="Created" Type="datetime" Nullable="false" />
+          <Property Name="Groop" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubGroop" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="ProccessStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsRemovedToCustomer" Type="bit" />
+          <Property Name="Closed" Type="datetime" />
+          <Property Name="IsRemovedToWorker" Type="bit" />
+          <Property Name="PlaceName" Type="nvarchar" MaxLength="200" />
+          <Property Name="PlaceLat" Type="float" />
+          <Property Name="PlaceLng" Type="float" />
+        </EntityType>
+        <EntityType Name="TempUserData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublicKey" Type="uniqueidentifier" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" />
+          <Property Name="SurName" Type="nvarchar" MaxLength="20" />
+          <Property Name="UserLogoPath" Type="nvarchar" MaxLength="300" />
+          <Property Name="BelongsToUser" Type="int" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PublicKey" Type="uniqueidentifier" />
+          <Property Name="IsCompany" Type="bit" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="SurName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Phone1" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Skype" Type="nvarchar" MaxLength="100" />
+          <Property Name="Ballance" Type="nvarchar" MaxLength="20" />
+          <Property Name="Valuta" Type="nvarchar" MaxLength="20" />
+          <Property Name="AccountCreated" Type="datetime" Nullable="false" />
+          <Property Name="LastLogIn" Type="datetime" />
+          <Property Name="UserLogoPath" Type="nvarchar" MaxLength="300" />
+          <Property Name="Gender" Type="bit" />
+          <Property Name="Birthday" Type="nvarchar" MaxLength="30" />
+          <Property Name="Rating" Type="float" />
+          <Property Name="Honors" Type="nvarchar(max)" />
+          <Property Name="SubscribeToGroups" Type="nvarchar(max)" />
+          <Property Name="IsEnabled" Type="bit" Nullable="false" />
+          <Property Name="ReceiveNews" Type="bit" Nullable="false" />
+          <Property Name="Lang" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsAdmin" Type="bit" />
+          <Property Name="IsModerator" Type="bit" />
+          <Property Name="UserLogoPathMax" Type="nvarchar" MaxLength="300" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="EmailDelivery" Type="bit" />
+          <Property Name="SmsDelivery" Type="bit" />
+          <Property Name="PushUpDelivery" Type="bit" />
+          <Property Name="IsModerChecked" Type="bit" Nullable="false" />
+          <Property Name="PlaceName" Type="nchar" MaxLength="100" />
+          <Property Name="PlaceLat" Type="float" />
+          <Property Name="PlaceLng" Type="float" />
+        </EntityType>
+        <Association Name="FK__ChatMessa__Belon__45F365D3">
+          <End Role="Chats" Type="Self.Chats" Multiplicity="0..1" />
+          <End Role="ChatMessages" Type="Self.ChatMessages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chats">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ChatMessages">
+              <PropertyRef Name="BelongToChat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Chats__BelongsTo__46E78A0C">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Chats" Type="Self.Chats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Chats">
+              <PropertyRef Name="BelongsToUserA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Chats__BelongsTo__47DBAE45">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Chats" Type="Self.Chats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Chats">
+              <PropertyRef Name="BelongsToUserB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Notificat__Belon__48CFD27E">
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="0..1" />
+          <End Role="Notifications" Type="Self.Notifications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tasks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Notifications">
+              <PropertyRef Name="BelongsToTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Notificat__Belon__49C3F6B7">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Notifications" Type="Self.Notifications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Notifications">
+              <PropertyRef Name="BelongsToUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Notificat__Belon__4AB81AF0">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Notifications" Type="Self.Notifications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Notifications">
+              <PropertyRef Name="BelongsToFromUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Portfolio__Belon__4BAC3F29">
+          <End Role="PortfolioJobs" Type="Self.PortfolioJobs" Multiplicity="0..1" />
+          <End Role="PortfolioJobImages" Type="Self.PortfolioJobImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PortfolioJobs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PortfolioJobImages">
+              <PropertyRef Name="BelongsToPortfolioJob" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Portfolio__Belon__4CA06362">
+          <End Role="Portfolios" Type="Self.Portfolios" Multiplicity="0..1" />
+          <End Role="PortfolioJobs" Type="Self.PortfolioJobs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Portfolios">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PortfolioJobs">
+              <PropertyRef Name="BelongsToPortfolio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Portfolio__Belon__4D94879B">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Portfolios" Type="Self.Portfolios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Portfolios">
+              <PropertyRef Name="BelongsToUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RialtoAct__Belon__4E88ABD4">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="RialtoAction" Type="Self.RialtoAction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RialtoAction">
+              <PropertyRef Name="BelongsToUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RialtoUse__Belon__4F7CD00D">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="RialtoUserAssets" Type="Self.RialtoUserAssets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RialtoUserAssets">
+              <PropertyRef Name="BelongsToUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RialtoUse__Belon__5070F446">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="RialtoUsersStates" Type="Self.RialtoUsersStates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RialtoUsersStates">
+              <PropertyRef Name="BelongsToUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TaskAttac__Belon__5165187F">
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="0..1" />
+          <End Role="TaskAttachments" Type="Self.TaskAttachments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tasks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaskAttachments">
+              <PropertyRef Name="BelongsToTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TaskBids__Belong__52593CB8">
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="0..1" />
+          <End Role="TaskBids" Type="Self.TaskBids" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tasks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaskBids">
+              <PropertyRef Name="BelongsToTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TaskBids__Belong__534D60F1">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="TaskBids" Type="Self.TaskBids" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaskBids">
+              <PropertyRef Name="BelongsToWorker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TaskOffer__Belon__5441852A">
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="0..1" />
+          <End Role="TaskOffers" Type="Self.TaskOffers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tasks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaskOffers">
+              <PropertyRef Name="BelongsToTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TaskOffer__Belon__5535A963">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="TaskOffers" Type="Self.TaskOffers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaskOffers">
+              <PropertyRef Name="BelongsToWorker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TaskPreWo__Belon__5629CD9C">
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="0..1" />
+          <End Role="TaskPreWorkers" Type="Self.TaskPreWorkers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tasks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaskPreWorkers">
+              <PropertyRef Name="BelongsToTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TaskPreWo__Belon__571DF1D5">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="TaskPreWorkers" Type="Self.TaskPreWorkers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaskPreWorkers">
+              <PropertyRef Name="BelongsToWorker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TempUserD__Belon__5812160E">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="TempUserData" Type="Self.TempUserData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TempUserData">
+              <PropertyRef Name="BelongsToUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AvelangoDbModelStoreContainer">
+          <EntitySet Name="ChatMessages" EntityType="Self.ChatMessages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Chats" EntityType="Self.Chats" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommonAdvertising" EntityType="Self.CommonAdvertising" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommonNews" EntityType="Self.CommonNews" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mails" EntityType="Self.Mails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notifications" EntityType="Self.Notifications" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PortfolioJobImages" EntityType="Self.PortfolioJobImages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PortfolioJobs" EntityType="Self.PortfolioJobs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Portfolios" EntityType="Self.Portfolios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RialtoAction" EntityType="Self.RialtoAction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RialtoChat" EntityType="Self.RialtoChat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RialtoState" EntityType="Self.RialtoState" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RialtoUserAssets" EntityType="Self.RialtoUserAssets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RialtoUsersStates" EntityType="Self.RialtoUsersStates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SmsSending" EntityType="Self.SmsSending" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TaskAttachments" EntityType="Self.TaskAttachments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TaskBids" EntityType="Self.TaskBids" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TaskOffers" EntityType="Self.TaskOffers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TaskPreWorkers" EntityType="Self.TaskPreWorkers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tasks" EntityType="Self.Tasks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TempUserData" EntityType="Self.TempUserData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__ChatMessa__Belon__45F365D3" Association="Self.FK__ChatMessa__Belon__45F365D3">
+            <End Role="Chats" EntitySet="Chats" />
+            <End Role="ChatMessages" EntitySet="ChatMessages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Chats__BelongsTo__46E78A0C" Association="Self.FK__Chats__BelongsTo__46E78A0C">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Chats" EntitySet="Chats" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Chats__BelongsTo__47DBAE45" Association="Self.FK__Chats__BelongsTo__47DBAE45">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Chats" EntitySet="Chats" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Notificat__Belon__48CFD27E" Association="Self.FK__Notificat__Belon__48CFD27E">
+            <End Role="Tasks" EntitySet="Tasks" />
+            <End Role="Notifications" EntitySet="Notifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Notificat__Belon__49C3F6B7" Association="Self.FK__Notificat__Belon__49C3F6B7">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Notifications" EntitySet="Notifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Notificat__Belon__4AB81AF0" Association="Self.FK__Notificat__Belon__4AB81AF0">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Notifications" EntitySet="Notifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Portfolio__Belon__4BAC3F29" Association="Self.FK__Portfolio__Belon__4BAC3F29">
+            <End Role="PortfolioJobs" EntitySet="PortfolioJobs" />
+            <End Role="PortfolioJobImages" EntitySet="PortfolioJobImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Portfolio__Belon__4CA06362" Association="Self.FK__Portfolio__Belon__4CA06362">
+            <End Role="Portfolios" EntitySet="Portfolios" />
+            <End Role="PortfolioJobs" EntitySet="PortfolioJobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Portfolio__Belon__4D94879B" Association="Self.FK__Portfolio__Belon__4D94879B">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Portfolios" EntitySet="Portfolios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RialtoAct__Belon__4E88ABD4" Association="Self.FK__RialtoAct__Belon__4E88ABD4">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="RialtoAction" EntitySet="RialtoAction" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RialtoUse__Belon__4F7CD00D" Association="Self.FK__RialtoUse__Belon__4F7CD00D">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="RialtoUserAssets" EntitySet="RialtoUserAssets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RialtoUse__Belon__5070F446" Association="Self.FK__RialtoUse__Belon__5070F446">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="RialtoUsersStates" EntitySet="RialtoUsersStates" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TaskAttac__Belon__5165187F" Association="Self.FK__TaskAttac__Belon__5165187F">
+            <End Role="Tasks" EntitySet="Tasks" />
+            <End Role="TaskAttachments" EntitySet="TaskAttachments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TaskBids__Belong__52593CB8" Association="Self.FK__TaskBids__Belong__52593CB8">
+            <End Role="Tasks" EntitySet="Tasks" />
+            <End Role="TaskBids" EntitySet="TaskBids" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TaskBids__Belong__534D60F1" Association="Self.FK__TaskBids__Belong__534D60F1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TaskBids" EntitySet="TaskBids" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TaskOffer__Belon__5441852A" Association="Self.FK__TaskOffer__Belon__5441852A">
+            <End Role="Tasks" EntitySet="Tasks" />
+            <End Role="TaskOffers" EntitySet="TaskOffers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TaskOffer__Belon__5535A963" Association="Self.FK__TaskOffer__Belon__5535A963">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TaskOffers" EntitySet="TaskOffers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TaskPreWo__Belon__5629CD9C" Association="Self.FK__TaskPreWo__Belon__5629CD9C">
+            <End Role="Tasks" EntitySet="Tasks" />
+            <End Role="TaskPreWorkers" EntitySet="TaskPreWorkers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TaskPreWo__Belon__571DF1D5" Association="Self.FK__TaskPreWo__Belon__571DF1D5">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TaskPreWorkers" EntitySet="TaskPreWorkers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TempUserD__Belon__5812160E" Association="Self.FK__TempUserD__Belon__5812160E">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TempUserData" EntitySet="TempUserData" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AvelangoDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AvelangoDbEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="ChatMessages" EntityType="AvelangoDbModel.ChatMessages" />
+          <EntitySet Name="Chats" EntityType="AvelangoDbModel.Chats" />
+          <EntitySet Name="CommonAdvertising" EntityType="AvelangoDbModel.CommonAdvertising" />
+          <EntitySet Name="CommonNews" EntityType="AvelangoDbModel.CommonNews" />
+          <EntitySet Name="Events" EntityType="AvelangoDbModel.Events" />
+          <EntitySet Name="Mails" EntityType="AvelangoDbModel.Mails" />
+          <EntitySet Name="Notifications" EntityType="AvelangoDbModel.Notifications" />
+          <EntitySet Name="PortfolioJobImages" EntityType="AvelangoDbModel.PortfolioJobImages" />
+          <EntitySet Name="PortfolioJobs" EntityType="AvelangoDbModel.PortfolioJobs" />
+          <EntitySet Name="Portfolios" EntityType="AvelangoDbModel.Portfolios" />
+          <EntitySet Name="RialtoAction" EntityType="AvelangoDbModel.RialtoAction" />
+          <EntitySet Name="RialtoChat" EntityType="AvelangoDbModel.RialtoChat" />
+          <EntitySet Name="RialtoState" EntityType="AvelangoDbModel.RialtoState" />
+          <EntitySet Name="RialtoUserAssets" EntityType="AvelangoDbModel.RialtoUserAssets" />
+          <EntitySet Name="RialtoUsersStates" EntityType="AvelangoDbModel.RialtoUsersStates" />
+          <EntitySet Name="SmsSending" EntityType="AvelangoDbModel.SmsSending" />
+          <EntitySet Name="TaskAttachments" EntityType="AvelangoDbModel.TaskAttachments" />
+          <EntitySet Name="TaskBids" EntityType="AvelangoDbModel.TaskBids" />
+          <EntitySet Name="TaskOffers" EntityType="AvelangoDbModel.TaskOffers" />
+          <EntitySet Name="TaskPreWorkers" EntityType="AvelangoDbModel.TaskPreWorkers" />
+          <EntitySet Name="Tasks" EntityType="AvelangoDbModel.Tasks" />
+          <EntitySet Name="TempUserData" EntityType="AvelangoDbModel.TempUserData" />
+          <EntitySet Name="Users" EntityType="AvelangoDbModel.Users" />
+          <AssociationSet Name="FK__ChatMessa__Belon__45F365D3" Association="AvelangoDbModel.FK__ChatMessa__Belon__45F365D3">
+            <End Role="Chats" EntitySet="Chats" />
+            <End Role="ChatMessages" EntitySet="ChatMessages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Chats__BelongsTo__46E78A0C" Association="AvelangoDbModel.FK__Chats__BelongsTo__46E78A0C">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Chats" EntitySet="Chats" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Chats__BelongsTo__47DBAE45" Association="AvelangoDbModel.FK__Chats__BelongsTo__47DBAE45">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Chats" EntitySet="Chats" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Notificat__Belon__48CFD27E" Association="AvelangoDbModel.FK__Notificat__Belon__48CFD27E">
+            <End Role="Tasks" EntitySet="Tasks" />
+            <End Role="Notifications" EntitySet="Notifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Notificat__Belon__49C3F6B7" Association="AvelangoDbModel.FK__Notificat__Belon__49C3F6B7">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Notifications" EntitySet="Notifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Notificat__Belon__4AB81AF0" Association="AvelangoDbModel.FK__Notificat__Belon__4AB81AF0">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Notifications" EntitySet="Notifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Portfolio__Belon__4BAC3F29" Association="AvelangoDbModel.FK__Portfolio__Belon__4BAC3F29">
+            <End Role="PortfolioJobs" EntitySet="PortfolioJobs" />
+            <End Role="PortfolioJobImages" EntitySet="PortfolioJobImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Portfolio__Belon__4CA06362" Association="AvelangoDbModel.FK__Portfolio__Belon__4CA06362">
+            <End Role="Portfolios" EntitySet="Portfolios" />
+            <End Role="PortfolioJobs" EntitySet="PortfolioJobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Portfolio__Belon__4D94879B" Association="AvelangoDbModel.FK__Portfolio__Belon__4D94879B">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Portfolios" EntitySet="Portfolios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RialtoAct__Belon__4E88ABD4" Association="AvelangoDbModel.FK__RialtoAct__Belon__4E88ABD4">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="RialtoAction" EntitySet="RialtoAction" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RialtoUse__Belon__4F7CD00D" Association="AvelangoDbModel.FK__RialtoUse__Belon__4F7CD00D">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="RialtoUserAssets" EntitySet="RialtoUserAssets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RialtoUse__Belon__5070F446" Association="AvelangoDbModel.FK__RialtoUse__Belon__5070F446">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="RialtoUsersStates" EntitySet="RialtoUsersStates" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TaskAttac__Belon__5165187F" Association="AvelangoDbModel.FK__TaskAttac__Belon__5165187F">
+            <End Role="Tasks" EntitySet="Tasks" />
+            <End Role="TaskAttachments" EntitySet="TaskAttachments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TaskBids__Belong__52593CB8" Association="AvelangoDbModel.FK__TaskBids__Belong__52593CB8">
+            <End Role="Tasks" EntitySet="Tasks" />
+            <End Role="TaskBids" EntitySet="TaskBids" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TaskBids__Belong__534D60F1" Association="AvelangoDbModel.FK__TaskBids__Belong__534D60F1">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TaskBids" EntitySet="TaskBids" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TaskOffer__Belon__5441852A" Association="AvelangoDbModel.FK__TaskOffer__Belon__5441852A">
+            <End Role="Tasks" EntitySet="Tasks" />
+            <End Role="TaskOffers" EntitySet="TaskOffers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TaskOffer__Belon__5535A963" Association="AvelangoDbModel.FK__TaskOffer__Belon__5535A963">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TaskOffers" EntitySet="TaskOffers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TaskPreWo__Belon__5629CD9C" Association="AvelangoDbModel.FK__TaskPreWo__Belon__5629CD9C">
+            <End Role="Tasks" EntitySet="Tasks" />
+            <End Role="TaskPreWorkers" EntitySet="TaskPreWorkers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TaskPreWo__Belon__571DF1D5" Association="AvelangoDbModel.FK__TaskPreWo__Belon__571DF1D5">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TaskPreWorkers" EntitySet="TaskPreWorkers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TempUserD__Belon__5812160E" Association="AvelangoDbModel.FK__TempUserD__Belon__5812160E">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="TempUserData" EntitySet="TempUserData" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ChatMessages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicKey" Type="Guid" Nullable="false" />
+          <Property Name="BelongToChat" Type="Int32" />
+          <Property Name="IsNew" Type="Boolean" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AttachmentMin" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AttachmentMax" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Owner" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Chats" Relationship="AvelangoDbModel.FK__ChatMessa__Belon__45F365D3" FromRole="ChatMessages" ToRole="Chats" />
+        </EntityType>
+        <EntityType Name="Chats">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicKey" Type="Guid" Nullable="false" />
+          <Property Name="BelongsToUserA" Type="Int32" Nullable="false" />
+          <Property Name="BelongsToUserB" Type="Int32" Nullable="false" />
+          <Property Name="LastAction" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsBidirectional" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ChatMessages" Relationship="AvelangoDbModel.FK__ChatMessa__Belon__45F365D3" FromRole="Chats" ToRole="ChatMessages" />
+          <NavigationProperty Name="Users" Relationship="AvelangoDbModel.FK__Chats__BelongsTo__46E78A0C" FromRole="Chats" ToRole="Users" />
+          <NavigationProperty Name="Users1" Relationship="AvelangoDbModel.FK__Chats__BelongsTo__47DBAE45" FromRole="Chats" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="CommonAdvertising">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicKey" Type="Guid" Nullable="false" />
+          <Property Name="CompanyName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyRate" Type="Int32" Nullable="false" />
+          <Property Name="Expired" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ImagePath" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="FirstData" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SecondData" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Icon" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CommonNews">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicKey" Type="Guid" Nullable="false" />
+          <Property Name="Html" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Lang" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="Theme" Type="Guid" />
+        </EntityType>
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Decrtiption" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserPk" Type="Guid" Nullable="false" />
+          <Property Name="Datetime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Mails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Recipient" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailSubject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Datetime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Notifications">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicKey" Type="Guid" Nullable="false" />
+          <Property Name="BelongsToTask" Type="Int32" />
+          <Property Name="BelongsToUser" Type="Int32" />
+          <Property Name="BelongsToFromUser" Type="Int32" />
+          <Property Name="Reviewed" Type="Boolean" Nullable="false" />
+          <Property Name="NotificationType" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Tasks" Relationship="AvelangoDbModel.FK__Notificat__Belon__48CFD27E" FromRole="Notifications" ToRole="Tasks" />
+          <NavigationProperty Name="Users" Relationship="AvelangoDbModel.FK__Notificat__Belon__49C3F6B7" FromRole="Notifications" ToRole="Users" />
+          <NavigationProperty Name="Users1" Relationship="AvelangoDbModel.FK__Notificat__Belon__4AB81AF0" FromRole="Notifications" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="PortfolioJobImages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicKey" Type="Guid" />
+          <Property Name="BelongsToPortfolioJob" Type="Int32" />
+          <Property Name="Small" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Large" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PortfolioJobs" Relationship="AvelangoDbModel.FK__Portfolio__Belon__4BAC3F29" FromRole="PortfolioJobImages" ToRole="PortfolioJobs" />
+        </EntityType>
+        <EntityType Name="PortfolioJobs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicKey" Type="Guid" />
+          <Property Name="BelongsToPortfolio" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PortfolioJobImages" Relationship="AvelangoDbModel.FK__Portfolio__Belon__4BAC3F29" FromRole="PortfolioJobs" ToRole="PortfolioJobImages" />
+          <NavigationProperty Name="Portfolios" Relationship="AvelangoDbModel.FK__Portfolio__Belon__4CA06362" FromRole="PortfolioJobs" ToRole="Portfolios" />
+        </EntityType>
+        <EntityType Name="Portfolios">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicKey" Type="Guid" />
+          <Property Name="BelongsToUser" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PortfolioJobs" Relationship="AvelangoDbModel.FK__Portfolio__Belon__4CA06362" FromRole="Portfolios" ToRole="PortfolioJobs" />
+          <NavigationProperty Name="Users" Relationship="AvelangoDbModel.FK__Portfolio__Belon__4D94879B" FromRole="Portfolios" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="RialtoAction">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BidTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Bid" Type="Double" Nullable="false" />
+          <Property Name="AveRate" Type="Double" Nullable="false" />
+          <Property Name="BelongsToUser" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="AvelangoDbModel.FK__RialtoAct__Belon__4E88ABD4" FromRole="RialtoAction" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="RialtoChat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SenderName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="RialtoState">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TotalAveCount" Type="Double" Nullable="false" />
+          <Property Name="AveRate" Type="Double" Nullable="false" />
+          <Property Name="Benefit" Type="Double" Nullable="false" />
+          <Property Name="Shoulder" Type="Int32" Nullable="false" />
+          <Property Name="BenefitPersent" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RialtoUserAssets">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Value" Type="Double" Nullable="false" />
+          <Property Name="Rate" Type="Double" Nullable="false" />
+          <Property Name="Benefit" Type="Double" Nullable="false" />
+          <Property Name="Sign" Type="Boolean" Nullable="false" />
+          <Property Name="BelongsToUser" Type="Int32" />
+          <Property Name="PublicKey" Type="Guid" />
+          <NavigationProperty Name="Users" Relationship="AvelangoDbModel.FK__RialtoUse__Belon__4F7CD00D" FromRole="RialtoUserAssets" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="RialtoUsersStates">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ballance" Type="Double" Nullable="false" />
+          <Property Name="BelongsToUser" Type="Int32" Nullable="false" />
+          <Property Name="Equity" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="AvelangoDbModel.FK__RialtoUse__Belon__5070F446" FromRole="RialtoUsersStates" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="SmsSending">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicKey" Type="Guid" />
+          <Property Name="Ip" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Counter" Type="Int32" Nullable="false" />
+          <Property Name="ResetTime" Type="DateTime" Precision="3" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TaskAttachments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicKey" Type="Guid" Nullable="false" />
+          <Property Name="BelongsToTask" Type="Int32" />
+          <Property Name="Url" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Extention" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="FileTitle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tasks" Relationship="AvelangoDbModel.FK__TaskAttac__Belon__5165187F" FromRole="TaskAttachments" ToRole="Tasks" />
+        </EntityType>
+        <EntityType Name="TaskBids">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicKey" Type="Guid" Nullable="false" />
+          <Property Name="BelongsToTask" Type="Int32" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Denied" Type="Boolean" Nullable="false" />
+          <Property Name="BelongsToWorker" Type="Int32" />
+          <NavigationProperty Name="Tasks" Relationship="AvelangoDbModel.FK__TaskBids__Belong__52593CB8" FromRole="TaskBids" ToRole="Tasks" />
+          <NavigationProperty Name="Users" Relationship="AvelangoDbModel.FK__TaskBids__Belong__534D60F1" FromRole="TaskBids" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="TaskOffers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicKey" Type="Guid" Nullable="false" />
+          <Property Name="BelongsToTask" Type="Int32" />
+          <Property Name="BelongsToWorker" Type="Int32" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Message" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Tasks" Relationship="AvelangoDbModel.FK__TaskOffer__Belon__5441852A" FromRole="TaskOffers" ToRole="Tasks" />
+          <NavigationProperty Name="Users" Relationship="AvelangoDbModel.FK__TaskOffer__Belon__5535A963" FromRole="TaskOffers" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="TaskPreWorkers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicKey" Type="Guid" Nullable="false" />
+          <Property Name="BelongsToTask" Type="Int32" />
+          <Property Name="BelongsToWorker" Type="Int32" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Approved" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Tasks" Relationship="AvelangoDbModel.FK__TaskPreWo__Belon__5629CD9C" FromRole="TaskPreWorkers" ToRole="Tasks" />
+          <NavigationProperty Name="Users" Relationship="AvelangoDbModel.FK__TaskPreWo__Belon__571DF1D5" FromRole="TaskPreWorkers" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Tasks">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicKey" Type="Guid" Nullable="false" />
+          <Property Name="Customer" Type="Int32" Nullable="false" />
+          <Property Name="Worker" Type="Int32" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TopicalTo" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Groop" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubGroop" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="ProccessStatus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsRemovedToCustomer" Type="Boolean" />
+          <Property Name="Closed" Type="DateTime" Precision="3" />
+          <Property Name="IsRemovedToWorker" Type="Boolean" />
+          <Property Name="PlaceName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PlaceLat" Type="Double" />
+          <Property Name="PlaceLng" Type="Double" />
+          <NavigationProperty Name="Notifications" Relationship="AvelangoDbModel.FK__Notificat__Belon__48CFD27E" FromRole="Tasks" ToRole="Notifications" />
+          <NavigationProperty Name="TaskAttachments" Relationship="AvelangoDbModel.FK__TaskAttac__Belon__5165187F" FromRole="Tasks" ToRole="TaskAttachments" />
+          <NavigationProperty Name="TaskBids" Relationship="AvelangoDbModel.FK__TaskBids__Belong__52593CB8" FromRole="Tasks" ToRole="TaskBids" />
+          <NavigationProperty Name="TaskOffers" Relationship="AvelangoDbModel.FK__TaskOffer__Belon__5441852A" FromRole="Tasks" ToRole="TaskOffers" />
+          <NavigationProperty Name="TaskPreWorkers" Relationship="AvelangoDbModel.FK__TaskPreWo__Belon__5629CD9C" FromRole="Tasks" ToRole="TaskPreWorkers" />
+        </EntityType>
+        <EntityType Name="TempUserData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicKey" Type="Guid" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SurName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="UserLogoPath" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="BelongsToUser" Type="Int32" />
+          <NavigationProperty Name="Users" Relationship="AvelangoDbModel.FK__TempUserD__Belon__5812160E" FromRole="TempUserData" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PublicKey" Type="Guid" />
+          <Property Name="IsCompany" Type="Boolean" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SurName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Phone1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordHash" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Skype" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Ballance" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Valuta" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="AccountCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastLogIn" Type="DateTime" Precision="3" />
+          <Property Name="UserLogoPath" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="Boolean" />
+          <Property Name="Birthday" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Rating" Type="Double" />
+          <Property Name="Honors" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SubscribeToGroups" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="ReceiveNews" Type="Boolean" Nullable="false" />
+          <Property Name="Lang" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsAdmin" Type="Boolean" />
+          <Property Name="IsModerator" Type="Boolean" />
+          <Property Name="UserLogoPathMax" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="EmailDelivery" Type="Boolean" />
+          <Property Name="SmsDelivery" Type="Boolean" />
+          <Property Name="PushUpDelivery" Type="Boolean" />
+          <Property Name="IsModerChecked" Type="Boolean" Nullable="false" />
+          <Property Name="PlaceName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="PlaceLat" Type="Double" />
+          <Property Name="PlaceLng" Type="Double" />
+          <NavigationProperty Name="Chats" Relationship="AvelangoDbModel.FK__Chats__BelongsTo__46E78A0C" FromRole="Users" ToRole="Chats" />
+          <NavigationProperty Name="Chats1" Relationship="AvelangoDbModel.FK__Chats__BelongsTo__47DBAE45" FromRole="Users" ToRole="Chats" />
+          <NavigationProperty Name="Notifications" Relationship="AvelangoDbModel.FK__Notificat__Belon__49C3F6B7" FromRole="Users" ToRole="Notifications" />
+          <NavigationProperty Name="Notifications1" Relationship="AvelangoDbModel.FK__Notificat__Belon__4AB81AF0" FromRole="Users" ToRole="Notifications" />
+          <NavigationProperty Name="Portfolios" Relationship="AvelangoDbModel.FK__Portfolio__Belon__4D94879B" FromRole="Users" ToRole="Portfolios" />
+          <NavigationProperty Name="RialtoAction" Relationship="AvelangoDbModel.FK__RialtoAct__Belon__4E88ABD4" FromRole="Users" ToRole="RialtoAction" />
+          <NavigationProperty Name="RialtoUserAssets" Relationship="AvelangoDbModel.FK__RialtoUse__Belon__4F7CD00D" FromRole="Users" ToRole="RialtoUserAssets" />
+          <NavigationProperty Name="RialtoUsersStates" Relationship="AvelangoDbModel.FK__RialtoUse__Belon__5070F446" FromRole="Users" ToRole="RialtoUsersStates" />
+          <NavigationProperty Name="TaskBids" Relationship="AvelangoDbModel.FK__TaskBids__Belong__534D60F1" FromRole="Users" ToRole="TaskBids" />
+          <NavigationProperty Name="TaskOffers" Relationship="AvelangoDbModel.FK__TaskOffer__Belon__5535A963" FromRole="Users" ToRole="TaskOffers" />
+          <NavigationProperty Name="TaskPreWorkers" Relationship="AvelangoDbModel.FK__TaskPreWo__Belon__571DF1D5" FromRole="Users" ToRole="TaskPreWorkers" />
+          <NavigationProperty Name="TempUserData" Relationship="AvelangoDbModel.FK__TempUserD__Belon__5812160E" FromRole="Users" ToRole="TempUserData" />
+        </EntityType>
+        <Association Name="FK__ChatMessa__Belon__45F365D3">
+          <End Type="AvelangoDbModel.Chats" Role="Chats" Multiplicity="0..1" />
+          <End Type="AvelangoDbModel.ChatMessages" Role="ChatMessages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chats">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ChatMessages">
+              <PropertyRef Name="BelongToChat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Chats__BelongsTo__46E78A0C">
+          <End Type="AvelangoDbModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="AvelangoDbModel.Chats" Role="Chats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Chats">
+              <PropertyRef Name="BelongsToUserA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Chats__BelongsTo__47DBAE45">
+          <End Type="AvelangoDbModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="AvelangoDbModel.Chats" Role="Chats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Chats">
+              <PropertyRef Name="BelongsToUserB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Notificat__Belon__48CFD27E">
+          <End Type="AvelangoDbModel.Tasks" Role="Tasks" Multiplicity="0..1" />
+          <End Type="AvelangoDbModel.Notifications" Role="Notifications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tasks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Notifications">
+              <PropertyRef Name="BelongsToTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Notificat__Belon__49C3F6B7">
+          <End Type="AvelangoDbModel.Users" Role="Users" Multiplicity="0..1" />
+          <End Type="AvelangoDbModel.Notifications" Role="Notifications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Notifications">
+              <PropertyRef Name="BelongsToUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Notificat__Belon__4AB81AF0">
+          <End Type="AvelangoDbModel.Users" Role="Users" Multiplicity="0..1" />
+          <End Type="AvelangoDbModel.Notifications" Role="Notifications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Notifications">
+              <PropertyRef Name="BelongsToFromUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Portfolio__Belon__4BAC3F29">
+          <End Type="AvelangoDbModel.PortfolioJobs" Role="PortfolioJobs" Multiplicity="0..1" />
+          <End Type="AvelangoDbModel.PortfolioJobImages" Role="PortfolioJobImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PortfolioJobs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PortfolioJobImages">
+              <PropertyRef Name="BelongsToPortfolioJob" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Portfolio__Belon__4CA06362">
+          <End Type="AvelangoDbModel.Portfolios" Role="Portfolios" Multiplicity="0..1" />
+          <End Type="AvelangoDbModel.PortfolioJobs" Role="PortfolioJobs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Portfolios">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PortfolioJobs">
+              <PropertyRef Name="BelongsToPortfolio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Portfolio__Belon__4D94879B">
+          <End Type="AvelangoDbModel.Users" Role="Users" Multiplicity="0..1" />
+          <End Type="AvelangoDbModel.Portfolios" Role="Portfolios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Portfolios">
+              <PropertyRef Name="BelongsToUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RialtoAct__Belon__4E88ABD4">
+          <End Type="AvelangoDbModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="AvelangoDbModel.RialtoAction" Role="RialtoAction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RialtoAction">
+              <PropertyRef Name="BelongsToUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RialtoUse__Belon__4F7CD00D">
+          <End Type="AvelangoDbModel.Users" Role="Users" Multiplicity="0..1" />
+          <End Type="AvelangoDbModel.RialtoUserAssets" Role="RialtoUserAssets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RialtoUserAssets">
+              <PropertyRef Name="BelongsToUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RialtoUse__Belon__5070F446">
+          <End Type="AvelangoDbModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="AvelangoDbModel.RialtoUsersStates" Role="RialtoUsersStates" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RialtoUsersStates">
+              <PropertyRef Name="BelongsToUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TaskAttac__Belon__5165187F">
+          <End Type="AvelangoDbModel.Tasks" Role="Tasks" Multiplicity="0..1" />
+          <End Type="AvelangoDbModel.TaskAttachments" Role="TaskAttachments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tasks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaskAttachments">
+              <PropertyRef Name="BelongsToTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TaskBids__Belong__52593CB8">
+          <End Type="AvelangoDbModel.Tasks" Role="Tasks" Multiplicity="0..1" />
+          <End Type="AvelangoDbModel.TaskBids" Role="TaskBids" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tasks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaskBids">
+              <PropertyRef Name="BelongsToTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TaskBids__Belong__534D60F1">
+          <End Type="AvelangoDbModel.Users" Role="Users" Multiplicity="0..1" />
+          <End Type="AvelangoDbModel.TaskBids" Role="TaskBids" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaskBids">
+              <PropertyRef Name="BelongsToWorker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TaskOffer__Belon__5441852A">
+          <End Type="AvelangoDbModel.Tasks" Role="Tasks" Multiplicity="0..1" />
+          <End Type="AvelangoDbModel.TaskOffers" Role="TaskOffers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tasks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaskOffers">
+              <PropertyRef Name="BelongsToTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TaskOffer__Belon__5535A963">
+          <End Type="AvelangoDbModel.Users" Role="Users" Multiplicity="0..1" />
+          <End Type="AvelangoDbModel.TaskOffers" Role="TaskOffers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaskOffers">
+              <PropertyRef Name="BelongsToWorker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TaskPreWo__Belon__5629CD9C">
+          <End Type="AvelangoDbModel.Tasks" Role="Tasks" Multiplicity="0..1" />
+          <End Type="AvelangoDbModel.TaskPreWorkers" Role="TaskPreWorkers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tasks">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaskPreWorkers">
+              <PropertyRef Name="BelongsToTask" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TaskPreWo__Belon__571DF1D5">
+          <End Type="AvelangoDbModel.Users" Role="Users" Multiplicity="0..1" />
+          <End Type="AvelangoDbModel.TaskPreWorkers" Role="TaskPreWorkers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TaskPreWorkers">
+              <PropertyRef Name="BelongsToWorker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TempUserD__Belon__5812160E">
+          <End Type="AvelangoDbModel.Users" Role="Users" Multiplicity="0..1" />
+          <End Type="AvelangoDbModel.TempUserData" Role="TempUserData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TempUserData">
+              <PropertyRef Name="BelongsToUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AvelangoDbModelStoreContainer" CdmEntityContainer="AvelangoDbEntities" >
+          <EntitySetMapping Name="ChatMessages">
+            <EntityTypeMapping TypeName="AvelangoDbModel.ChatMessages">
+              <MappingFragment StoreEntitySet="ChatMessages">
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="AttachmentMax" ColumnName="AttachmentMax" />
+                <ScalarProperty Name="AttachmentMin" ColumnName="AttachmentMin" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+                <ScalarProperty Name="BelongToChat" ColumnName="BelongToChat" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Chats">
+            <EntityTypeMapping TypeName="AvelangoDbModel.Chats">
+              <MappingFragment StoreEntitySet="Chats">
+                <ScalarProperty Name="IsBidirectional" ColumnName="IsBidirectional" />
+                <ScalarProperty Name="LastAction" ColumnName="LastAction" />
+                <ScalarProperty Name="BelongsToUserB" ColumnName="BelongsToUserB" />
+                <ScalarProperty Name="BelongsToUserA" ColumnName="BelongsToUserA" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommonAdvertising">
+            <EntityTypeMapping TypeName="AvelangoDbModel.CommonAdvertising">
+              <MappingFragment StoreEntitySet="CommonAdvertising">
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="SecondData" ColumnName="SecondData" />
+                <ScalarProperty Name="FirstData" ColumnName="FirstData" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="Expired" ColumnName="Expired" />
+                <ScalarProperty Name="CompanyRate" ColumnName="CompanyRate" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommonNews">
+            <EntityTypeMapping TypeName="AvelangoDbModel.CommonNews">
+              <MappingFragment StoreEntitySet="CommonNews">
+                <ScalarProperty Name="Theme" ColumnName="Theme" />
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Html" ColumnName="Html" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="AvelangoDbModel.Events">
+              <MappingFragment StoreEntitySet="Events">
+                <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+                <ScalarProperty Name="UserPk" ColumnName="UserPk" />
+                <ScalarProperty Name="Decrtiption" ColumnName="Decrtiption" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mails">
+            <EntityTypeMapping TypeName="AvelangoDbModel.Mails">
+              <MappingFragment StoreEntitySet="Mails">
+                <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+                <ScalarProperty Name="EmailSubject" ColumnName="EmailSubject" />
+                <ScalarProperty Name="Recipient" ColumnName="Recipient" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notifications">
+            <EntityTypeMapping TypeName="AvelangoDbModel.Notifications">
+              <MappingFragment StoreEntitySet="Notifications">
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="NotificationType" ColumnName="NotificationType" />
+                <ScalarProperty Name="Reviewed" ColumnName="Reviewed" />
+                <ScalarProperty Name="BelongsToFromUser" ColumnName="BelongsToFromUser" />
+                <ScalarProperty Name="BelongsToUser" ColumnName="BelongsToUser" />
+                <ScalarProperty Name="BelongsToTask" ColumnName="BelongsToTask" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PortfolioJobImages">
+            <EntityTypeMapping TypeName="AvelangoDbModel.PortfolioJobImages">
+              <MappingFragment StoreEntitySet="PortfolioJobImages">
+                <ScalarProperty Name="Large" ColumnName="Large" />
+                <ScalarProperty Name="Small" ColumnName="Small" />
+                <ScalarProperty Name="BelongsToPortfolioJob" ColumnName="BelongsToPortfolioJob" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PortfolioJobs">
+            <EntityTypeMapping TypeName="AvelangoDbModel.PortfolioJobs">
+              <MappingFragment StoreEntitySet="PortfolioJobs">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="BelongsToPortfolio" ColumnName="BelongsToPortfolio" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Portfolios">
+            <EntityTypeMapping TypeName="AvelangoDbModel.Portfolios">
+              <MappingFragment StoreEntitySet="Portfolios">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="BelongsToUser" ColumnName="BelongsToUser" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RialtoAction">
+            <EntityTypeMapping TypeName="AvelangoDbModel.RialtoAction">
+              <MappingFragment StoreEntitySet="RialtoAction">
+                <ScalarProperty Name="BelongsToUser" ColumnName="BelongsToUser" />
+                <ScalarProperty Name="AveRate" ColumnName="AveRate" />
+                <ScalarProperty Name="Bid" ColumnName="Bid" />
+                <ScalarProperty Name="BidTime" ColumnName="BidTime" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RialtoChat">
+            <EntityTypeMapping TypeName="AvelangoDbModel.RialtoChat">
+              <MappingFragment StoreEntitySet="RialtoChat">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="SenderName" ColumnName="SenderName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RialtoState">
+            <EntityTypeMapping TypeName="AvelangoDbModel.RialtoState">
+              <MappingFragment StoreEntitySet="RialtoState">
+                <ScalarProperty Name="BenefitPersent" ColumnName="BenefitPersent" />
+                <ScalarProperty Name="Shoulder" ColumnName="Shoulder" />
+                <ScalarProperty Name="Benefit" ColumnName="Benefit" />
+                <ScalarProperty Name="AveRate" ColumnName="AveRate" />
+                <ScalarProperty Name="TotalAveCount" ColumnName="TotalAveCount" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RialtoUserAssets">
+            <EntityTypeMapping TypeName="AvelangoDbModel.RialtoUserAssets">
+              <MappingFragment StoreEntitySet="RialtoUserAssets">
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="BelongsToUser" ColumnName="BelongsToUser" />
+                <ScalarProperty Name="Sign" ColumnName="Sign" />
+                <ScalarProperty Name="Benefit" ColumnName="Benefit" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RialtoUsersStates">
+            <EntityTypeMapping TypeName="AvelangoDbModel.RialtoUsersStates">
+              <MappingFragment StoreEntitySet="RialtoUsersStates">
+                <ScalarProperty Name="Equity" ColumnName="Equity" />
+                <ScalarProperty Name="BelongsToUser" ColumnName="BelongsToUser" />
+                <ScalarProperty Name="Ballance" ColumnName="Ballance" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SmsSending">
+            <EntityTypeMapping TypeName="AvelangoDbModel.SmsSending">
+              <MappingFragment StoreEntitySet="SmsSending">
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="ResetTime" ColumnName="ResetTime" />
+                <ScalarProperty Name="Counter" ColumnName="Counter" />
+                <ScalarProperty Name="Ip" ColumnName="Ip" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaskAttachments">
+            <EntityTypeMapping TypeName="AvelangoDbModel.TaskAttachments">
+              <MappingFragment StoreEntitySet="TaskAttachments">
+                <ScalarProperty Name="FileTitle" ColumnName="FileTitle" />
+                <ScalarProperty Name="Extention" ColumnName="Extention" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="BelongsToTask" ColumnName="BelongsToTask" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaskBids">
+            <EntityTypeMapping TypeName="AvelangoDbModel.TaskBids">
+              <MappingFragment StoreEntitySet="TaskBids">
+                <ScalarProperty Name="BelongsToWorker" ColumnName="BelongsToWorker" />
+                <ScalarProperty Name="Denied" ColumnName="Denied" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="BelongsToTask" ColumnName="BelongsToTask" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaskOffers">
+            <EntityTypeMapping TypeName="AvelangoDbModel.TaskOffers">
+              <MappingFragment StoreEntitySet="TaskOffers">
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="BelongsToWorker" ColumnName="BelongsToWorker" />
+                <ScalarProperty Name="BelongsToTask" ColumnName="BelongsToTask" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaskPreWorkers">
+            <EntityTypeMapping TypeName="AvelangoDbModel.TaskPreWorkers">
+              <MappingFragment StoreEntitySet="TaskPreWorkers">
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="BelongsToWorker" ColumnName="BelongsToWorker" />
+                <ScalarProperty Name="BelongsToTask" ColumnName="BelongsToTask" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tasks">
+            <EntityTypeMapping TypeName="AvelangoDbModel.Tasks">
+              <MappingFragment StoreEntitySet="Tasks">
+                <ScalarProperty Name="PlaceLng" ColumnName="PlaceLng" />
+                <ScalarProperty Name="PlaceLat" ColumnName="PlaceLat" />
+                <ScalarProperty Name="PlaceName" ColumnName="PlaceName" />
+                <ScalarProperty Name="IsRemovedToWorker" ColumnName="IsRemovedToWorker" />
+                <ScalarProperty Name="Closed" ColumnName="Closed" />
+                <ScalarProperty Name="IsRemovedToCustomer" ColumnName="IsRemovedToCustomer" />
+                <ScalarProperty Name="ProccessStatus" ColumnName="ProccessStatus" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="SubGroop" ColumnName="SubGroop" />
+                <ScalarProperty Name="Groop" ColumnName="Groop" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="TopicalTo" ColumnName="TopicalTo" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Worker" ColumnName="Worker" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TempUserData">
+            <EntityTypeMapping TypeName="AvelangoDbModel.TempUserData">
+              <MappingFragment StoreEntitySet="TempUserData">
+                <ScalarProperty Name="BelongsToUser" ColumnName="BelongsToUser" />
+                <ScalarProperty Name="UserLogoPath" ColumnName="UserLogoPath" />
+                <ScalarProperty Name="SurName" ColumnName="SurName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="AvelangoDbModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="PlaceLng" ColumnName="PlaceLng" />
+                <ScalarProperty Name="PlaceLat" ColumnName="PlaceLat" />
+                <ScalarProperty Name="PlaceName" ColumnName="PlaceName" />
+                <ScalarProperty Name="IsModerChecked" ColumnName="IsModerChecked" />
+                <ScalarProperty Name="PushUpDelivery" ColumnName="PushUpDelivery" />
+                <ScalarProperty Name="SmsDelivery" ColumnName="SmsDelivery" />
+                <ScalarProperty Name="EmailDelivery" ColumnName="EmailDelivery" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="UserLogoPathMax" ColumnName="UserLogoPathMax" />
+                <ScalarProperty Name="IsModerator" ColumnName="IsModerator" />
+                <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="ReceiveNews" ColumnName="ReceiveNews" />
+                <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+                <ScalarProperty Name="SubscribeToGroups" ColumnName="SubscribeToGroups" />
+                <ScalarProperty Name="Honors" ColumnName="Honors" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="UserLogoPath" ColumnName="UserLogoPath" />
+                <ScalarProperty Name="LastLogIn" ColumnName="LastLogIn" />
+                <ScalarProperty Name="AccountCreated" ColumnName="AccountCreated" />
+                <ScalarProperty Name="Valuta" ColumnName="Valuta" />
+                <ScalarProperty Name="Ballance" ColumnName="Ballance" />
+                <ScalarProperty Name="Skype" ColumnName="Skype" />
+                <ScalarProperty Name="Phone3" ColumnName="Phone3" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+                <ScalarProperty Name="SurName" ColumnName="SurName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IsCompany" ColumnName="IsCompany" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

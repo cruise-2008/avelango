@@ -1,0 +1,94 @@
+﻿.scroll-pane {
+	height: 275px; /* Высота видимой области*/
+	overflow: auto; /* Если отключены скрипты это правило позволит отобразить обычный скролл */
+}
+/* вертикальная полоса прокрутки */
+.jspVerticalBar {
+	position: absolute;
+	top: 0;
+	right: 0;   /* можно прижать к правому или левому краю */
+	width: 24px;   /* ширина полосы прокрутки */
+	height: 100%;
+	background: #323e60;
+	-moz-border-radius: 25px;
+		-webkit-border-radius: 25px;
+		border-radius: 25px;
+
+}
+/* горизонтальная полоса прокрутки */
+.jspHorizontalBar
+{
+	position: absolute;
+	bottom: 0;  /* можно прижать к нижнему или верхнему краю */
+	left: 0;
+	width: 100%;
+	height: 16px;  /* высота слушит шириной полосы прокрутки */
+	background: red;
+}
+
+/* полоска, по которой бегает ползунок */
+.jspTrack
+{
+	background: #323e60;  /* цвет полосы, или фоновый рисунок  */
+	position: relative;
+		-webkit-box-shadow: inset 0px 0px 7px 0px rgba(0,0,0,0.3);
+		-moz-box-shadow: inset 0px 0px 7px 0px rgba(0,0,0,0.3);
+		box-shadow: inset 0px 0px 7px 0px rgba(0,0,0,0.3);
+				-moz-border-radius: 25px;
+		-webkit-border-radius: 25px;
+		border-radius: 25px;
+}
+/* сам ползунок */
+.jspDrag
+{
+	background: #2d3858;  /* цвет ползунка, или фоновый рисунок  */
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	
+}
+/* стрелки для прокрутки */
+.jspArrow
+{
+	background: #50506d;  /* фон стрелки */
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+}
+/* стили для неактивной стрелки */
+.jspArrow.jspDisabled
+{
+	cursor: default;
+	background: #80808d;
+}
+/* этими правилами можно задать различные стили для вертикальных и горизонтальных стрелок */
+.jspVerticalBar .jspArrow
+{
+	height: 16px;
+}
+
+.jspHorizontalBar .jspArrow
+{
+	width: 16px;
+	float: left;
+	height: 100%;
+}
+
+/* стили для уголка - квадратной зоны где сходятся полосы прокрутки */
+.jspCorner
+{
+	background: #f00;
+	float: left;
+	height: 100%;
+}
+
+/* кроме того можно задать стили для каждой стрелки отдельно (этих правил изначально в jquery.jscrollpane.css нет!) */
+
+.jspArrowUp {}
+.jspArrowDown {}
+.jspArrowLeft {}
+.jspArrowRight {}

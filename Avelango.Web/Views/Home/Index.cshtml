@@ -1,0 +1,554 @@
+﻿@Scripts.Render("~/bundles/homeScripts")
+<div ng-controller="GlobalHomePageCtrl as home" >
+    <div class="content-holder">
+        <div id="content" class="main">
+            <ul class="onepage-pagination">
+                <li><a data-index="1" href="" ng-click="home.scrollTo(0); newNameClass($event)"></a></li>
+                <li><a data-index="3" href="" ng-click="home.scrollTo(1); newNameClass($event)" class="active"></a></li>
+                <li><a data-index="4" href="" ng-click="home.scrollTo(2); newNameClass($event)"></a></li>
+                <li><a data-index="5" href="" ng-click="home.scrollTo(3); newNameClass($event)"></a></li>
+            </ul>
+            <div id="categories" class="sectionscroll">
+                <ul class="category-list">
+                    <li ng-repeat="group in home.filtergroups" ng-show="!$last">
+                        <a ng-click="OpenSubgroups(group)" ng-cloak class="{{group.Ico}}" href="" id="{{group.Id}}"  title="открыть категорию Здоровье" data-toggle="modal" data-target="#myModal">{{group.Text}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="modalWindowForSubgroups"></div>
+
+            <div id="homepage" class="sectionscroll">
+                <div class="home2">
+                    <h1>Search Engine Capabilities</h1>
+                    <h2>placement and job search on the work</h2>
+                    <div>
+                        <button ng-click="home.scrollTo(0)" class="btn-promo-blue">Get start</button>
+                    </div>
+                </div>
+                <a href="" title="next page" class="btn-list-bottom" ng-click="home.scrollTo(2)">bottom</a>
+                <div class="imgbackground-overlay"></div>
+                <div class="imgbackground">
+                    <div class="rowimgbckgr rowimgbckgr1">
+                        <div class="imgbckgr imgbckgr1"></div>
+                        <div class="imgbckgr imgbckgr2"></div>
+                        <div class="imgbckgr imgbckgr3"></div>
+                    </div>
+                    <div class="rowimgbckgr rowimgbckgr2">
+                        <div class="imgbckgr imgbckgr4"></div>
+                        <div class="imgbckgr imgbckgr5"></div>
+                        <div class="imgbckgr imgbckgr6"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="statistic" class="sectionscroll">
+                <div class="home3">
+                    <div>
+                        <img src="../../Images/imgForHomePage/avelango-home3.png" class="statisticimg" alt=""/>
+                    </div>
+                    <div>
+                        <a ng-click="home.scrollTo(0)" href="" class="btn-orange center-block">Get start</a>
+                    </div>
+                </div>
+            </div>
+            <div id="video" class="sectionscroll">
+                <div class="noutblock">
+                    <div class="noutvideo">
+                        <div class="video">
+                            <div class="video__placeholder"> </div>
+                            <iframe class="video__player" src="https://www.youtube.com/embed/dIIx3uNv1l4?enablejsapi=1;rel=0&amp;showinfo=0&amp;controls=0&amp;playerapiid=ytplayer" showinfo="0" controls="0" autohide="1" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="nouttext">
+                        <p class="head1">Everything is a lot easier</p>
+                        <p>Помню, когда в армии между караулами дежурным ходил бывало такое: делаешь запись в книге выдачи оружия и на середине слова ловишь микросон в виде каких-то мутных образов. Офигеваешь, готовиться получать люлей за косяк в книге выдачи оружия... Потом смотришь, а, пока ты залипал, рука все правильно дописала... Так что недосып - он такой, да...</p>
+                        <a href="/Task/Tasks" target="_self" class="btn-orange">I customer</a> <a href="/Users/Executors" target="_self" class="btn-promo-blue"> I'm a performer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content1"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*<div>*@
+    @*<div class="">
+            <div class="text-content" ng-controller="ModalController as mod">
+                <div id="orderDynamicContent"></div>
+                <div ng-controller="AngularCarouselController as caro" class="carousel-demo">
+                    <div class="text-content">
+                        <h2 translate="MOTO" class="slogantext"></h2>
+                        <button style="margin: 0 auto;" type="button" class="btn btn-lg btn-warning hide" ng-click="mod.open()" ng-class="{'show':contr.IsAuthanticated}"><span translate="BTNCREATE"></span></button>
+                        <a ng-click="contr.login('Main')" target="_parent" class="hide" ng-class="{'show':!contr.IsAuthanticated}">
+                            <button type="button" class="btn btn-lg btn-warning"><span translate="BTNCREATE"></span></button>
+                        </a>
+                        <a style="margin-top: 10px" href="/Home/HowItWorks" target="_self" class="hiw bg-gray-lighter"><span translate="HOWTOWORK"></span></a>
+                    </div>
+                    <ul rn-carousel rn-carousel-index="caro.carouselIndex" rn-carousel-auto-slide class="list-unstyled carousel2">
+                        <li id="slide1">
+                            <div ng-style="{'background-image': 'url(Images/carousel/1.jpg)'}" class="bgimage"></div>
+                        </li>
+                        <li id="slide2">
+                            <div ng-style="{'background-image': 'url(Images/carousel/2.jpg)'}" class="bgimage"></div>
+                        </li>
+                        <li id="slide3">
+                            <div ng-style="{'background-image': 'url(Images/carousel/3.jpg)'}" class="bgimage"></div>
+                        </li>
+                        <li id="slide4">
+                            <div ng-style="{'background-image': 'url(Images/carousel/4.jpg)'}" class="bgimage"></div>
+                        </li>
+                        <li id="slide5">
+                            <div ng-style="{'background-image': 'url(Images/carousel/5.jpg)'}" class="bgimage"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>*@
+
+    @*<div class="container">
+        <uib-accordion close-others="true">
+        <ul class="timeline">
+
+        <li class="timeline-separator"></li>
+
+        <li class="timeline-inverted">
+            <div class="timeline-badge primary">
+                <em class="fa fa-car fa-2x"></em>
+            </div>
+            <div class="timeline-panel">
+                <uib-accordion-group class="custom-accordion">
+                    <uib-accordion-heading><span translate="A"></span></uib-accordion-heading>
+                    <p><a href="/Task/Tasks?subg=A1" target="_self" translate="A1"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=A2" target="_self" translate="A2"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=A3" target="_self" translate="A3"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=A4" target="_self" translate="A4"></a>
+                    </p>
+                </uib-accordion-group>
+            </div>
+        </li>
+
+        <li class="timeline-separator"></li>
+
+        <li>
+            <div class="timeline-badge warning">
+                <em class="fa fa-mail-reply-all fa-2x"></em>
+            </div>
+            <div class="timeline-panel">
+                <uib-accordion-group class="custom-accordion">
+                    <uib-accordion-heading><span translate="B"></span></uib-accordion-heading>
+                    <p><a href="/Task/Tasks?subg=B1" target="_self" translate="B1"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=B2" target="_self" translate="B2"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=B3" target="_self" translate="B3"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=B4" target="_self" translate="B4"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=B5" target="_self" translate="B5"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=B6" target="_self" translate="B6"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=B7" target="_self" translate="B7"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=B8" target="_self" translate="B8"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=B9" target="_self" translate="B9"></a>
+                    </p>
+                </uib-accordion-group>
+            </div>
+        </li>
+        <li class="timeline-inverted">
+            <div class="timeline-badge danger">
+                <em class="fa fa-truck fa-2x"></em>
+            </div>
+            <div class="timeline-panel">
+                <uib-accordion-group class="custom-accordion">
+                    <uib-accordion-heading><span translate="C"></span></uib-accordion-heading>
+                    <p><a href="/Task/Tasks?subg=C1" target="_self" translate="C1"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=C2" target="_self" translate="C2"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=C3" target="_self" translate="C3"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=C4" target="_self" translate="C4"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=C5" target="_self" translate="C5"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=C6" target="_self" translate="C6"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=C7" target="_self" translate="C7"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=C8" target="_self" translate="C8"></a>
+                    </p>
+                </uib-accordion-group>
+            </div>
+        </li>
+
+        <li class="timeline-separator"></li>
+
+        <li>
+            <div class="timeline-badge danger">
+                <em class="fa fa-car fa-2x"></em>
+            </div>
+            <div class="timeline-panel">
+                <uib-accordion-group class="custom-accordion">
+                    <uib-accordion-heading><span translate="D"></span></uib-accordion-heading>
+                    <p><a href="/Task/Tasks?subg=D1" target="_self" translate="D1"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=D2" target="_self" translate="D2"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=D3" target="_self" translate="D3"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=D4" target="_self" translate="D4"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=D5" target="_self" translate="D5"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=D6" target="_self" translate="D6"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=D7" target="_self" translate="D7"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=D8" target="_self" translate="D8"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=D9" target="_self" translate="D9"></a>
+                    </p>
+                </uib-accordion-group>
+            </div>
+        </li>
+        <li class="timeline-inverted">
+            <div class="timeline-badge success">
+                <em class="fa fa-puzzle-piece fa-2x"></em>
+            </div>
+            <div class="timeline-panel">
+                <uib-accordion-group class="custom-accordion">
+                    <uib-accordion-heading><span translate="E"></span></uib-accordion-heading>
+                    <p><a href="/Task/Tasks?subg=E1" target="_self" translate="E1"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=E2" target="_self" translate="E2"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=E3" target="_self" translate="E3"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=E4" target="_self" translate="E4"></a>
+                    </p>
+                </uib-accordion-group>
+            </div>
+        </li>
+
+        <li class="timeline-separator"></li>
+
+        <li>
+            <div class="timeline-badge danger">
+                <em class="fa icon-user-female fa-2x"></em>
+            </div>
+            <div class="timeline-panel">
+                <uib-accordion-group class="custom-accordion">
+                    <uib-accordion-heading><span translate="F"></span></uib-accordion-heading>
+                    <p><a href="/Task/Tasks?subg=F1" target="_self" translate="F1"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=F2" target="_self" translate="F2"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=F3" target="_self" translate="F3"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=F4" target="_self" translate="F4"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=F5" target="_self" translate="F5"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=F6" target="_self" translate="F6"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=F7" target="_self" translate="F7"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=F8" target="_self" translate="F8"></a>
+                    </p>
+                </uib-accordion-group>
+            </div>
+        </li>
+        <li class="timeline-inverted">
+            <div class="timeline-badge success">
+                <em class="fa fa-graduation-cap fa-2x"></em>
+            </div>
+            <div class="timeline-panel">
+                <uib-accordion-group class="custom-accordion">
+                    <uib-accordion-heading><span translate="G"></span></uib-accordion-heading>
+                    <p><a href="/Task/Tasks?subg=G1" target="_self" translate="G1"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=G2" target="_self" translate="G2"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=G3" target="_self" translate="G3"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=G4" target="_self" translate="G4"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=G5" target="_self" translate="G5"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=G6" target="_self" translate="G6"></a>
+                    </p>
+
+                </uib-accordion-group>
+            </div>
+        </li>
+
+        <li class="timeline-separator"></li>
+
+        <li>
+            <div class="timeline-badge danger">
+                <em class="fa icon-globe fa-2x"></em>
+            </div>
+            <div class="timeline-panel">
+                <uib-accordion-group class="custom-accordion">
+                    <uib-accordion-heading><span translate="H"></span></uib-accordion-heading>
+                    <p><a href="/Task/Tasks?subg=H1" target="_self" translate="H1"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=H2" target="_self" translate="H2"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=H3" target="_self" translate="H3"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=H4" target="_self" translate="H4"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=H5" target="_self" translate="H5"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=H6" target="_self" translate="H6"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=H7" target="_self" translate="H7"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=H8" target="_self" translate="H8"></a>
+                    </p>
+                </uib-accordion-group>
+            </div>
+        </li>
+        <li class="timeline-inverted">
+            <div class="timeline-badge success">
+                <em class="fa fa-futbol-o fa-2x"></em>
+            </div>
+            <div class="timeline-panel">
+                <uib-accordion-group class="custom-accordion">
+                    <uib-accordion-heading><span translate="I"></span></uib-accordion-heading>
+                    <p><a href="/Task/Tasks?subg=I1" target="_self" translate="I1"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=I2" target="_self" translate="I2"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=I3" target="_self" translate="I3"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=I4" target="_self" translate="I4"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=I5" target="_self" translate="I5"></a>
+                    </p>
+                </uib-accordion-group>
+            </div>
+        </li>
+
+
+        <li class="timeline-separator"></li>
+
+        <li>
+            <div class="timeline-badge danger">
+                <em class="fa fa-building-o fa-2x"></em>
+            </div>
+            <div class="timeline-panel">
+                <uib-accordion-group class="custom-accordion">
+                    <uib-accordion-heading><span translate="J"></span></uib-accordion-heading>
+                    <p><a href="/Task/Tasks?subg=J1" target="_self" translate="J1"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=J2" target="_self" translate="J2"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=J3" target="_self" translate="J3"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=J4" target="_self" translate="J4"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=J5" target="_self" translate="J5"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=J6" target="_self" translate="J6"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=J7" target="_self" translate="J7"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=J8" target="_self" translate="J8"></a>
+                    </p>
+                </uib-accordion-group>
+            </div>
+        </li>
+        <li class="timeline-inverted">
+            <div class="timeline-badge success">
+                <em class="fa fa-briefcase fa-2x"></em>
+            </div>
+            <div class="timeline-panel">
+                <uib-accordion-group class="custom-accordion">
+                    <uib-accordion-heading><span translate="K"></span></uib-accordion-heading>
+                    <p><a href="/Task/Tasks?subg=K1" target="_self" translate="K1"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=K2" target="_self" translate="K2"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=K3" target="_self" translate="K3"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=K4" target="_self" translate="K4"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=K5" target="_self" translate="K5"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=K6" target="_self" translate="K6"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=K7" target="_self" translate="K7"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=K8" target="_self" translate="K8"></a>
+                    </p>
+                </uib-accordion-group>
+            </div>
+        </li>
+
+
+        <li class="timeline-separator"></li>
+
+        <li>
+            <div class="timeline-badge danger">
+                <em class="fa fa-paint-brush fa-2x"></em>
+            </div>
+            <div class="timeline-panel">
+                <uib-accordion-group class="custom-accordion">
+                    <uib-accordion-heading><span translate="L"></span></uib-accordion-heading>
+                    <p><a href="/Task/Tasks?subg=L1" target="_self" translate="L1"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=L2" target="_self" translate="L2"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=L3" target="_self" translate="L3"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=L4" target="_self" translate="L4"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=L5" target="_self" translate="L5"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=L6" target="_self" translate="L6"></a>
+                    </p>
+                </uib-accordion-group>
+            </div>
+        </li>
+        <li class="timeline-inverted">
+            <div class="timeline-badge success">
+                <em class="fa fa-tree fa-2x"></em>
+            </div>
+            <div class="timeline-panel">
+                <uib-accordion-group class="custom-accordion">
+                    <uib-accordion-heading><span translate="M"></span></uib-accordion-heading>
+                    <p><a href="/Task/Tasks?subg=M1" target="_self" translate="M1"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=M2" target="_self" translate="M2"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=M3" target="_self" translate="M3"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=M4" target="_self" translate="M4"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=M5" target="_self" translate="M5"></a>
+                    </p>
+                </uib-accordion-group>
+            </div>
+        </li>
+
+        <li class="timeline-separator"></li>
+
+        <li>
+            <div class="timeline-badge danger">
+                <em class="fa fa-birthday-cake fa-2x"></em>
+            </div>
+            <div class="timeline-panel">
+                <uib-accordion-group class="custom-accordion">
+                    <uib-accordion-heading><span translate="N"></span></uib-accordion-heading>
+                    <p><a href="/Task/Tasks?subg=N1" target="_self" translate="N1"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=N2" target="_self" translate="N2"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=N3" target="_self" translate="N3"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=N4" target="_self" translate="N4"></a>
+                    </p>
+                    <p><a href="/Task/Tasks?subg=N5" target="_self" translate="N5"></a>
+                    </p>
+                </uib-accordion-group>
+            </div>
+        </li>*@
+
+    @*ARROW UP*@
+    @*<li>
+                <div class="timeline-badge danger" type="button" ng-click="contr.gotoUp()">
+                    <em class="fa fa-arrow-up fa-2x"></em>
+                </div>
+            </li>
+
+            <li>
+                <div class="clearfix"></div>
+            </li>
+
+            </ul>
+            </uib-accordion>
+        </div>*@
+    @*</div>*@
+
+
+
+

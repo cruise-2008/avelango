@@ -1,0 +1,572 @@
+﻿@{
+    var groups = @ViewData["Groups"];
+}
+@Scripts.Render("~/bundles/moderParlourScripts")
+<div id="main" ng-controller="MainModeratorController as mmm" data-groups="@groups">
+    <div class="wrapper">
+        <aside class="aside offsidebar">
+            <div class="panel panel-default">
+                <!-- START list group-->
+                <div class="list-group">
+                    <!-- START list group item-->
+                    <div class="list-group-item">
+                        <div class="media-box">
+                            <div class="media-box-body clearfix">
+                                <div class="pull-right label label-success" ng-bind="mmm.usersForModerators.length"></div>
+                                <div class="media-box-heading">
+                                    <a ui-sref="moderatorusers" class="m0">Пользователи</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="media-box">
+                            <div class="media-box-body clearfix">
+                                <div class="pull-right label label-success" ng-bind="mmm.dataForModerators.length"></div>
+                                <div class="media-box-heading">
+                                    <a ui-sref="moderatororders" class="m0">Заказы</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="media-box">
+                            <div class="media-box-body clearfix">
+                                <div class="pull-right label label-success">0</div>
+                                <div class="media-box-heading">
+                                    <a href="#" class="m0">Споры</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="media-box">
+                            <div class="media-box-body clearfix">
+                                <div class="pull-right label label-success">0</div>
+                                <div class="media-box-heading">
+                                    <a href="#" class="m0">Заявки на Pro</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END list group-->
+            </div>
+
+            <button type="button" class="btn btn-warning">Статистика</button>
+        </aside>
+        <section class="moderator-cabinet" ng-controller="ModalController as mod">
+            @*<button type="button" class="btn btn-lg btn-warning" ng-click="mod.open2()">Создать заказ</button>*@
+            <div data-ui-view="moderStart" data-autoscroll="false" class="wrapper">Loading...</div>
+        </section>
+    </div>
+</div>
+
+<script type="text/ng-template" id="/moder.orders.html">
+    <div class="content-wrapper">
+        <h3>
+            Кабинет модератора - Заказы
+        </h3>
+    </div>
+    <div class="content-wrapper" ng-controller="ModeratorOrdeDataTableController as mess">
+        <div class="content-wrapper hide" ng-class="{show:mmm.settingActive}">
+            <div class="col-md-12">
+                <form class="form-horizontal" ng-submit="mess.send()" name="mess.myForm">
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Заказчик</label>
+
+                        <div class="col-lg-8">
+                            <a href="#" class="customer-profile">{{mmm.sendMessage.Name}}Посмотреть профиль Заказчика</a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Заголовок</label>
+
+                        <div class="col-lg-8">
+                            <input name="title" type="text" placeholder="Введите Заголовок..." class="form-control" ng-model="mmm.sendMessage.Name" required="">
+                            <span ng-class="{show:(mess.myForm.title.$dirty &amp;&amp; mess.myForm.title.$error.required)}" class="text-danger hide">Поле обязательно к заполнению</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Описание</label>
+
+                        <div class="col-lg-8">
+                            <textarea name="description" class="form-control" ng-model="mmm.sendMessage.Description" required=""></textarea>
+                            <span ng-class="{show:(mess.myForm.description.$dirty &amp;&amp; mess.myForm.description.$error.required)}" class="text-danger hide">Поле обязательно к заполнению</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Сумма</label>
+
+                        <div class="col-lg-4">
+                            <input disabled type="text" class="form-control" ng-model="mmm.sendMessage.Price">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Дата/Время</label>
+
+                        <div class="col-lg-4">
+                            <div class="input-group date">
+                                <input disabled type="text" class="form-control" value="{{mmm.sendMessage.TopicalTo | date:'yyyy-MM-dd HH:mm'}} ">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default">
+                                        <em class="fa fa-calendar"></em>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Категория</label>
+
+                        <div class="col-lg-4">
+                            <select class="selectpicker"  name="groups" ng-model="mmm.sendMessage.Group" ng-change="mmm.numbergroups(mmm.sendMessage.Group);"required="">
+                                <option ng-repeat="x in mmm.groups" value="{{x.Name}}" translate="{{x.Name}}">{{x.Text}}</option>
+                            </select>
+                            <span ng-class="{show:(mess.myForm.groups.$dirty &amp;&amp; mess.myForm.groups.$error.required)}" class="text-danger hide">Поле обязательно к заполнению</span>
+                        </div>
+                        <div class="col-lg-4">
+                            <select class="selectpicker" name="subgroups" ng-model="mmm.sendMessage.SubGroup" required="">
+                                <option ng-repeat="x in mmm.groups[mmm.count].SubGroups" value="{{x.Name}}" translate="{{x.Name}}">{{x.Text}}</option>
+                            </select>
+                            <span ng-class="{show:(mess.myForm.subgroups.$dirty &amp;&amp; mess.myForm.subgroups.$error.required)}" class="text-danger hide">Поле обязательно к заполнению</span>
+                        </div>
+                    </div>
+                    <div class="btn-block">
+                        <button ng-click="mmm.deactwindow=true" type="button" class="btn btn-danger" ng-init="mmm.deactwindow=false">Деактивировать</button>
+                        <button type="submit" class="btn btn-primary">Ok</button>
+                    </div>
+                </form>
+            </div>
+            <div ng-include="'/moder.ngdialog1.html'" ng-if="mmm.deactwindow"></div>
+        </div>
+        <div class="hide" ng-class="{'show': !mmm.settingActive}">
+            <button type="button" class="btn btn-primary" ng-click="mmm.openMessage(0); mess.validationCleaner() ">Взять в работу</button>
+            <div class="col-lg-5">
+                <div class="panel panel-default">
+                    @*<div class="panel-heading">
+
+                        </div>*@
+                    <div class="panel-body">
+                        <div>
+                            <table datatable="ng" dt-options="mess.dtOptions" dt-column-defs="mess.dtColumnDefs" class="row-border hover">
+                                <thead>
+                                    <tr>
+                                        <th>Имя</th>
+                                        <th>Дата</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="message in mmm.dataForModerators">
+                                        <td>{{ message.Name}}</td>
+                                        <td>{{ message.Created | date:'yyyy-MM-dd HH:mm'}} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="/moder.ngdialog1.html">
+    <div id="ngdialog1" class="ngdialog ngdialog-theme-default ng-scope" role="alertdialog" aria-labelledby="ngdialog1-aria-labelledby" aria-describedby="ngdialog1-aria-describedby">
+        <div class="ngdialog-overlay"></div>
+        <div class="ngdialog-content" role="document">
+            <h2>Причина деактивации</h2>
+            <form role="form" class="ng-pristine ng-valid">
+                <div class="form-group">
+                    <div class="checkbox c-checkbox needsclick">
+                        <label class="needsclick">
+                            <input type="checkbox" value="" class="needsclick" ng-model="mess.causeDeact.BadDataFormat">
+                            <span class="fa fa-check"></span>Неверный формат данных – телефон, почта
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox c-checkbox needsclick">
+                        <label class="needsclick">
+                            <input type="checkbox" value="" class="needsclick" ng-model="mess.causeDeact.SuspicionBot">
+                            <span class="fa fa-check"></span>Бот (Заказ создан не человеком)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox c-checkbox needsclick">
+                        <label class="needsclick">
+                            <input type="checkbox" value="obscenity" class="needsclick" ng-model="mess.causeDeact.ObscenityPublishing">
+                            <span class="fa fa-check"></span>Публикация непристойных материалов, фото
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="checkbox c-checkbox needsclick">
+                        <label class="needsclick">
+                            <input type="checkbox" value="violation" class="needsclick" ng-model="mess.causeDeact.ViolationRules">
+                            <span class="fa fa-check"></span>Нарушение правил сайта
+                        </label>
+                    </div>
+                </div>
+                @*<div class="form-group">
+                        <div class="checkbox c-checkbox needsclick">
+                            <label class="needsclick">
+                                <input type="checkbox" value="publicationOffensive" class="needsclick">
+                                <span class="fa fa-check"></span>Публикация оскорбительных материалов
+                            </label>
+                        </div>
+                    </div>*@
+                <div class="form-group">
+                    <div class="checkbox c-checkbox needsclick">
+                        <label class="needsclick">
+                            <input type="checkbox" value="badFoto" class="needsclick" ng-model="mess.causeDeact.IncorrectFoto">
+                            <span class="fa fa-check"></span>Фото животных, предметов, знаменитостей вместо своего
+                        </label>
+                    </div>
+                </div>
+                <div class="btn-block">
+                    <button type="button" class="btn btn-warning" ng-click="mmm.deactwindow=false">Cancel</button>
+                    <button type="button" class="btn btn-primary" ng-click="mess.deactivate()">Ok</button>
+                </div>
+            </form>
+            <div class="ngdialog-close"></div>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="/moder.userToUprouve.html">
+    <div class="content-wrapper">
+        <h3>
+            Кабинет модератора - Юзеры
+        </h3>
+    </div>
+    <div class="content-wrapper" ng-controller="ModeratorUsersDataTableController as mess">
+        <div class="hide" ng-class="{'show': !mess.settingActive}">
+            <button type="button" class="btn btn-primary" ng-click="mess.openUser(0)">Взять в работу</button>
+            <div class="col-lg-5">
+                <div class="panel panel-default">
+                    @*<div class="panel-heading">
+
+                        </div>*@
+                    <div class="panel-body">
+                        <div>
+
+                            <table datatable="ng" dt-options="mess.dtOptions" dt-column-defs="mess.dtColumnDefs" class="row-border hover" ng-if="mmm.usersForModerators[0]">
+                                <thead>
+                                    <tr>
+                                        <th>Имя</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="message in mmm.usersForModerators">
+                                        <td>{{ message.Name }}</td>
+                                        <td>{{ message.Email }} </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-include="'/mypageanathereyes.html'" ng-if="mess.settingActive"></div>
+    </div>
+
+</script>
+<script type="text/ng-template" id="/myModalContent.html">
+    <div ng-controller="sweetAlertController">
+        <div ng-controller="OrderFormController as task">
+            <form role="form" ng-submit="task.login();ok(task.orderForm)" name="task.orderForm" novalidate="" class="form-validate mb-lg">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" aria-hidden="true" class="close"></button>
+                    <h4 id="myModalLabel" class="modal-title">Создать задание</h4>
+                </div>
+                <div class="modal-body">
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Краткое наименование задания</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="order_name" placeholder="placeholder" class="form-control" ng-model="task.order.name" required="" />
+                                <span ng-show="task.orderForm.order_name.$dirty &amp;&amp; task.orderForm.order_name.$error.required" class="text-danger">This field is required</span>
+                                <span ng-show="task.orderForm.order_name.$dirty &amp;&amp; task.orderForm.order_name.$error.validator" class="text-danger">This field must be a valid</span>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Описание</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="order_description" placeholder="placeholder" class="form-control" value="" ng-model="task.order.description" required="" />
+                                <span ng-show="task.orderForm.order_description.$dirty &amp;&amp; task.orderForm.order_description.$error.required" class="text-danger">This field is required</span>
+                                <span ng-show="task.orderForm.order_description.$dirty &amp;&amp; task.orderForm.order_description.$error.validator" class="text-danger">This field must be a valid</span>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Ориентировочная сумма</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="order_price" placeholder="placeholder" class="form-control" ng-model="task.order.price" required="" ng-pattern="/^[\d]{1,12}$/" />
+                                <span ng-show="task.orderForm.order_price.$dirty &amp;&amp; task.orderForm.order_price.$error.required" class="text-danger">This field is required</span>
+                                <span ng-show="task.orderForm.order_price.$dirty &amp;&amp; task.orderForm.order_price.$error.pattern" class="text-danger">This field must be a valid number</span>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Задание актуально до</label>
+                            <div class="row" ng-controller="DatepickerDemoCtrl as dp">
+                                <div class="col-md-12">
+                                    <p class="input-group">
+                                        <input type="text" name="order_data" uib-datepicker-popup="{{dp.format}}" ng-model="dp.dt" is-open="dp.opened" min-date="dp.minDate" datepicker-options="dp.dateOptions" date-disabled="dp.disabled(date, mode)" ng-required=""
+                                               close-text="Close" class="form-control" />
+                                        <span class="input-group-btn">
+
+                                            <button type="button" ng-click="dp.open($event)" class="btn btn-default">
+                                                <em class="fa fa-calendar"></em>
+                                            </button>
+                                        </span>
+                                        <span ng-show="task.orderForm.order_data.$dirty &amp;&amp; task.orderForm.order_data.$error.required" class="text-danger">This field is required</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div ng-controller="TimepickerDemoCtrl as tp">
+                                <uib-timepicker ng-model="tp.mytime" @*ng-change="tp.changed()"*@ hour-step="tp.hstep" minute-step="tp.mstep" show-meridian="tp.ismeridian"></uib-timepicker>
+<pre class="alert alert-info">Time is: {{tp.mytime | date:'shortTime' }}</pre>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div ng-show="task.authMsg" class="alert alert-danger text-center">{{task.authMsg}}</div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">OK</button>
+                    <button type="button" ng-click="cancel()" class="btn btn-warning">Cancel{{fa}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="/mypageanathereyes.html">
+    <div class="user-profile">
+        <div class="main-description">
+            <div class="ava-block" ng-if="mess.sendUser.UserLogoPath">
+                <div class="ava-wrap">
+                    <img ng-src="{{mess.sendUser.UserLogoPath}}" alt="Avatar" />
+                </div>
+                <div class="indicator on">
+                    <span>Online</span>
+                </div>
+                <div class="btn-block">
+                    <div class="btn-wrap" ng-if="mess.sendUser.Honors">
+                        <a href="#">Награды{{mess.sendUser.Honors}}</a>
+                    </div>
+                    <div class="btn-wrap">
+                        <a href="#">Экзамены</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-block">
+                <h3>{{mess.sendUser.Name}} {{mess.sendUser.SurName}}</h3>
+
+                <h3>{{mess.sendUser.Age}}</h3>
+
+                <h3 ng-if="mess.sendUser.City">
+                    {{mess.sendUser.City}}
+                    <span ng-if="mess.sendUser.Country">{{mess.sendUser.Country}}</span>
+                </h3>
+
+                <p class="date">Дата создания{{mess.sendUser.AccountCreated | date:'yyyy-MM-dd HH:mm'}}</p>
+
+                <div class="customer-rating">
+                    <p>Рейтинг Заказчика -{{mess.sendUser.Raiting}}</p>
+                    <a href="#" class="reviews">Отзывы- {{mess.sendUser.Claims.length}}</a>
+                </div>
+                <div class="contractor-rating">
+                    <p>Рейтинг Исполнителя{{}}</p>
+                    <a href="#" class="reviews">Отзывы</a>
+                </div>
+                <h4>Инженер-электрик{{mess.sendUser.Portfolio}}</h4>
+
+                <p>
+                    Cras ultricies ligula sed magna dictum porta. Donec rutrum congue leo eget malesuada.
+                    Donec rutrum congue leo eget malesuada. Vestibulum ac diam sit amet quam
+                    vehicula
+                </p>
+
+                <p>
+                    Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit
+                    amet
+                    quam vehicula elementum sed sit amet dui.
+                </p>
+
+                <p>
+                    Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus
+                    nibh.
+                </p>
+
+                <p>
+                    Cras ultricies ligula sed magna dictum porta. Donec rutrum congue leo eget malesuada.
+                    Donec rutrum congue leo eget malesuada. Vestibulum ac diam sit amet quam
+                    vehicula
+                </p>
+
+                <p>
+                    Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit
+                    amet
+                    quam vehicula elementum sed sit amet dui.
+                </p>
+
+                <p>
+                    Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus
+                    nibh.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <h4>Группы</h4>
+            </div>
+            <div class="col-md-10">
+                <ul class="groups">
+                    <li ng-repeat="group in mmm.sendUser.SubscribeToGroups">{{group | translate}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <h4>Портфолио</h4>
+            </div>
+            <div class="col-md-10">
+                <!-- START panel-->
+                <div id="panelDemo1" class="panel panel-default">
+                    <div ng-class="{'panel-heading-collapsed':panelDemo1}" class="panel-heading">
+                        Курьерские услуги
+                        <paneltool tool-collapse="tool-collapse"></paneltool>
+                    </div>
+                    <div uib-collapse="panelDemo1" class="panel-wrapper">
+                        <div class="panel-body">
+                            <p>Panel can be collapsed clicking on the chevron up/down icon on the top right corner</p>
+                        </div>
+                        <div class="img-block">
+                            <img src="Storage/Avatars/defaultuser.png" alt="Portfolio image" />
+                        </div>
+                    </div>
+                </div>
+                <div id="panelDemo2" class="panel panel-default">
+                    <div ng-class="{'panel-heading-collapsed':panelDemo2}" class="panel-heading">
+                        Курьерские услуги
+                        <paneltool tool-collapse="tool-collapse"></paneltool>
+                    </div>
+                    <div uib-collapse="panelDemo2" class="panel-wrapper">
+                        <div class="panel-body">
+                            <p>Panel can be collapsed clicking on the chevron up/down icon on the top right corner</p>
+                        </div>
+                        <div class="img-block">
+                            <img src="Storage/Avatars/defaultuser.png" alt="Portfolio image" />
+                        </div>
+                    </div>
+                </div>
+                <!-- END panel-->
+                @*<div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="img-block">
+                                <img src="Storage/Avatars/defaultuser.png" alt="Portfolio image" />
+                            </div>
+                            Курьерские услуги
+                            <paneltool tool-collapse="tool-collapse" class="pull-right">
+                                <a href="#" class="ng-scope">
+                                    <em class="fa fa-plus ng-no-animation ng-hide"></em>
+                                    <em class="fa fa-minus ng-no-animation"></em>
+                                </a>
+                            </paneltool>
+                        </div>
+                        <div class="panel-wrapper in collapse">
+                            <div class="panel-body">
+                                <p>Curabitur aliquet quam id dui posuere blandit.</p>
+                            </div>
+                        </div>
+                    </div>*@
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="img-block">
+                            <img src="Storage/Avatars/defaultuser.png" alt="Portfolio image" />
+                        </div>
+                        Стройка и ремонт
+                        <paneltool tool-collapse="tool-collapse" class="pull-right">
+                            <a href="#" class="ng-scope">
+                                <em class="fa fa-plus ng-no-animation ng-hide"></em>
+                                <em class="fa fa-minus ng-no-animation"></em>
+                            </a>
+                        </paneltool>
+                    </div>
+                    <div class="panel-wrapper in collapse">
+                        <div class="panel-body">
+                            <p>
+                                Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
+                                Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum
+                                ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                                Curae;
+                            </p>
+
+                            <div class="portfolio-images">
+                                <div class="images-block">
+                                    <img src="Storage/Avatars/defaultuser.png"
+                                         alt="Portfolio image">
+                                </div>
+                                <div class="images-block">
+                                    <img src="Storage/Avatars/defaultuser.png"
+                                         alt="Portfolio image">
+                                </div>
+                                <div class="images-block">
+                                    <img src="Storage/Avatars/defaultuser.png"
+                                         alt="Portfolio image">
+                                </div>
+                                <div class="images-block">
+                                    <img src="Storage/Avatars/defaultuser.png"
+                                         alt="Portfolio image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="img-block">
+                            <img src="Storage/Avatars/defaultuser.png" alt="Portfolio image" />
+                        </div>
+                        Грузоперевозки
+                        <paneltool tool-collapse="tool-collapse" class="pull-right">
+                            <a href="#" class="ng-scope">
+                                <em class="fa fa-plus ng-no-animation ng-hide"></em>
+                                <em class="fa fa-minus ng-no-animation"></em>
+                            </a>
+                        </paneltool>
+                    </div>
+                    <div class="panel-wrapper in collapse">
+                        <div class="panel-body">
+                            <p>
+                                Nulla porttitor accumsan tincidunt. Proin eget tortor risus. Quisque
+                                velit nisi, pretium ut lacinia in, elementum id enim. Praesent sapien
+                                massa, convallis a pellentesque nec, egestas non nisi. Pellentesque in
+                                ipsum id orci porta dapibus. Pellentesque in ipsum id orci porta
+                                dapibus. Praesent sapien massa, convallis a pellentesque nec, egestas
+                                non nisi. Sed porttitor lectus nibh. Nulla quis lorem ut libero
+                                malesuada feugiat. Curabitur non nulla sit amet nisl tempus convallis
+                                quis ac lectus.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="btn-block">
+        <button ng-click="mmm.deactwindow=true" type="button" class="btn btn-danger" ng-init="mmm.deactwindow=false">Деактивировать</button>
+        <button type="button" class="btn btn-primary" ng-click="mess.senduser(); mmm.setNotifiAsViewed(mmm.sendMessage.PublicKey)">Ok</button>
+    </div>
+    <div ng-include="'/moder.ngdialog1.html'" ng-if="mmm.deactwindow"></div>
+</script>

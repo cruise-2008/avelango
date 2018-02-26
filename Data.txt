@@ -1,0 +1,30 @@
+Хостинг для сайта uh419050.ukrdomen.com
+
+Домен: uh419050.ukrdomen.com
+IP: 93.190.43.249
+
+ФТП доступ:
+хост: ваш_домен
+IP: 93.190.43.249
+логин: uh419050
+пароль: 94Tc98E4gn
+
+Просмотр сайта:
+http://uh419050.ukrdomen.com
+
+БД:
+
+
+ns-сервера:
+ns1.ukrdomen.com
+ns2.ukrdomen.com
+
+Почта:
+uh419050@avelango.com
+
+https://webmail.uh.ua:2222/
+логин uh419050
+пароль 6z84NVwEJR
+POP3: mail.ваш_домен
+SMTP: mail.ваш_домен
+

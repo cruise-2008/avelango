@@ -1,0 +1,58 @@
+﻿<div id="exchange" class="item-cart exchangeblock row darktheme" ng-controller="rialtoController as rialto">
+    <div class="col-lg-8">
+        <div class="row">
+            <!--CHART-->
+            <div id="rialtochart"></div>
+        </div>
+        <div class="chat-exchenge">
+            <div class="row">
+                <div class="chat-display col-lg-8" style="overflow-y: scroll; height: 350px;">
+                    @*<div class="scroll-pane"></div>*@
+                    <p ng-repeat="msg in rialto.chatMessages" ng-init="$last && rialto.msgAdded()"><strong>{{msg.SenderName}}:&nbsp;</strong>{{msg.Message}}</p>
+                </div>
+                <div class="addcoment-exch col-lg-4">
+                    <textarea ng-keyup="$event.keyCode == 13 && rialto.sendMessage()" ng-model="rialto.chatmessage" placeholder="Поле ввода комментария"></textarea>
+                    <a ng-click="rialto.sendMessage()" title="Оставить комментарий" class="btn-exch-send"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="row">
+            <div class="col-lg-12"><div class=" info-ex1">&laquo; Текущий лидер &raquo;<span>{{rialto.champion}}</span></div></div>
+            <div class="col-lg-6"><div class="info-ex2">&laquo; Баланс &raquo;<span>{{rialto.ballance}}</span></div></div>
+            <div class="col-lg-6 pull-right"><div class="info-ex3">&laquo; Капитал &raquo; <span>{{rialto.equity}}</span></div></div>
+        </div>
+        <div class="block-ex">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="btn-ex">
+                        <div class="amountbets-holder">
+                            <div class="amountbets">
+                                <a class="incamount" ng-click="rialto.ballancetoactionDown()">-</a>
+                                <input type="text" ng-model="rialto.ballancetoaction" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                                <a class="decamount" ng-click="rialto.ballancetoactionUp()"> +</a>
+                            </div>
+                        </div>
+                        <button ng-click="rialto.up()" class="btn-up">{{rialto.aveRate}}</button>
+                        <button ng-click="rialto.down()" class="btn-down">{{rialto.aveRate}}</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="scoreboard" ng-repeat="asset in rialto.assetlist">
+                        <div class="row">
+                            <div class="col-lg-5 col1">{{asset.Value}}</div>
+                            <div class="col-lg-1 col1"><span ng-class="{'arrow-up':asset.Sign, 'arrow-down':!asset.Sign}"></span></div>
+                            <div class="col-lg-5 col1">{{asset.Benefit.toFixed(2)}}</div>
+                            <div class="col-lg-1 col1"><a ng-click="rialto.close($index, asset.Pk)" class="close">X</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

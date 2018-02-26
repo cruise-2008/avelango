@@ -1,0 +1,25 @@
+﻿@{ Layout = null; }
+
+<script type="text/ng-template" id="/groupModalContent.html">
+    
+    <div > 
+        <button ng-click="closeModal()" type="button" class="modal-close" data-dismiss="modal">X</button>
+        <div class="modal-body" >
+            <h2 class="group-title"><span class="{{groupICO}}">{{groupName}}</span></h2>
+            <ul class="podcat" >
+                <li ng-repeat="subGroup in subgroups">
+                    <input type="checkbox" id="{{subGroup.Id}}" name="{{subGroup.Id}}">
+                    <label for="{{subGroup.Id}}">{{subGroup.Text}}</label>
+                </li>
+
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <a href="/Task/Tasks" target="_self" type="button" class="btn btn-default btn-prev">В заказы</a>
+            <a href="/Users/Executors" target="_self" type="button" class="btn btn-default btn-next">В исполнители</a>
+        </div>
+    </div>
+
+</script>
+
+

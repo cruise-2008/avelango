@@ -1,0 +1,95 @@
+﻿    <!-- Modal inline template-->
+<script type="text/ng-template" id="/myModalContent.html">
+        <div ng-controller="sweetAlertController as sac">
+            <div ng-controller="OrderFormController as task">
+                <form role="form" ng-submit="task.creatOrEdit(editedTask); ok(task.orderForm)" name="task.orderForm" novalidate="" class="form-validate mb-lg">
+                    <div class="modal-header"><button type="button" data-dismiss="modal" aria-hidden="true" class="close"></button><h4 id="myModalLabel" class="modal-title"><span translate={{modalTitle}}></span></h4></div>
+                    <div class="modal-body">
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label"><span translate="ORDERNAME"></span></label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="order_name" placeholder="placeholder" class="form-control" ng-model="task.order.name" ng-init="task.order.name=editedTask.Name" required="" />
+                                    <span ng-class="{show:(task.orderForm.order_name.$dirty &amp;&amp; task.orderForm.order_name.$error.required)}" class="text-danger hide" translate="REQUIREDFIELD"></span>
+                                    <span ng-class="{show:(task.orderForm.order_name.$dirty &amp;&amp; task.orderForm.order_name.$error.validator)}" class="text-danger hide" translate="VALIDFIELD"></span>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label"><span translate="ORDERDESCRIPT"></span></label>
+                                <div class="col-sm-9">
+                                    <textarea type="text" name="order_description" maxlength="500" placeholder="placeholder" class="form-control" value="" ng-model="task.order.description" ng-init="task.order.description=editedTask.Description" required="" />
+                                    <span ng-class="{show:(task.orderForm.order_description.$dirty &amp;&amp; task.orderForm.order_description.$error.required)}" class="text-danger hide" translate="REQUIREDFIELD"></span>
+                                    <span ng-class="{show:(task.orderForm.order_description.$dirty &amp;&amp; task.orderForm.order_description.$error.validator)}" class="text-danger hide" translate="VALIDFIELD"></span>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label"><span translate="ORDERCITY"></span></label>
+                                <div class="col-sm-9">
+                                    <input id="search" name="order_place" ng-model="task.order.chosenPlace" class="form-control" ng-init="task.order.chosenPlace=editedTask.PlaceName" required="" ng-change="task.myValidation()" />
+                                    <span ng-class="{show:(task.showValidatemessage &amp;&amp; task.orderForm.order_place.$error.required)}" class="text-danger hide" translate="REQUIREDFIELD"></span>
+                                    <span ng-class="{show:(task.showValidatemessage &amp;&amp; task.orderForm.order_place.$error.validator)}" class="text-danger hide"></span>
+                                    <span ng-class="{show:(task.showValidatemessage)}" class="text-danger hide">Выберете местоположение из выпадающего списка</span>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label"><span translate="ORDERPRICE"></span></label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="order_price" placeholder="placeholder" class="form-control" ng-model="task.order.price" ng-init="task.order.price=editedTask.Price" required="" ng-pattern="/^[\d]{1,9}$/" />
+                                    <span ng-class="{show:(task.orderForm.order_price.$dirty &amp;&amp; task.orderForm.order_price.$error.required)}" class="text-danger hide" translate="REQUIREDFIELD"></span>
+                                    <span ng-class="{show:(task.orderForm.order_price.$dirty &amp;&amp; task.orderForm.order_price.$error.pattern)}" class="text-danger hide" translate="VALIDNUMBER"></span>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" style="margin-top: 35px;"><span translate="ACTUALTIME"></span></label>
+                                <div class="row" ng-controller="DatepickerDemoCtrl as dp">
+                                    <div class="col-md-5" style="margin-top: 30px;">
+                                        <p class="input-group">
+                                            <input type="text" uib-datepicker-popup="{{dp.format}}" ng-init="dp.dt = initDate" ng-model="dp.dt" is-open="dp.opened" min-date="dp.minDate" datepicker-options="dp.dateOptions" ng-required="" close-text="Close" class="form-control" />
+                                            <span class="input-group-btn">
+                                                <button type="button" ng-click="dp.open($event)" class="btn btn-default">
+                                                    <em class="fa fa-calendar"></em>
+                                                </button>
+                                            </span>
+                                            <span ng-class="{show:(task.orderForm.order_data.$dirty &amp;&amp; task.orderForm.order_data.$error.required)}" class="text-danger hide" translate="REQUIREDFIELD"></span>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3" ng-controller="TimepickerDemoCtrl as tp" id="timepick">
+                                        <uib-timepicker show-meridian="tp.ismeridian" ng-init="tp.mytime = initDate" ng-model="tp.mytime" hour-step="tp.hstep" minute-step="tp.mstep"></uib-timepicker>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-group">
+                                <input type="file" id="file-uploader" class="form-control" multiple>
+                            </div>
+                        </fieldset>
+
+                        <!-- Тут прикрепленные файлы--> 
+                        <fieldset>
+                            <div class="form-group">
+                                <div class="portfolio-images">
+                                    <div ng-repeat="attachment in attachments">
+                                        <a target="_blank" ng-href="{{attachment.Url}}" download>
+                                            <span class="fa fa-file">&nbsp{{attachment.FileTitle}}</span>
+                                        </a>
+                                        <span ng-click="task.removeAttachment(attachment.Url, $index)">&nbsp(Удалить)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div ng-class="{show:task.authMsg}" class="alert alert-danger text-center hide">{{task.authMsg}}</div>
+                    <div class="modal-footer"><button type="submit" class="btn btn-primary">OK</button><button type="button" class="btn btn-warning" ng-click="cancel()"><span translate="BTNCANCEL"></span></button></div>
+                </form>
+            </div>
+        </div>
+    </script>   

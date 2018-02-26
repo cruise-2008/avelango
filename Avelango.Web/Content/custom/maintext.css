@@ -1,0 +1,82 @@
+/** maintext START**/
+.maintext{
+	font-size:1.1em;
+	line-height:1.2em;
+}
+.maintext a{
+}
+.maintext .date{
+	font-size:0.9em;
+}
+.maintext .textabout{
+	font-weight:bold;
+}
+.maintext .maintextimg{
+	margin:10px 0;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+
+}
+.maintext .maintextimg img{
+	width:100%;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+.maintext p{
+	margin:5px 0 10px
+}
+.maintext h1{
+	font-size:1.6em;
+	line-height:1.1em;
+	margin:5px 0 10px;
+	color:#404040;
+}
+.maintext h2{
+	font-size:1.5em;
+	line-height:1.1em;
+	margin:5px 0 10px;
+		color:#404040;
+}
+.maintext h3{
+	font-size:1.4em;
+	line-height:1.1em;
+	margin:5px 0 10px;
+		color:#404040;
+}
+.maintext h4{
+	font-size:1.3em;
+	line-height:1.1em;
+	margin:5px 0 10px;
+		color:#404040;
+}
+.maintext h5{
+	font-size:1.2em;
+	line-height:1.1em;
+	margin:5px 0 10px;
+		color:#404040;
+}
+.maintext h6{
+	font-size:1.1em;
+	line-height:1.1em;
+	margin:5px 0 10px;
+		color:#404040;
+}
+
+.maintext ul{
+	padding-left:20px;
+}
+.maintext ul li{
+	margin:3px 0 5px;
+	background:url(../i/bulet-ul.png) no-repeat 0 6px;
+	padding-left:11px;
+}
+.maintext ol{
+	padding-left:25px;
+}
+.maintext ol li{
+	list-style:decimal;
+	margin:3px 0 5px;
+}
+/** maintext END**/

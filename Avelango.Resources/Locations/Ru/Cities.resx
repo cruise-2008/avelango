@@ -1,0 +1,2418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AD1" xml:space="preserve">
+    <value>Андорра-ла-Велья</value>
+  </data>
+  <data name="AD2" xml:space="preserve">
+    <value>Эскальдес-Энгордань</value>
+  </data>
+  <data name="AD3" xml:space="preserve">
+    <value>Сант-Жулия-де-Лория</value>
+  </data>
+  <data name="AD4" xml:space="preserve">
+    <value>Энкамп</value>
+  </data>
+  <data name="AD5" xml:space="preserve">
+    <value>Ла-Массана</value>
+  </data>
+  <data name="AD6" xml:space="preserve">
+    <value>Пас-де-ла-Каса</value>
+  </data>
+  <data name="AD7" xml:space="preserve">
+    <value>Санта-Колома</value>
+  </data>
+  <data name="AD8" xml:space="preserve">
+    <value>Ордино</value>
+  </data>
+  <data name="AL1" xml:space="preserve">
+    <value>Тирана</value>
+  </data>
+  <data name="AL2" xml:space="preserve">
+    <value>Эльбасан</value>
+  </data>
+  <data name="AL3" xml:space="preserve">
+    <value>Дуррес</value>
+  </data>
+  <data name="AL4" xml:space="preserve">
+    <value>Шкодер</value>
+  </data>
+  <data name="AL5" xml:space="preserve">
+    <value>Влёра</value>
+  </data>
+  <data name="AL6" xml:space="preserve">
+    <value>Корча</value>
+  </data>
+  <data name="AL7" xml:space="preserve">
+    <value>Фиери</value>
+  </data>
+  <data name="AL8" xml:space="preserve">
+    <value>Кучова</value>
+  </data>
+  <data name="AL9" xml:space="preserve">
+    <value>Саранда</value>
+  </data>
+  <data name="AM1" xml:space="preserve">
+    <value>Ереван</value>
+  </data>
+  <data name="AM2" xml:space="preserve">
+    <value>Гюмри</value>
+  </data>
+  <data name="AM3" xml:space="preserve">
+    <value>Ванадзор</value>
+  </data>
+  <data name="AM4" xml:space="preserve">
+    <value>Вагаршапат</value>
+  </data>
+  <data name="AM5" xml:space="preserve">
+    <value>Раздан</value>
+  </data>
+  <data name="AM6" xml:space="preserve">
+    <value>Абовян</value>
+  </data>
+  <data name="AM7" xml:space="preserve">
+    <value>Капан</value>
+  </data>
+  <data name="AM8" xml:space="preserve">
+    <value>Армавир</value>
+  </data>
+  <data name="AT1" xml:space="preserve">
+    <value>Вена</value>
+  </data>
+  <data name="AT10" xml:space="preserve">
+    <value>Дорнбирн</value>
+  </data>
+  <data name="AT11" xml:space="preserve">
+    <value>Винер-Нойштадт</value>
+  </data>
+  <data name="AT2" xml:space="preserve">
+    <value>Грац</value>
+  </data>
+  <data name="AT3" xml:space="preserve">
+    <value>Линц</value>
+  </data>
+  <data name="AT4" xml:space="preserve">
+    <value>Зальцбург</value>
+  </data>
+  <data name="AT5" xml:space="preserve">
+    <value>Инсбрук</value>
+  </data>
+  <data name="AT6" xml:space="preserve">
+    <value>Клагенфурт</value>
+  </data>
+  <data name="AT7" xml:space="preserve">
+    <value>Вельс</value>
+  </data>
+  <data name="AT8" xml:space="preserve">
+    <value>Филлах</value>
+  </data>
+  <data name="AT9" xml:space="preserve">
+    <value>Санкт-Пёльтен</value>
+  </data>
+  <data name="AZ1" xml:space="preserve">
+    <value>Баку</value>
+  </data>
+  <data name="AZ10" xml:space="preserve">
+    <value>Хачмаз</value>
+  </data>
+  <data name="AZ11" xml:space="preserve">
+    <value>Евлах</value>
+  </data>
+  <data name="AZ12" xml:space="preserve">
+    <value>Джалилабад</value>
+  </data>
+  <data name="AZ2" xml:space="preserve">
+    <value>Гянджа</value>
+  </data>
+  <data name="AZ3" xml:space="preserve">
+    <value>Сумгайыт</value>
+  </data>
+  <data name="AZ4" xml:space="preserve">
+    <value>Мингечевир</value>
+  </data>
+  <data name="AZ5" xml:space="preserve">
+    <value>Хырдалан</value>
+  </data>
+  <data name="AZ6" xml:space="preserve">
+    <value>Ленкорань</value>
+  </data>
+  <data name="AZ7" xml:space="preserve">
+    <value>Ширван</value>
+  </data>
+  <data name="AZ8" xml:space="preserve">
+    <value>Нахичевань</value>
+  </data>
+  <data name="AZ9" xml:space="preserve">
+    <value>Шеки</value>
+  </data>
+  <data name="BA1" xml:space="preserve">
+    <value>Сараево</value>
+  </data>
+  <data name="BA2" xml:space="preserve">
+    <value>Баня-Лука</value>
+  </data>
+  <data name="BA3" xml:space="preserve">
+    <value>Тузла</value>
+  </data>
+  <data name="BA4" xml:space="preserve">
+    <value>Зеница</value>
+  </data>
+  <data name="BA5" xml:space="preserve">
+    <value>Мостар</value>
+  </data>
+  <data name="BA6" xml:space="preserve">
+    <value>Биелина</value>
+  </data>
+  <data name="BA7" xml:space="preserve">
+    <value>Брчко</value>
+  </data>
+  <data name="BA8" xml:space="preserve">
+    <value>Бихач</value>
+  </data>
+  <data name="BE1" xml:space="preserve">
+    <value>Антверпен</value>
+  </data>
+  <data name="BE10" xml:space="preserve">
+    <value>Алст</value>
+  </data>
+  <data name="BE11" xml:space="preserve">
+    <value>Ла-Лувьер</value>
+  </data>
+  <data name="BE12" xml:space="preserve">
+    <value>Кортрейк</value>
+  </data>
+  <data name="BE13" xml:space="preserve">
+    <value>Хасселт</value>
+  </data>
+  <data name="BE14" xml:space="preserve">
+    <value>Синт-Никлас</value>
+  </data>
+  <data name="BE15" xml:space="preserve">
+    <value>Остенде</value>
+  </data>
+  <data name="BE16" xml:space="preserve">
+    <value>Турне</value>
+  </data>
+  <data name="BE17" xml:space="preserve">
+    <value>Генк</value>
+  </data>
+  <data name="BE18" xml:space="preserve">
+    <value>Серен</value>
+  </data>
+  <data name="BE19" xml:space="preserve">
+    <value>Руселаре</value>
+  </data>
+  <data name="BE2" xml:space="preserve">
+    <value>Гент</value>
+  </data>
+  <data name="BE3" xml:space="preserve">
+    <value>Шарлеруа</value>
+  </data>
+  <data name="BE4" xml:space="preserve">
+    <value>Брюссель</value>
+  </data>
+  <data name="BE5" xml:space="preserve">
+    <value>Брюгге</value>
+  </data>
+  <data name="BE6" xml:space="preserve">
+    <value>Намюр</value>
+  </data>
+  <data name="BE7" xml:space="preserve">
+    <value>Монс</value>
+  </data>
+  <data name="BE8" xml:space="preserve">
+    <value>Лёвен</value>
+  </data>
+  <data name="BE9" xml:space="preserve">
+    <value>Мехелен</value>
+  </data>
+  <data name="BG1" xml:space="preserve">
+    <value>София</value>
+  </data>
+  <data name="BG10" xml:space="preserve">
+    <value>Перник</value>
+  </data>
+  <data name="BG11" xml:space="preserve">
+    <value>Шумен</value>
+  </data>
+  <data name="BG12" xml:space="preserve">
+    <value>Хасково</value>
+  </data>
+  <data name="BG13" xml:space="preserve">
+    <value>Ямбол</value>
+  </data>
+  <data name="BG2" xml:space="preserve">
+    <value>Пловдив</value>
+  </data>
+  <data name="BG3" xml:space="preserve">
+    <value>Варна</value>
+  </data>
+  <data name="BG4" xml:space="preserve">
+    <value>Бургас</value>
+  </data>
+  <data name="BG5" xml:space="preserve">
+    <value>Русе</value>
+  </data>
+  <data name="BG6" xml:space="preserve">
+    <value>Стара-Загора</value>
+  </data>
+  <data name="BG7" xml:space="preserve">
+    <value>Плевен</value>
+  </data>
+  <data name="BG8" xml:space="preserve">
+    <value>Сливен</value>
+  </data>
+  <data name="BG9" xml:space="preserve">
+    <value>Добрич</value>
+  </data>
+  <data name="BY1" xml:space="preserve">
+    <value>Минск</value>
+  </data>
+  <data name="BY10" xml:space="preserve">
+    <value>Пинск</value>
+  </data>
+  <data name="BY11" xml:space="preserve">
+    <value>Орша</value>
+  </data>
+  <data name="BY12" xml:space="preserve">
+    <value>Мозырь</value>
+  </data>
+  <data name="BY2" xml:space="preserve">
+    <value>Гомель</value>
+  </data>
+  <data name="BY3" xml:space="preserve">
+    <value>Могилёв</value>
+  </data>
+  <data name="BY4" xml:space="preserve">
+    <value>Витебск</value>
+  </data>
+  <data name="BY5" xml:space="preserve">
+    <value>Гродно</value>
+  </data>
+  <data name="BY6" xml:space="preserve">
+    <value>Брест</value>
+  </data>
+  <data name="BY7" xml:space="preserve">
+    <value>Бобруйск</value>
+  </data>
+  <data name="BY8" xml:space="preserve">
+    <value>Барановичи</value>
+  </data>
+  <data name="BY9" xml:space="preserve">
+    <value>Борисов</value>
+  </data>
+  <data name="CH1" xml:space="preserve">
+    <value>Цюрих</value>
+  </data>
+  <data name="CH10" xml:space="preserve">
+    <value>Биль</value>
+  </data>
+  <data name="CH11" xml:space="preserve">
+    <value>Тун</value>
+  </data>
+  <data name="CH12" xml:space="preserve">
+    <value>Кёниц</value>
+  </data>
+  <data name="CH13" xml:space="preserve">
+    <value>Ла-Шо-де-Фон</value>
+  </data>
+  <data name="CH14" xml:space="preserve">
+    <value>Верденберг</value>
+  </data>
+  <data name="CH15" xml:space="preserve">
+    <value>Шаффхаузен</value>
+  </data>
+  <data name="CH16" xml:space="preserve">
+    <value>Фрибур</value>
+  </data>
+  <data name="CH17" xml:space="preserve">
+    <value>Кур</value>
+  </data>
+  <data name="CH18" xml:space="preserve">
+    <value>Невшатель</value>
+  </data>
+  <data name="CH19" xml:space="preserve">
+    <value>Вернье</value>
+  </data>
+  <data name="CH2" xml:space="preserve">
+    <value>Женева</value>
+  </data>
+  <data name="CH20" xml:space="preserve">
+    <value>Устер</value>
+  </data>
+  <data name="CH3" xml:space="preserve">
+    <value>Базель</value>
+  </data>
+  <data name="CH4" xml:space="preserve">
+    <value>Берн</value>
+  </data>
+  <data name="CH5" xml:space="preserve">
+    <value>Лозанна</value>
+  </data>
+  <data name="CH6" xml:space="preserve">
+    <value>Винтертур</value>
+  </data>
+  <data name="CH7" xml:space="preserve">
+    <value>Санкт-Галлен</value>
+  </data>
+  <data name="CH8" xml:space="preserve">
+    <value>Лугано</value>
+  </data>
+  <data name="CH9" xml:space="preserve">
+    <value>Люцерн</value>
+  </data>
+  <data name="CZ1" xml:space="preserve">
+    <value>Прага</value>
+  </data>
+  <data name="CZ10" xml:space="preserve">
+    <value>Пардубице</value>
+  </data>
+  <data name="CZ11" xml:space="preserve">
+    <value>Гавиржов</value>
+  </data>
+  <data name="CZ12" xml:space="preserve">
+    <value>Злин</value>
+  </data>
+  <data name="CZ13" xml:space="preserve">
+    <value>Кладно</value>
+  </data>
+  <data name="CZ14" xml:space="preserve">
+    <value>Мост</value>
+  </data>
+  <data name="CZ15" xml:space="preserve">
+    <value>Карвина</value>
+  </data>
+  <data name="CZ16" xml:space="preserve">
+    <value>Опава</value>
+  </data>
+  <data name="CZ17" xml:space="preserve">
+    <value>Фридек-Мистек</value>
+  </data>
+  <data name="CZ18" xml:space="preserve">
+    <value>Дечин</value>
+  </data>
+  <data name="CZ19" xml:space="preserve">
+    <value>Йиглава</value>
+  </data>
+  <data name="CZ2" xml:space="preserve">
+    <value>Брно</value>
+  </data>
+  <data name="CZ20" xml:space="preserve">
+    <value>Теплице</value>
+  </data>
+  <data name="CZ3" xml:space="preserve">
+    <value>Острава</value>
+  </data>
+  <data name="CZ4" xml:space="preserve">
+    <value>Пльзень</value>
+  </data>
+  <data name="CZ5" xml:space="preserve">
+    <value>Либерец</value>
+  </data>
+  <data name="CZ6" xml:space="preserve">
+    <value>Оломоуц</value>
+  </data>
+  <data name="CZ7" xml:space="preserve">
+    <value>Усти-над-Лабем</value>
+  </data>
+  <data name="CZ8" xml:space="preserve">
+    <value>Ческе-Будеёвице</value>
+  </data>
+  <data name="CZ9" xml:space="preserve">
+    <value>Градец-Кралове</value>
+  </data>
+  <data name="DE1" xml:space="preserve">
+    <value>Берлин</value>
+  </data>
+  <data name="DE10" xml:space="preserve">
+    <value>Бремен</value>
+  </data>
+  <data name="DE11" xml:space="preserve">
+    <value>Дрезден</value>
+  </data>
+  <data name="DE12" xml:space="preserve">
+    <value>Лейпциг</value>
+  </data>
+  <data name="DE13" xml:space="preserve">
+    <value>Ганновер</value>
+  </data>
+  <data name="DE14" xml:space="preserve">
+    <value>Нюрнберг</value>
+  </data>
+  <data name="DE15" xml:space="preserve">
+    <value>Дуйсбург</value>
+  </data>
+  <data name="DE16" xml:space="preserve">
+    <value>Бохум</value>
+  </data>
+  <data name="DE17" xml:space="preserve">
+    <value>Вупперталь</value>
+  </data>
+  <data name="DE18" xml:space="preserve">
+    <value>Бонн</value>
+  </data>
+  <data name="DE19" xml:space="preserve">
+    <value>Билефельд</value>
+  </data>
+  <data name="DE2" xml:space="preserve">
+    <value>Гамбург</value>
+  </data>
+  <data name="DE20" xml:space="preserve">
+    <value>Маннгейм</value>
+  </data>
+  <data name="DE3" xml:space="preserve">
+    <value>Мюнхен</value>
+  </data>
+  <data name="DE4" xml:space="preserve">
+    <value>Кёльн</value>
+  </data>
+  <data name="DE5" xml:space="preserve">
+    <value>Франкфурт-на-Майне</value>
+  </data>
+  <data name="DE6" xml:space="preserve">
+    <value>Штуттгарт</value>
+  </data>
+  <data name="DE7" xml:space="preserve">
+    <value>Дюссельдорф</value>
+  </data>
+  <data name="DE8" xml:space="preserve">
+    <value>Дортмунд</value>
+  </data>
+  <data name="DE9" xml:space="preserve">
+    <value>Эссен</value>
+  </data>
+  <data name="DK1" xml:space="preserve">
+    <value>Копенгаген</value>
+  </data>
+  <data name="DK10" xml:space="preserve">
+    <value>Роскилле</value>
+  </data>
+  <data name="DK11" xml:space="preserve">
+    <value>Хернинг</value>
+  </data>
+  <data name="DK12" xml:space="preserve">
+    <value>Силькеборг</value>
+  </data>
+  <data name="DK13" xml:space="preserve">
+    <value>Нествед</value>
+  </data>
+  <data name="DK14" xml:space="preserve">
+    <value>Греве Странн</value>
+  </data>
+  <data name="DK15" xml:space="preserve">
+    <value>Хёрсхольм</value>
+  </data>
+  <data name="DK16" xml:space="preserve">
+    <value>Фредерисия</value>
+  </data>
+  <data name="DK17" xml:space="preserve">
+    <value>Хельсингёр</value>
+  </data>
+  <data name="DK2" xml:space="preserve">
+    <value>Орхус</value>
+  </data>
+  <data name="DK3" xml:space="preserve">
+    <value>Оденсе</value>
+  </data>
+  <data name="DK4" xml:space="preserve">
+    <value>Ольборг</value>
+  </data>
+  <data name="DK5" xml:space="preserve">
+    <value>Эсбьерг</value>
+  </data>
+  <data name="DK6" xml:space="preserve">
+    <value>Раннерс</value>
+  </data>
+  <data name="DK7" xml:space="preserve">
+    <value>Кольдинг</value>
+  </data>
+  <data name="DK8" xml:space="preserve">
+    <value>Хорсенс</value>
+  </data>
+  <data name="DK9" xml:space="preserve">
+    <value>Вайле</value>
+  </data>
+  <data name="EE1" xml:space="preserve">
+    <value>Таллин</value>
+  </data>
+  <data name="EE2" xml:space="preserve">
+    <value>Тарту</value>
+  </data>
+  <data name="EE3" xml:space="preserve">
+    <value>Нарва</value>
+  </data>
+  <data name="EE4" xml:space="preserve">
+    <value>Пярну</value>
+  </data>
+  <data name="EE5" xml:space="preserve">
+    <value>Кохтла-Ярве</value>
+  </data>
+  <data name="EE6" xml:space="preserve">
+    <value>Маарду</value>
+  </data>
+  <data name="EE7" xml:space="preserve">
+    <value>Вильянди</value>
+  </data>
+  <data name="EE8" xml:space="preserve">
+    <value>Раквере</value>
+  </data>
+  <data name="ES1" xml:space="preserve">
+    <value>Мадрид</value>
+  </data>
+  <data name="ES10" xml:space="preserve">
+    <value>Бильбао</value>
+  </data>
+  <data name="ES11" xml:space="preserve">
+    <value>Кордова</value>
+  </data>
+  <data name="ES12" xml:space="preserve">
+    <value>Аликанте</value>
+  </data>
+  <data name="ES13" xml:space="preserve">
+    <value>Вальядолид</value>
+  </data>
+  <data name="ES14" xml:space="preserve">
+    <value>Виго</value>
+  </data>
+  <data name="ES15" xml:space="preserve">
+    <value>Хихон</value>
+  </data>
+  <data name="ES16" xml:space="preserve">
+    <value>Оспиталет-де-Льобрегат</value>
+  </data>
+  <data name="ES17" xml:space="preserve">
+    <value>Ла-Корунья</value>
+  </data>
+  <data name="ES18" xml:space="preserve">
+    <value>Гранада</value>
+  </data>
+  <data name="ES19" xml:space="preserve">
+    <value>Витория</value>
+  </data>
+  <data name="ES2" xml:space="preserve">
+    <value>Барселона</value>
+  </data>
+  <data name="ES20" xml:space="preserve">
+    <value>Санта-Крус-де-Тенерифе</value>
+  </data>
+  <data name="ES3" xml:space="preserve">
+    <value>Валенсия</value>
+  </data>
+  <data name="ES4" xml:space="preserve">
+    <value>Севилья</value>
+  </data>
+  <data name="ES5" xml:space="preserve">
+    <value>Сарагоса</value>
+  </data>
+  <data name="ES6" xml:space="preserve">
+    <value>Малага</value>
+  </data>
+  <data name="ES7" xml:space="preserve">
+    <value>Мурсия</value>
+  </data>
+  <data name="ES8" xml:space="preserve">
+    <value>Лас-Пальмас-де-Гран-Канария</value>
+  </data>
+  <data name="ES9" xml:space="preserve">
+    <value>Пальма-де-Майорка</value>
+  </data>
+  <data name="FI1" xml:space="preserve">
+    <value>Хельсинки</value>
+  </data>
+  <data name="FI10" xml:space="preserve">
+    <value>Пори</value>
+  </data>
+  <data name="FI11" xml:space="preserve">
+    <value>Лаппеэнранта</value>
+  </data>
+  <data name="FI12" xml:space="preserve">
+    <value>Рованиеми</value>
+  </data>
+  <data name="FI13" xml:space="preserve">
+    <value>Йоэнсуу</value>
+  </data>
+  <data name="FI14" xml:space="preserve">
+    <value>Вааса</value>
+  </data>
+  <data name="FI15" xml:space="preserve">
+    <value>Котка</value>
+  </data>
+  <data name="FI2" xml:space="preserve">
+    <value>Эспоо</value>
+  </data>
+  <data name="FI3" xml:space="preserve">
+    <value>Тампере</value>
+  </data>
+  <data name="FI4" xml:space="preserve">
+    <value>Вантаа</value>
+  </data>
+  <data name="FI5" xml:space="preserve">
+    <value>Турку</value>
+  </data>
+  <data name="FI6" xml:space="preserve">
+    <value>Оулу</value>
+  </data>
+  <data name="FI7" xml:space="preserve">
+    <value>Лахти</value>
+  </data>
+  <data name="FI8" xml:space="preserve">
+    <value>Куопио</value>
+  </data>
+  <data name="FI9" xml:space="preserve">
+    <value>Ювяскюля</value>
+  </data>
+  <data name="FR1" xml:space="preserve">
+    <value>Париж</value>
+  </data>
+  <data name="FR10" xml:space="preserve">
+    <value>Лилль</value>
+  </data>
+  <data name="FR11" xml:space="preserve">
+    <value>Ренн</value>
+  </data>
+  <data name="FR12" xml:space="preserve">
+    <value>Реймс</value>
+  </data>
+  <data name="FR13" xml:space="preserve">
+    <value>Гавр</value>
+  </data>
+  <data name="FR14" xml:space="preserve">
+    <value>Сент-Этьен</value>
+  </data>
+  <data name="FR15" xml:space="preserve">
+    <value>Тулон</value>
+  </data>
+  <data name="FR16" xml:space="preserve">
+    <value>Гренобль</value>
+  </data>
+  <data name="FR17" xml:space="preserve">
+    <value>Дижон</value>
+  </data>
+  <data name="FR18" xml:space="preserve">
+    <value>Анже</value>
+  </data>
+  <data name="FR19" xml:space="preserve">
+    <value>Виллербан</value>
+  </data>
+  <data name="FR2" xml:space="preserve">
+    <value>Марсель</value>
+  </data>
+  <data name="FR20" xml:space="preserve">
+    <value>Сен-Дени</value>
+  </data>
+  <data name="FR3" xml:space="preserve">
+    <value>Лион</value>
+  </data>
+  <data name="FR4" xml:space="preserve">
+    <value>Тулуза</value>
+  </data>
+  <data name="FR5" xml:space="preserve">
+    <value>Ницца</value>
+  </data>
+  <data name="FR6" xml:space="preserve">
+    <value>Нант</value>
+  </data>
+  <data name="FR7" xml:space="preserve">
+    <value>Страсбург</value>
+  </data>
+  <data name="FR8" xml:space="preserve">
+    <value>Монпелье</value>
+  </data>
+  <data name="FR9" xml:space="preserve">
+    <value>Бордо</value>
+  </data>
+  <data name="GB1" xml:space="preserve">
+    <value>Лондон</value>
+  </data>
+  <data name="GB10" xml:space="preserve">
+    <value>Кардифф</value>
+  </data>
+  <data name="GB11" xml:space="preserve">
+    <value>Ковентри</value>
+  </data>
+  <data name="GB12" xml:space="preserve">
+    <value>Брэдфорд</value>
+  </data>
+  <data name="GB13" xml:space="preserve">
+    <value>Лестер</value>
+  </data>
+  <data name="GB14" xml:space="preserve">
+    <value>Ноттингем</value>
+  </data>
+  <data name="GB15" xml:space="preserve">
+    <value>Белфаст</value>
+  </data>
+  <data name="GB16" xml:space="preserve">
+    <value>Ньюкасл-апон-Тайн</value>
+  </data>
+  <data name="GB17" xml:space="preserve">
+    <value>Кингстон-апон-Халл</value>
+  </data>
+  <data name="GB18" xml:space="preserve">
+    <value>Плимут</value>
+  </data>
+  <data name="GB19" xml:space="preserve">
+    <value>Сток-он-Трент</value>
+  </data>
+  <data name="GB2" xml:space="preserve">
+    <value>Бирмингем</value>
+  </data>
+  <data name="GB20" xml:space="preserve">
+    <value>Дерби</value>
+  </data>
+  <data name="GB3" xml:space="preserve">
+    <value>Лидс</value>
+  </data>
+  <data name="GB4" xml:space="preserve">
+    <value>Глазго</value>
+  </data>
+  <data name="GB5" xml:space="preserve">
+    <value>Шеффилд</value>
+  </data>
+  <data name="GB6" xml:space="preserve">
+    <value>Манчестер</value>
+  </data>
+  <data name="GB7" xml:space="preserve">
+    <value>Эдинбург</value>
+  </data>
+  <data name="GB8" xml:space="preserve">
+    <value>Ливерпуль</value>
+  </data>
+  <data name="GB9" xml:space="preserve">
+    <value>Бристоль</value>
+  </data>
+  <data name="GE1" xml:space="preserve">
+    <value>Тбилиси</value>
+  </data>
+  <data name="GE10" xml:space="preserve">
+    <value>Сенаки</value>
+  </data>
+  <data name="GE11" xml:space="preserve">
+    <value>Зестафони</value>
+  </data>
+  <data name="GE12" xml:space="preserve">
+    <value>Марнеули</value>
+  </data>
+  <data name="GE13" xml:space="preserve">
+    <value>Телави</value>
+  </data>
+  <data name="GE2" xml:space="preserve">
+    <value>Кутаиси</value>
+  </data>
+  <data name="GE3" xml:space="preserve">
+    <value>Батуми</value>
+  </data>
+  <data name="GE4" xml:space="preserve">
+    <value>Рустави</value>
+  </data>
+  <data name="GE5" xml:space="preserve">
+    <value>Зугдиди</value>
+  </data>
+  <data name="GE6" xml:space="preserve">
+    <value>Гори</value>
+  </data>
+  <data name="GE7" xml:space="preserve">
+    <value>Поти</value>
+  </data>
+  <data name="GE8" xml:space="preserve">
+    <value>Самтредиа</value>
+  </data>
+  <data name="GE9" xml:space="preserve">
+    <value>Хашури</value>
+  </data>
+  <data name="GR1" xml:space="preserve">
+    <value>Афины</value>
+  </data>
+  <data name="GR10" xml:space="preserve">
+    <value>Никея</value>
+  </data>
+  <data name="GR11" xml:space="preserve">
+    <value>Каламария</value>
+  </data>
+  <data name="GR12" xml:space="preserve">
+    <value>Волос</value>
+  </data>
+  <data name="GR13" xml:space="preserve">
+    <value>Эвосмос</value>
+  </data>
+  <data name="GR14" xml:space="preserve">
+    <value>Янина</value>
+  </data>
+  <data name="GR15" xml:space="preserve">
+    <value>Трикала</value>
+  </data>
+  <data name="GR16" xml:space="preserve">
+    <value>Айя-Параскеви</value>
+  </data>
+  <data name="GR17" xml:space="preserve">
+    <value>Килкис</value>
+  </data>
+  <data name="GR18" xml:space="preserve">
+    <value>Серре</value>
+  </data>
+  <data name="GR19" xml:space="preserve">
+    <value>Александруполис</value>
+  </data>
+  <data name="GR2" xml:space="preserve">
+    <value>Салоники</value>
+  </data>
+  <data name="GR3" xml:space="preserve">
+    <value>Пирей</value>
+  </data>
+  <data name="GR4" xml:space="preserve">
+    <value>Патры</value>
+  </data>
+  <data name="GR5" xml:space="preserve">
+    <value>Ираклион</value>
+  </data>
+  <data name="GR6" xml:space="preserve">
+    <value>Перистери</value>
+  </data>
+  <data name="GR7" xml:space="preserve">
+    <value>Ларисса</value>
+  </data>
+  <data name="GR8" xml:space="preserve">
+    <value>Каллифея</value>
+  </data>
+  <data name="GR9" xml:space="preserve">
+    <value>Ахарне</value>
+  </data>
+  <data name="HR1" xml:space="preserve">
+    <value>Загреб</value>
+  </data>
+  <data name="HR10" xml:space="preserve">
+    <value>Шибеник</value>
+  </data>
+  <data name="HR11" xml:space="preserve">
+    <value>Сисак</value>
+  </data>
+  <data name="HR2" xml:space="preserve">
+    <value>Сплит</value>
+  </data>
+  <data name="HR3" xml:space="preserve">
+    <value>Риека</value>
+  </data>
+  <data name="HR4" xml:space="preserve">
+    <value>Осиек</value>
+  </data>
+  <data name="HR5" xml:space="preserve">
+    <value>Задар</value>
+  </data>
+  <data name="HR6" xml:space="preserve">
+    <value>Славонски-Брод</value>
+  </data>
+  <data name="HR7" xml:space="preserve">
+    <value>Пула</value>
+  </data>
+  <data name="HR8" xml:space="preserve">
+    <value>Карловац</value>
+  </data>
+  <data name="HR9" xml:space="preserve">
+    <value>Вараждин</value>
+  </data>
+  <data name="HU1" xml:space="preserve">
+    <value>Будапешт</value>
+  </data>
+  <data name="HU10" xml:space="preserve">
+    <value>Сомбатхей</value>
+  </data>
+  <data name="HU11" xml:space="preserve">
+    <value>Сольнок</value>
+  </data>
+  <data name="HU12" xml:space="preserve">
+    <value>Татабанья</value>
+  </data>
+  <data name="HU2" xml:space="preserve">
+    <value>Дебрецен</value>
+  </data>
+  <data name="HU3" xml:space="preserve">
+    <value>Сегед</value>
+  </data>
+  <data name="HU4" xml:space="preserve">
+    <value>Мишкольц</value>
+  </data>
+  <data name="HU5" xml:space="preserve">
+    <value>Печ</value>
+  </data>
+  <data name="HU6" xml:space="preserve">
+    <value>Дьёр</value>
+  </data>
+  <data name="HU7" xml:space="preserve">
+    <value>Ньиредьхаза</value>
+  </data>
+  <data name="HU8" xml:space="preserve">
+    <value>Кечкемет</value>
+  </data>
+  <data name="HU9" xml:space="preserve">
+    <value>Секешфехервар</value>
+  </data>
+  <data name="IE1" xml:space="preserve">
+    <value>Дублин</value>
+  </data>
+  <data name="IE10" xml:space="preserve">
+    <value>Эннис</value>
+  </data>
+  <data name="IE11" xml:space="preserve">
+    <value>Килкенни</value>
+  </data>
+  <data name="IE2" xml:space="preserve">
+    <value>Корк</value>
+  </data>
+  <data name="IE3" xml:space="preserve">
+    <value>Лимерик</value>
+  </data>
+  <data name="IE4" xml:space="preserve">
+    <value>Голуэй</value>
+  </data>
+  <data name="IE5" xml:space="preserve">
+    <value>Уотерфорд</value>
+  </data>
+  <data name="IE6" xml:space="preserve">
+    <value>Дроэда</value>
+  </data>
+  <data name="IE7" xml:space="preserve">
+    <value>Дандолк</value>
+  </data>
+  <data name="IE8" xml:space="preserve">
+    <value>Брей</value>
+  </data>
+  <data name="IE9" xml:space="preserve">
+    <value>Ан-Уавь</value>
+  </data>
+  <data name="IS1" xml:space="preserve">
+    <value> Рейкьявик</value>
+  </data>
+  <data name="IS10" xml:space="preserve">
+    <value>Селтьярнарнес</value>
+  </data>
+  <data name="IS11" xml:space="preserve">
+    <value>Исафьордюр</value>
+  </data>
+  <data name="IS2" xml:space="preserve">
+    <value>Коупавогюр</value>
+  </data>
+  <data name="IS3" xml:space="preserve">
+    <value>Хабнарфьордюр</value>
+  </data>
+  <data name="IS4" xml:space="preserve">
+    <value>Акюрейри</value>
+  </data>
+  <data name="IS5" xml:space="preserve">
+    <value>Гардабайр</value>
+  </data>
+  <data name="IS6" xml:space="preserve">
+    <value>Кеблавик</value>
+  </data>
+  <data name="IS7" xml:space="preserve">
+    <value>Мосфедльсбайр</value>
+  </data>
+  <data name="IS8" xml:space="preserve">
+    <value>Акранес</value>
+  </data>
+  <data name="IS9" xml:space="preserve">
+    <value>Сельфосс</value>
+  </data>
+  <data name="IT1" xml:space="preserve">
+    <value>Рим</value>
+  </data>
+  <data name="IT10" xml:space="preserve">
+    <value>Катания</value>
+  </data>
+  <data name="IT11" xml:space="preserve">
+    <value>Венеция</value>
+  </data>
+  <data name="IT12" xml:space="preserve">
+    <value>Верона</value>
+  </data>
+  <data name="IT13" xml:space="preserve">
+    <value>Мессина</value>
+  </data>
+  <data name="IT14" xml:space="preserve">
+    <value>Падуя</value>
+  </data>
+  <data name="IT15" xml:space="preserve">
+    <value>Триест</value>
+  </data>
+  <data name="IT16" xml:space="preserve">
+    <value>Таранто</value>
+  </data>
+  <data name="IT17" xml:space="preserve">
+    <value>Брешиа</value>
+  </data>
+  <data name="IT18" xml:space="preserve">
+    <value>Реджо-ди-Калабрия</value>
+  </data>
+  <data name="IT19" xml:space="preserve">
+    <value>Прато</value>
+  </data>
+  <data name="IT2" xml:space="preserve">
+    <value>Милан</value>
+  </data>
+  <data name="IT20" xml:space="preserve">
+    <value>Модена</value>
+  </data>
+  <data name="IT3" xml:space="preserve">
+    <value>Неаполь</value>
+  </data>
+  <data name="IT4" xml:space="preserve">
+    <value>Турин</value>
+  </data>
+  <data name="IT5" xml:space="preserve">
+    <value>Палермо</value>
+  </data>
+  <data name="IT6" xml:space="preserve">
+    <value>Генуя</value>
+  </data>
+  <data name="IT7" xml:space="preserve">
+    <value>Болонья</value>
+  </data>
+  <data name="IT8" xml:space="preserve">
+    <value>Флоренция</value>
+  </data>
+  <data name="IT9" xml:space="preserve">
+    <value>Бари</value>
+  </data>
+  <data name="KZ1" xml:space="preserve">
+    <value>Алма-Ата</value>
+  </data>
+  <data name="KZ10" xml:space="preserve">
+    <value>Уральск</value>
+  </data>
+  <data name="KZ11" xml:space="preserve">
+    <value>Костанай</value>
+  </data>
+  <data name="KZ12" xml:space="preserve">
+    <value>Петропавловск</value>
+  </data>
+  <data name="KZ13" xml:space="preserve">
+    <value>Кызылорда</value>
+  </data>
+  <data name="KZ2" xml:space="preserve">
+    <value>Астана</value>
+  </data>
+  <data name="KZ3" xml:space="preserve">
+    <value>Шымкент</value>
+  </data>
+  <data name="KZ4" xml:space="preserve">
+    <value>Караганда</value>
+  </data>
+  <data name="KZ5" xml:space="preserve">
+    <value>Актобе</value>
+  </data>
+  <data name="KZ6" xml:space="preserve">
+    <value>Тараз</value>
+  </data>
+  <data name="KZ7" xml:space="preserve">
+    <value>Павлодар</value>
+  </data>
+  <data name="KZ8" xml:space="preserve">
+    <value>Семей</value>
+  </data>
+  <data name="KZ9" xml:space="preserve">
+    <value>Усть-Каменогорск</value>
+  </data>
+  <data name="LI1" xml:space="preserve">
+    <value>Шан</value>
+  </data>
+  <data name="LI10" xml:space="preserve">
+    <value>Нендельн</value>
+  </data>
+  <data name="LI11" xml:space="preserve">
+    <value>Бендерн</value>
+  </data>
+  <data name="LI12" xml:space="preserve">
+    <value>Шелленберг</value>
+  </data>
+  <data name="LI13" xml:space="preserve">
+    <value>Планкен</value>
+  </data>
+  <data name="LI2" xml:space="preserve">
+    <value>Вадуц</value>
+  </data>
+  <data name="LI3" xml:space="preserve">
+    <value>Тризен</value>
+  </data>
+  <data name="LI4" xml:space="preserve">
+    <value>Бальцерс</value>
+  </data>
+  <data name="LI5" xml:space="preserve">
+    <value>Эшен</value>
+  </data>
+  <data name="LI6" xml:space="preserve">
+    <value>Маурен</value>
+  </data>
+  <data name="LI7" xml:space="preserve">
+    <value>Тризенберг</value>
+  </data>
+  <data name="LI8" xml:space="preserve">
+    <value>Руггелль</value>
+  </data>
+  <data name="LI9" xml:space="preserve">
+    <value>Гамприн</value>
+  </data>
+  <data name="LT1" xml:space="preserve">
+    <value>Вильнюс</value>
+  </data>
+  <data name="LT10" xml:space="preserve">
+    <value>Йонава</value>
+  </data>
+  <data name="LT11" xml:space="preserve">
+    <value>Утяна</value>
+  </data>
+  <data name="LT12" xml:space="preserve">
+    <value>Кедайняй</value>
+  </data>
+  <data name="LT2" xml:space="preserve">
+    <value>Каунас</value>
+  </data>
+  <data name="LT3" xml:space="preserve">
+    <value>Клайпеда</value>
+  </data>
+  <data name="LT4" xml:space="preserve">
+    <value>Шяуляй</value>
+  </data>
+  <data name="LT5" xml:space="preserve">
+    <value>Панявежис</value>
+  </data>
+  <data name="LT6" xml:space="preserve">
+    <value>Алитус</value>
+  </data>
+  <data name="LT7" xml:space="preserve">
+    <value>Мариямполе</value>
+  </data>
+  <data name="LT8" xml:space="preserve">
+    <value>Расейняй</value>
+  </data>
+  <data name="LT9" xml:space="preserve">
+    <value>Мажейкяй</value>
+  </data>
+  <data name="LU1" xml:space="preserve">
+    <value>Люксембург</value>
+  </data>
+  <data name="LU10" xml:space="preserve">
+    <value>Гревенмахер</value>
+  </data>
+  <data name="LU11" xml:space="preserve">
+    <value>Ремих</value>
+  </data>
+  <data name="LU12" xml:space="preserve">
+    <value>Клерво</value>
+  </data>
+  <data name="LU13" xml:space="preserve">
+    <value>Вианден</value>
+  </data>
+  <data name="LU2" xml:space="preserve">
+    <value>Эш-сюр-Альзетт</value>
+  </data>
+  <data name="LU3" xml:space="preserve">
+    <value>Дифферданж</value>
+  </data>
+  <data name="LU4" xml:space="preserve">
+    <value>Дюделанж</value>
+  </data>
+  <data name="LU5" xml:space="preserve">
+    <value>Эттельбрюк</value>
+  </data>
+  <data name="LU6" xml:space="preserve">
+    <value>Дикирх</value>
+  </data>
+  <data name="LU7" xml:space="preserve">
+    <value>Вильц</value>
+  </data>
+  <data name="LU8" xml:space="preserve">
+    <value>Эхтернах</value>
+  </data>
+  <data name="LU9" xml:space="preserve">
+    <value>Рюмеланж</value>
+  </data>
+  <data name="LV1" xml:space="preserve">
+    <value>Рига</value>
+  </data>
+  <data name="LV10" xml:space="preserve">
+    <value>Екабпилс</value>
+  </data>
+  <data name="LV11" xml:space="preserve">
+    <value>Тукумс</value>
+  </data>
+  <data name="LV12" xml:space="preserve">
+    <value>Саласпилс</value>
+  </data>
+  <data name="LV13" xml:space="preserve">
+    <value>Цесис</value>
+  </data>
+  <data name="LV2" xml:space="preserve">
+    <value>Даугавпилс</value>
+  </data>
+  <data name="LV3" xml:space="preserve">
+    <value>Лиепая</value>
+  </data>
+  <data name="LV4" xml:space="preserve">
+    <value>Елгава</value>
+  </data>
+  <data name="LV5" xml:space="preserve">
+    <value>Юрмала</value>
+  </data>
+  <data name="LV6" xml:space="preserve">
+    <value>Вентспилс</value>
+  </data>
+  <data name="LV7" xml:space="preserve">
+    <value>Резекне</value>
+  </data>
+  <data name="LV8" xml:space="preserve">
+    <value>Огре</value>
+  </data>
+  <data name="LV9" xml:space="preserve">
+    <value>Валмиера</value>
+  </data>
+  <data name="MC1" xml:space="preserve">
+    <value>Ла-Кондамин</value>
+  </data>
+  <data name="MC2" xml:space="preserve">
+    <value>Фонвьей</value>
+  </data>
+  <data name="MC3" xml:space="preserve">
+    <value>Монте-Карло</value>
+  </data>
+  <data name="MC4" xml:space="preserve">
+    <value>Монако</value>
+  </data>
+  <data name="MD1" xml:space="preserve">
+    <value>Кишинёв</value>
+  </data>
+  <data name="MD10" xml:space="preserve">
+    <value>Дубоссары</value>
+  </data>
+  <data name="MD2" xml:space="preserve">
+    <value>Бельцы</value>
+  </data>
+  <data name="MD3" xml:space="preserve">
+    <value>Тирасполь</value>
+  </data>
+  <data name="MD4" xml:space="preserve">
+    <value>Бендеры</value>
+  </data>
+  <data name="MD5" xml:space="preserve">
+    <value>Рыбница</value>
+  </data>
+  <data name="MD6" xml:space="preserve">
+    <value>Кахул</value>
+  </data>
+  <data name="MD7" xml:space="preserve">
+    <value>Унгень</value>
+  </data>
+  <data name="MD8" xml:space="preserve">
+    <value>Сороки</value>
+  </data>
+  <data name="MD9" xml:space="preserve">
+    <value>Орхей</value>
+  </data>
+  <data name="ME1" xml:space="preserve">
+    <value>Подгорица</value>
+  </data>
+  <data name="ME10" xml:space="preserve">
+    <value>Будва</value>
+  </data>
+  <data name="ME11" xml:space="preserve">
+    <value>Улцинь</value>
+  </data>
+  <data name="ME12" xml:space="preserve">
+    <value>Тиват</value>
+  </data>
+  <data name="ME13" xml:space="preserve">
+    <value>Рожае</value>
+  </data>
+  <data name="ME14" xml:space="preserve">
+    <value>Даниловград</value>
+  </data>
+  <data name="ME15" xml:space="preserve">
+    <value>Мойковац</value>
+  </data>
+  <data name="ME16" xml:space="preserve">
+    <value>Плав</value>
+  </data>
+  <data name="ME17" xml:space="preserve">
+    <value>Колашин</value>
+  </data>
+  <data name="ME18" xml:space="preserve">
+    <value>Жабляк</value>
+  </data>
+  <data name="ME2" xml:space="preserve">
+    <value>Никшич</value>
+  </data>
+  <data name="ME3" xml:space="preserve">
+    <value>Плевля</value>
+  </data>
+  <data name="ME4" xml:space="preserve">
+    <value>Херцег-Нови</value>
+  </data>
+  <data name="ME5" xml:space="preserve">
+    <value>Биело-Поле</value>
+  </data>
+  <data name="ME6" xml:space="preserve">
+    <value>Цетине</value>
+  </data>
+  <data name="ME7" xml:space="preserve">
+    <value>Бар</value>
+  </data>
+  <data name="ME8" xml:space="preserve">
+    <value>Котор</value>
+  </data>
+  <data name="ME9" xml:space="preserve">
+    <value>Беране</value>
+  </data>
+  <data name="MK1" xml:space="preserve">
+    <value>Скопье</value>
+  </data>
+  <data name="MK10" xml:space="preserve">
+    <value>Струмица</value>
+  </data>
+  <data name="MK11" xml:space="preserve">
+    <value>Кавадарци</value>
+  </data>
+  <data name="MK12" xml:space="preserve">
+    <value>Кочани</value>
+  </data>
+  <data name="MK13" xml:space="preserve">
+    <value>Кичево</value>
+  </data>
+  <data name="MK2" xml:space="preserve">
+    <value>Битола</value>
+  </data>
+  <data name="MK3" xml:space="preserve">
+    <value>Куманово</value>
+  </data>
+  <data name="MK4" xml:space="preserve">
+    <value>Прилеп</value>
+  </data>
+  <data name="MK5" xml:space="preserve">
+    <value>Тетово</value>
+  </data>
+  <data name="MK6" xml:space="preserve">
+    <value>Велес</value>
+  </data>
+  <data name="MK7" xml:space="preserve">
+    <value>Штип</value>
+  </data>
+  <data name="MK8" xml:space="preserve">
+    <value>Охрид</value>
+  </data>
+  <data name="MK9" xml:space="preserve">
+    <value>Гостивар</value>
+  </data>
+  <data name="MT1" xml:space="preserve">
+    <value>Биркиркара</value>
+  </data>
+  <data name="MT10" xml:space="preserve">
+    <value>Зейтун</value>
+  </data>
+  <data name="MT11" xml:space="preserve">
+    <value>Зеббудж</value>
+  </data>
+  <data name="MT12" xml:space="preserve">
+    <value>Фгура</value>
+  </data>
+  <data name="MT13" xml:space="preserve">
+    <value>Аттард</value>
+  </data>
+  <data name="MT14" xml:space="preserve">
+    <value>Зуррик</value>
+  </data>
+  <data name="MT2" xml:space="preserve">
+    <value>Моста</value>
+  </data>
+  <data name="MT3" xml:space="preserve">
+    <value>Корми</value>
+  </data>
+  <data name="MT4" xml:space="preserve">
+    <value>Слима</value>
+  </data>
+  <data name="MT5" xml:space="preserve">
+    <value>Заббар</value>
+  </data>
+  <data name="MT6" xml:space="preserve">
+    <value>Сан-Пауль-иль-Бахар</value>
+  </data>
+  <data name="MT7" xml:space="preserve">
+    <value>Сан-Джуанн</value>
+  </data>
+  <data name="MT8" xml:space="preserve">
+    <value>Нашшар</value>
+  </data>
+  <data name="MT9" xml:space="preserve">
+    <value>Рабат</value>
+  </data>
+  <data name="NL1" xml:space="preserve">
+    <value>Амстердам</value>
+  </data>
+  <data name="NL10" xml:space="preserve">
+    <value>Неймеген</value>
+  </data>
+  <data name="NL11" xml:space="preserve">
+    <value>Энсхеде</value>
+  </data>
+  <data name="NL12" xml:space="preserve">
+    <value>Апелдорн</value>
+  </data>
+  <data name="NL13" xml:space="preserve">
+    <value>Харлем</value>
+  </data>
+  <data name="NL14" xml:space="preserve">
+    <value>Арнем</value>
+  </data>
+  <data name="NL15" xml:space="preserve">
+    <value>Амерсфорт</value>
+  </data>
+  <data name="NL16" xml:space="preserve">
+    <value>Хертогенбос</value>
+  </data>
+  <data name="NL17" xml:space="preserve">
+    <value>Зутермер</value>
+  </data>
+  <data name="NL18" xml:space="preserve">
+    <value>Зволле</value>
+  </data>
+  <data name="NL19" xml:space="preserve">
+    <value>Маастрихт</value>
+  </data>
+  <data name="NL2" xml:space="preserve">
+    <value>Роттердам</value>
+  </data>
+  <data name="NL20" xml:space="preserve">
+    <value>Дордрехт</value>
+  </data>
+  <data name="NL3" xml:space="preserve">
+    <value>Гаага</value>
+  </data>
+  <data name="NL4" xml:space="preserve">
+    <value>Утрехт</value>
+  </data>
+  <data name="NL5" xml:space="preserve">
+    <value>Эйндховен</value>
+  </data>
+  <data name="NL6" xml:space="preserve">
+    <value>Тилбург</value>
+  </data>
+  <data name="NL7" xml:space="preserve">
+    <value>Алмере</value>
+  </data>
+  <data name="NL8" xml:space="preserve">
+    <value>Гронинген</value>
+  </data>
+  <data name="NL9" xml:space="preserve">
+    <value>Бреда</value>
+  </data>
+  <data name="NO1" xml:space="preserve">
+    <value>Осло</value>
+  </data>
+  <data name="NO10" xml:space="preserve">
+    <value>Драммен</value>
+  </data>
+  <data name="NO11" xml:space="preserve">
+    <value>Шиен</value>
+  </data>
+  <data name="NO12" xml:space="preserve">
+    <value>Сарпсборг</value>
+  </data>
+  <data name="NO13" xml:space="preserve">
+    <value>Будё</value>
+  </data>
+  <data name="NO14" xml:space="preserve">
+    <value>Лиллестрём</value>
+  </data>
+  <data name="NO15" xml:space="preserve">
+    <value>Саннефьорд</value>
+  </data>
+  <data name="NO16" xml:space="preserve">
+    <value>Ларвик</value>
+  </data>
+  <data name="NO17" xml:space="preserve">
+    <value>Олесунн</value>
+  </data>
+  <data name="NO18" xml:space="preserve">
+    <value>Арендал</value>
+  </data>
+  <data name="NO19" xml:space="preserve">
+    <value>Купервик</value>
+  </data>
+  <data name="NO2" xml:space="preserve">
+    <value>Берген</value>
+  </data>
+  <data name="NO20" xml:space="preserve">
+    <value>Окрехамн</value>
+  </data>
+  <data name="NO3" xml:space="preserve">
+    <value>Тронхейм</value>
+  </data>
+  <data name="NO4" xml:space="preserve">
+    <value>Ставангер</value>
+  </data>
+  <data name="NO5" xml:space="preserve">
+    <value>Сандвика</value>
+  </data>
+  <data name="NO6" xml:space="preserve">
+    <value>Кристиансанн</value>
+  </data>
+  <data name="NO7" xml:space="preserve">
+    <value>Фредрикстад</value>
+  </data>
+  <data name="NO8" xml:space="preserve">
+    <value>Тромсё</value>
+  </data>
+  <data name="NO9" xml:space="preserve">
+    <value>Саннес</value>
+  </data>
+  <data name="PL1" xml:space="preserve">
+    <value>Варшава</value>
+  </data>
+  <data name="PL10" xml:space="preserve">
+    <value>Катовице</value>
+  </data>
+  <data name="PL11" xml:space="preserve">
+    <value>Белосток</value>
+  </data>
+  <data name="PL12" xml:space="preserve">
+    <value>Гдыня</value>
+  </data>
+  <data name="PL13" xml:space="preserve">
+    <value>Ченстохова</value>
+  </data>
+  <data name="PL14" xml:space="preserve">
+    <value>Радом</value>
+  </data>
+  <data name="PL15" xml:space="preserve">
+    <value>Сосновец</value>
+  </data>
+  <data name="PL16" xml:space="preserve">
+    <value>Торунь</value>
+  </data>
+  <data name="PL17" xml:space="preserve">
+    <value>Кельце</value>
+  </data>
+  <data name="PL18" xml:space="preserve">
+    <value>Гливице</value>
+  </data>
+  <data name="PL19" xml:space="preserve">
+    <value>Забже</value>
+  </data>
+  <data name="PL2" xml:space="preserve">
+    <value>Краков</value>
+  </data>
+  <data name="PL20" xml:space="preserve">
+    <value>Бытом</value>
+  </data>
+  <data name="PL3" xml:space="preserve">
+    <value>Лодзь</value>
+  </data>
+  <data name="PL4" xml:space="preserve">
+    <value>Вроцлав</value>
+  </data>
+  <data name="PL5" xml:space="preserve">
+    <value>Познань</value>
+  </data>
+  <data name="PL6" xml:space="preserve">
+    <value>Гданьск</value>
+  </data>
+  <data name="PL7" xml:space="preserve">
+    <value>Щецин</value>
+  </data>
+  <data name="PL8" xml:space="preserve">
+    <value>Быдгощ</value>
+  </data>
+  <data name="PL9" xml:space="preserve">
+    <value>Люблин</value>
+  </data>
+  <data name="PT1" xml:space="preserve">
+    <value>Лиссабон</value>
+  </data>
+  <data name="PT10" xml:space="preserve">
+    <value>Сетубал</value>
+  </data>
+  <data name="PT11" xml:space="preserve">
+    <value>Баррейру</value>
+  </data>
+  <data name="PT12" xml:space="preserve">
+    <value>Келуш</value>
+  </data>
+  <data name="PT13" xml:space="preserve">
+    <value>Авейру</value>
+  </data>
+  <data name="PT14" xml:space="preserve">
+    <value>Гимарайнш</value>
+  </data>
+  <data name="PT15" xml:space="preserve">
+    <value>Визеу</value>
+  </data>
+  <data name="PT16" xml:space="preserve">
+    <value>Риу-Тинту</value>
+  </data>
+  <data name="PT17" xml:space="preserve">
+    <value>Одивелаш</value>
+  </data>
+  <data name="PT18" xml:space="preserve">
+    <value>Лейрия</value>
+  </data>
+  <data name="PT19" xml:space="preserve">
+    <value>Матозиньюш</value>
+  </data>
+  <data name="PT2" xml:space="preserve">
+    <value>Порту</value>
+  </data>
+  <data name="PT20" xml:space="preserve">
+    <value>Амора</value>
+  </data>
+  <data name="PT3" xml:space="preserve">
+    <value>Вила-Нова-ди-Гая</value>
+  </data>
+  <data name="PT4" xml:space="preserve">
+    <value>Амадора</value>
+  </data>
+  <data name="PT5" xml:space="preserve">
+    <value>Брага</value>
+  </data>
+  <data name="PT6" xml:space="preserve">
+    <value>Агуалва-Касен</value>
+  </data>
+  <data name="PT7" xml:space="preserve">
+    <value>Фуншал</value>
+  </data>
+  <data name="PT8" xml:space="preserve">
+    <value>Коимбра</value>
+  </data>
+  <data name="PT9" xml:space="preserve">
+    <value>Алмада</value>
+  </data>
+  <data name="RO1" xml:space="preserve">
+    <value>Бухарест</value>
+  </data>
+  <data name="RO10" xml:space="preserve">
+    <value>Брэила</value>
+  </data>
+  <data name="RO11" xml:space="preserve">
+    <value>Орадя</value>
+  </data>
+  <data name="RO12" xml:space="preserve">
+    <value>Бакэу</value>
+  </data>
+  <data name="RO2" xml:space="preserve">
+    <value>Констанца</value>
+  </data>
+  <data name="RO3" xml:space="preserve">
+    <value>Яссы</value>
+  </data>
+  <data name="RO4" xml:space="preserve">
+    <value>Клуж-Напока</value>
+  </data>
+  <data name="RO5" xml:space="preserve">
+    <value>Тимишоара</value>
+  </data>
+  <data name="RO6" xml:space="preserve">
+    <value>Крайова</value>
+  </data>
+  <data name="RO7" xml:space="preserve">
+    <value>Галац</value>
+  </data>
+  <data name="RO8" xml:space="preserve">
+    <value>Брашов</value>
+  </data>
+  <data name="RO9" xml:space="preserve">
+    <value>Плоешти</value>
+  </data>
+  <data name="RS1" xml:space="preserve">
+    <value>Белград</value>
+  </data>
+  <data name="RS10" xml:space="preserve">
+    <value>Лесковац</value>
+  </data>
+  <data name="RS11" xml:space="preserve">
+    <value>Панчево</value>
+  </data>
+  <data name="RS12" xml:space="preserve">
+    <value>Джяковица</value>
+  </data>
+  <data name="RS13" xml:space="preserve">
+    <value>Косовска-Митровица</value>
+  </data>
+  <data name="RS14" xml:space="preserve">
+    <value>Чачак</value>
+  </data>
+  <data name="RS15" xml:space="preserve">
+    <value>Гнилане</value>
+  </data>
+  <data name="RS16" xml:space="preserve">
+    <value>Кралево</value>
+  </data>
+  <data name="RS2" xml:space="preserve">
+    <value>Нови-Сад</value>
+  </data>
+  <data name="RS3" xml:space="preserve">
+    <value>Приштина</value>
+  </data>
+  <data name="RS4" xml:space="preserve">
+    <value>Ниш</value>
+  </data>
+  <data name="RS5" xml:space="preserve">
+    <value>Крагуевац</value>
+  </data>
+  <data name="RS6" xml:space="preserve">
+    <value>Призрен</value>
+  </data>
+  <data name="RS7" xml:space="preserve">
+    <value>Суботица</value>
+  </data>
+  <data name="RS8" xml:space="preserve">
+    <value>Печ</value>
+  </data>
+  <data name="RS9" xml:space="preserve">
+    <value>Зренянин</value>
+  </data>
+  <data name="RU1" xml:space="preserve">
+    <value>Москва</value>
+  </data>
+  <data name="RU10" xml:space="preserve">
+    <value>Ростов-на-Дону</value>
+  </data>
+  <data name="RU11" xml:space="preserve">
+    <value>Уфа</value>
+  </data>
+  <data name="RU12" xml:space="preserve">
+    <value>Волгоград</value>
+  </data>
+  <data name="RU13" xml:space="preserve">
+    <value>Пермь</value>
+  </data>
+  <data name="RU14" xml:space="preserve">
+    <value>Красноярск</value>
+  </data>
+  <data name="RU15" xml:space="preserve">
+    <value>Воронеж</value>
+  </data>
+  <data name="RU16" xml:space="preserve">
+    <value>Саратов</value>
+  </data>
+  <data name="RU17" xml:space="preserve">
+    <value>Тольятти</value>
+  </data>
+  <data name="RU18" xml:space="preserve">
+    <value>Махачкала</value>
+  </data>
+  <data name="RU19" xml:space="preserve">
+    <value>Краснодар</value>
+  </data>
+  <data name="RU2" xml:space="preserve">
+    <value>Санкт-Петербург</value>
+  </data>
+  <data name="RU20" xml:space="preserve">
+    <value>Барнаул</value>
+  </data>
+  <data name="RU21" xml:space="preserve">
+    <value>Белгород</value>
+  </data>
+  <data name="RU22" xml:space="preserve">
+    <value>Курск</value>
+  </data>
+  <data name="RU23" xml:space="preserve">
+    <value>Иркутск</value>
+  </data>
+  <data name="RU24" xml:space="preserve">
+    <value>Владивосток</value>
+  </data>
+  <data name="RU25" xml:space="preserve">
+    <value>Архангельск</value>
+  </data>
+  <data name="RU26" xml:space="preserve">
+    <value>Тюмень</value>
+  </data>
+  <data name="RU27" xml:space="preserve">
+    <value>Грозный</value>
+  </data>
+  <data name="RU28" xml:space="preserve">
+    <value>Набережные челны</value>
+  </data>
+  <data name="RU29" xml:space="preserve">
+    <value>Томск</value>
+  </data>
+  <data name="RU3" xml:space="preserve">
+    <value>Новосибирск</value>
+  </data>
+  <data name="RU30" xml:space="preserve">
+    <value>Оренбург</value>
+  </data>
+  <data name="RU31" xml:space="preserve">
+    <value>Кемерово</value>
+  </data>
+  <data name="RU32" xml:space="preserve">
+    <value>Ижевск</value>
+  </data>
+  <data name="RU33" xml:space="preserve">
+    <value>Рязань</value>
+  </data>
+  <data name="RU34" xml:space="preserve">
+    <value>Хабаровск</value>
+  </data>
+  <data name="RU35" xml:space="preserve">
+    <value>Липецк</value>
+  </data>
+  <data name="RU36" xml:space="preserve">
+    <value>Новокузнецк</value>
+  </data>
+  <data name="RU37" xml:space="preserve">
+    <value>Пенза</value>
+  </data>
+  <data name="RU38" xml:space="preserve">
+    <value>Ярославль</value>
+  </data>
+  <data name="RU39" xml:space="preserve">
+    <value>Ульяновск</value>
+  </data>
+  <data name="RU4" xml:space="preserve">
+    <value>Екатеринбург</value>
+  </data>
+  <data name="RU40" xml:space="preserve">
+    <value>Астрахань</value>
+  </data>
+  <data name="RU41" xml:space="preserve">
+    <value>Калининград</value>
+  </data>
+  <data name="RU42" xml:space="preserve">
+    <value>Сочи</value>
+  </data>
+  <data name="RU43" xml:space="preserve">
+    <value>Сургут</value>
+  </data>
+  <data name="RU5" xml:space="preserve">
+    <value>Нижний Новгород</value>
+  </data>
+  <data name="RU6" xml:space="preserve">
+    <value>Самара</value>
+  </data>
+  <data name="RU7" xml:space="preserve">
+    <value>Омск</value>
+  </data>
+  <data name="RU8" xml:space="preserve">
+    <value>Казань</value>
+  </data>
+  <data name="RU9" xml:space="preserve">
+    <value>Челябинск</value>
+  </data>
+  <data name="SE1" xml:space="preserve">
+    <value>Стокгольм</value>
+  </data>
+  <data name="SE10" xml:space="preserve">
+    <value>Йёнчёпинг</value>
+  </data>
+  <data name="SE11" xml:space="preserve">
+    <value>Умео</value>
+  </data>
+  <data name="SE12" xml:space="preserve">
+    <value>Лунд</value>
+  </data>
+  <data name="SE13" xml:space="preserve">
+    <value>Бурос</value>
+  </data>
+  <data name="SE14" xml:space="preserve">
+    <value>Сундсвалль</value>
+  </data>
+  <data name="SE15" xml:space="preserve">
+    <value>Эскильстуна</value>
+  </data>
+  <data name="SE16" xml:space="preserve">
+    <value>Евле</value>
+  </data>
+  <data name="SE17" xml:space="preserve">
+    <value>Хальмстад</value>
+  </data>
+  <data name="SE18" xml:space="preserve">
+    <value>Сёдертелье</value>
+  </data>
+  <data name="SE19" xml:space="preserve">
+    <value>Карлстад</value>
+  </data>
+  <data name="SE2" xml:space="preserve">
+    <value>Гётеборг</value>
+  </data>
+  <data name="SE20" xml:space="preserve">
+    <value>Векшё</value>
+  </data>
+  <data name="SE3" xml:space="preserve">
+    <value>Мальмё</value>
+  </data>
+  <data name="SE4" xml:space="preserve">
+    <value>Уппсала</value>
+  </data>
+  <data name="SE5" xml:space="preserve">
+    <value>Линчёпинг</value>
+  </data>
+  <data name="SE6" xml:space="preserve">
+    <value>Вестерос</value>
+  </data>
+  <data name="SE7" xml:space="preserve">
+    <value>Эребру</value>
+  </data>
+  <data name="SE8" xml:space="preserve">
+    <value>Норрчёпинг</value>
+  </data>
+  <data name="SE9" xml:space="preserve">
+    <value>Хельсингборг</value>
+  </data>
+  <data name="SI1" xml:space="preserve">
+    <value>Любляна</value>
+  </data>
+  <data name="SI2" xml:space="preserve">
+    <value>Марибор</value>
+  </data>
+  <data name="SI3" xml:space="preserve">
+    <value>Целе</value>
+  </data>
+  <data name="SI4" xml:space="preserve">
+    <value>Крань</value>
+  </data>
+  <data name="SI5" xml:space="preserve">
+    <value>Веленье</value>
+  </data>
+  <data name="SI6" xml:space="preserve">
+    <value>Копер</value>
+  </data>
+  <data name="SI7" xml:space="preserve">
+    <value>Ново-Место</value>
+  </data>
+  <data name="SI8" xml:space="preserve">
+    <value>Птуй</value>
+  </data>
+  <data name="SI9" xml:space="preserve">
+    <value>Трбовле</value>
+  </data>
+  <data name="SK1" xml:space="preserve">
+    <value>Братислава</value>
+  </data>
+  <data name="SK10" xml:space="preserve">
+    <value>Попрад</value>
+  </data>
+  <data name="SK11" xml:space="preserve">
+    <value>Прьевидза</value>
+  </data>
+  <data name="SK12" xml:space="preserve">
+    <value>Зволен</value>
+  </data>
+  <data name="SK13" xml:space="preserve">
+    <value>Поважска-Бистрица</value>
+  </data>
+  <data name="SK2" xml:space="preserve">
+    <value>Кошице</value>
+  </data>
+  <data name="SK3" xml:space="preserve">
+    <value>Прешов</value>
+  </data>
+  <data name="SK4" xml:space="preserve">
+    <value>Жилина</value>
+  </data>
+  <data name="SK5" xml:space="preserve">
+    <value>Банска-Бистрица</value>
+  </data>
+  <data name="SK6" xml:space="preserve">
+    <value>Нитра</value>
+  </data>
+  <data name="SK7" xml:space="preserve">
+    <value>Трнава</value>
+  </data>
+  <data name="SK8" xml:space="preserve">
+    <value>Мартин</value>
+  </data>
+  <data name="SK9" xml:space="preserve">
+    <value>Тренчин</value>
+  </data>
+  <data name="SM1" xml:space="preserve">
+    <value>Серравалле</value>
+  </data>
+  <data name="SM2" xml:space="preserve">
+    <value>Борго-Маджоре</value>
+  </data>
+  <data name="SM3" xml:space="preserve">
+    <value>Сан-Марино</value>
+  </data>
+  <data name="SM4" xml:space="preserve">
+    <value>Доманьяно</value>
+  </data>
+  <data name="SM5" xml:space="preserve">
+    <value>Фьорентино</value>
+  </data>
+  <data name="SM6" xml:space="preserve">
+    <value>Аккуавива</value>
+  </data>
+  <data name="SM7" xml:space="preserve">
+    <value>Фаэтано</value>
+  </data>
+  <data name="SM8" xml:space="preserve">
+    <value>Кьесануова</value>
+  </data>
+  <data name="SM9" xml:space="preserve">
+    <value>Монтеджардино</value>
+  </data>
+  <data name="TJ1" xml:space="preserve">
+    <value>Душанбе</value>
+  </data>
+  <data name="TJ10" xml:space="preserve">
+    <value>Кайраккум</value>
+  </data>
+  <data name="TJ11" xml:space="preserve">
+    <value>Вахдат</value>
+  </data>
+  <data name="TJ12" xml:space="preserve">
+    <value>Чкаловск</value>
+  </data>
+  <data name="TJ13" xml:space="preserve">
+    <value>Хорог</value>
+  </data>
+  <data name="TJ14" xml:space="preserve">
+    <value>Нурек</value>
+  </data>
+  <data name="TJ2" xml:space="preserve">
+    <value>Худжанд</value>
+  </data>
+  <data name="TJ3" xml:space="preserve">
+    <value>Куляб</value>
+  </data>
+  <data name="TJ4" xml:space="preserve">
+    <value>Курган-Тюбе</value>
+  </data>
+  <data name="TJ5" xml:space="preserve">
+    <value>Истаравшан</value>
+  </data>
+  <data name="TJ6" xml:space="preserve">
+    <value>Турсунзаде</value>
+  </data>
+  <data name="TJ7" xml:space="preserve">
+    <value>Канибадам</value>
+  </data>
+  <data name="TJ8" xml:space="preserve">
+    <value>Исфара</value>
+  </data>
+  <data name="TJ9" xml:space="preserve">
+    <value>Пенджикент</value>
+  </data>
+  <data name="TM1" xml:space="preserve">
+    <value>Ашхабад</value>
+  </data>
+  <data name="TM10" xml:space="preserve">
+    <value>Магданлы</value>
+  </data>
+  <data name="TM11" xml:space="preserve">
+    <value>Абадан</value>
+  </data>
+  <data name="TM12" xml:space="preserve">
+    <value>Атамурат</value>
+  </data>
+  <data name="TM13" xml:space="preserve">
+    <value>Ёлётен</value>
+  </data>
+  <data name="TM2" xml:space="preserve">
+    <value>Туркменабад</value>
+  </data>
+  <data name="TM3" xml:space="preserve">
+    <value>Дашогуз</value>
+  </data>
+  <data name="TM4" xml:space="preserve">
+    <value>Мары</value>
+  </data>
+  <data name="TM5" xml:space="preserve">
+    <value>Балканабад</value>
+  </data>
+  <data name="TM6" xml:space="preserve">
+    <value>Сердар</value>
+  </data>
+  <data name="TM7" xml:space="preserve">
+    <value>Байрамали</value>
+  </data>
+  <data name="TM8" xml:space="preserve">
+    <value>Теджен</value>
+  </data>
+  <data name="TM9" xml:space="preserve">
+    <value>Туркменбашы</value>
+  </data>
+  <data name="TR1" xml:space="preserve">
+    <value>Стамбул</value>
+  </data>
+  <data name="TR10" xml:space="preserve">
+    <value>Мерсин</value>
+  </data>
+  <data name="TR11" xml:space="preserve">
+    <value>Эскишехир</value>
+  </data>
+  <data name="TR12" xml:space="preserve">
+    <value>Диярбакыр</value>
+  </data>
+  <data name="TR13" xml:space="preserve">
+    <value>Денизли</value>
+  </data>
+  <data name="TR14" xml:space="preserve">
+    <value>Шанлыурфа</value>
+  </data>
+  <data name="TR15" xml:space="preserve">
+    <value>Самсун</value>
+  </data>
+  <data name="TR16" xml:space="preserve">
+    <value>Эсеньюрт</value>
+  </data>
+  <data name="TR17" xml:space="preserve">
+    <value>Малатья</value>
+  </data>
+  <data name="TR18" xml:space="preserve">
+    <value>Адапазары</value>
+  </data>
+  <data name="TR19" xml:space="preserve">
+    <value>Кахраманмараш</value>
+  </data>
+  <data name="TR2" xml:space="preserve">
+    <value>Анкара</value>
+  </data>
+  <data name="TR20" xml:space="preserve">
+    <value>Эрзерум</value>
+  </data>
+  <data name="TR3" xml:space="preserve">
+    <value>Измир</value>
+  </data>
+  <data name="TR4" xml:space="preserve">
+    <value>Бурса</value>
+  </data>
+  <data name="TR5" xml:space="preserve">
+    <value>Адана</value>
+  </data>
+  <data name="TR6" xml:space="preserve">
+    <value>Газиантеп</value>
+  </data>
+  <data name="TR7" xml:space="preserve">
+    <value>Конья</value>
+  </data>
+  <data name="TR8" xml:space="preserve">
+    <value>Анталья</value>
+  </data>
+  <data name="TR9" xml:space="preserve">
+    <value>Кайсери</value>
+  </data>
+  <data name="UA1" xml:space="preserve">
+    <value>Киев</value>
+  </data>
+  <data name="UA10" xml:space="preserve">
+    <value>Мариуполь</value>
+  </data>
+  <data name="UA11" xml:space="preserve">
+    <value>Луганск</value>
+  </data>
+  <data name="UA12" xml:space="preserve">
+    <value>Винница</value>
+  </data>
+  <data name="UA13" xml:space="preserve">
+    <value>Макеевка</value>
+  </data>
+  <data name="UA14" xml:space="preserve">
+    <value>Херсон</value>
+  </data>
+  <data name="UA15" xml:space="preserve">
+    <value>Полтава</value>
+  </data>
+  <data name="UA16" xml:space="preserve">
+    <value>Чернигов</value>
+  </data>
+  <data name="UA17" xml:space="preserve">
+    <value>Черкассы</value>
+  </data>
+  <data name="UA18" xml:space="preserve">
+    <value>Житомир</value>
+  </data>
+  <data name="UA19" xml:space="preserve">
+    <value>Сумы</value>
+  </data>
+  <data name="UA2" xml:space="preserve">
+    <value>Харьков</value>
+  </data>
+  <data name="UA20" xml:space="preserve">
+    <value>Хмельницкий</value>
+  </data>
+  <data name="UA3" xml:space="preserve">
+    <value>Одесса</value>
+  </data>
+  <data name="UA4" xml:space="preserve">
+    <value>Днепропетровск</value>
+  </data>
+  <data name="UA5" xml:space="preserve">
+    <value>Донецк</value>
+  </data>
+  <data name="UA6" xml:space="preserve">
+    <value>Запорожье</value>
+  </data>
+  <data name="UA7" xml:space="preserve">
+    <value>Львов</value>
+  </data>
+  <data name="UA8" xml:space="preserve">
+    <value>Кривой Рог</value>
+  </data>
+  <data name="UA9" xml:space="preserve">
+    <value>Николаев</value>
+  </data>
+  <data name="UZ1" xml:space="preserve">
+    <value>Ташкент</value>
+  </data>
+  <data name="UZ10" xml:space="preserve">
+    <value>Маргилан</value>
+  </data>
+  <data name="UZ11" xml:space="preserve">
+    <value>Чирчик</value>
+  </data>
+  <data name="UZ12" xml:space="preserve">
+    <value>Джизак</value>
+  </data>
+  <data name="UZ13" xml:space="preserve">
+    <value>Ургенч</value>
+  </data>
+  <data name="UZ14" xml:space="preserve">
+    <value>Ангрен</value>
+  </data>
+  <data name="UZ15" xml:space="preserve">
+    <value>Навои</value>
+  </data>
+  <data name="UZ16" xml:space="preserve">
+    <value>Термез</value>
+  </data>
+  <data name="UZ17" xml:space="preserve">
+    <value>Алмалык</value>
+  </data>
+  <data name="UZ2" xml:space="preserve">
+    <value>Наманган</value>
+  </data>
+  <data name="UZ3" xml:space="preserve">
+    <value>Самарканд</value>
+  </data>
+  <data name="UZ4" xml:space="preserve">
+    <value>Андижан</value>
+  </data>
+  <data name="UZ5" xml:space="preserve">
+    <value>Нукус</value>
+  </data>
+  <data name="UZ6" xml:space="preserve">
+    <value>Бухара</value>
+  </data>
+  <data name="UZ7" xml:space="preserve">
+    <value>Карши</value>
+  </data>
+  <data name="UZ8" xml:space="preserve">
+    <value>Коканд</value>
+  </data>
+  <data name="UZ9" xml:space="preserve">
+    <value>Фергана</value>
+  </data>
+</root>

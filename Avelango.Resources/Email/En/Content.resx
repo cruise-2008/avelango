@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BtnAllExecutors" xml:space="preserve">
+    <value>Browse executors</value>
+  </data>
+  <data name="BtnAllTasks" xml:space="preserve">
+    <value>Tasks overview</value>
+  </data>
+  <data name="BtnLearnMore" xml:space="preserve">
+    <value>To learn more</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeactHeader" xml:space="preserve">
+    <value>Your account on the site disabled</value>
+  </data>
+  <data name="Deactivation" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeactMail" xml:space="preserve">
+    <value>Deactivation on Avelango.com</value>
+  </data>
+  <data name="DeactMessage" xml:space="preserve">
+    <value>Read the site rules</value>
+  </data>
+  <data name="DeactNote" xml:space="preserve">
+    <value>* Deactivation - blocking the ability to use your account. In this case your data will not be deleted.</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DeleteHeader" xml:space="preserve">
+    <value>Your account on the site deleted</value>
+  </data>
+  <data name="DeleteMail" xml:space="preserve">
+    <value>Deleting your account on Avelango.com</value>
+  </data>
+  <data name="DeleteMessage" xml:space="preserve">
+    <value>Site rules</value>
+  </data>
+  <data name="DeleteNote" xml:space="preserve">
+    <value>* Delete Account - Delete your account data without the possibility of recovery.</value>
+  </data>
+  <data name="DontResponse" xml:space="preserve">
+    <value>This email was sent automatically, it is not necessary to answer.</value>
+  </data>
+  <data name="ForConfirm" xml:space="preserve">
+    <value>To confirm your e-mail, go to:</value>
+  </data>
+  <data name="ForCustomer" xml:space="preserve">
+    <value>Creating a job site, there is no need to search for executors yourself - due to instant notifications all experts on the profile of your job will automatically receive the message and respond to it. Will only choose a worthy.</value>
+  </data>
+  <data name="ForExecutor" xml:space="preserve">
+    <value>If you Executor - make in your account subscription to job categories interest you. No need to look for jobs - notifications are sent automatically to respond to requests, get a job.</value>
+  </data>
+  <data name="GoToParlour" xml:space="preserve">
+    <value>Sign in to your account, fill out the information and get all the benefits of this resource.</value>
+  </data>
+  <data name="LnkConfirm" xml:space="preserve">
+    <value>Confirm registration →</value>
+  </data>
+  <data name="LnkNewsOnSite" xml:space="preserve">
+    <value>Article online →</value>
+  </data>
+  <data name="LnkNewsUnsubscribe" xml:space="preserve">
+    <value>Unsubscribe from our newsletter</value>
+  </data>
+  <data name="LnkRecovery" xml:space="preserve">
+    <value>I want to restore access →</value>
+  </data>
+  <data name="LnkToParlour" xml:space="preserve">
+    <value>Go to my account →</value>
+  </data>
+  <data name="LnkToTask" xml:space="preserve">
+    <value>Go to the task →</value>
+  </data>
+  <data name="LnkUnsubscribe" xml:space="preserve">
+    <value>Refuse registration</value>
+  </data>
+  <data name="Members" xml:space="preserve">
+    <value>more than 50 000 participants</value>
+  </data>
+  <data name="ModerEmail" xml:space="preserve">
+    <value>Contact Tech Support</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NewsLetter" xml:space="preserve">
+    <value>You received this email because was registered on the website Avelango.com and subscribed to the newsletter.</value>
+  </data>
+  <data name="NewsMail" xml:space="preserve">
+    <value>News from Avelango.com</value>
+  </data>
+  <data name="NewsUnsubscribe" xml:space="preserve">
+    <value>If you do not want to receive the newsletter - unsubscribe by clicking on the appropriate link below.</value>
+  </data>
+  <data name="NewTask" xml:space="preserve">
+    <value />
+  </data>
+  <data name="NewTaskMail" xml:space="preserve">
+    <value>New task for you on Avelango.com</value>
+  </data>
+  <data name="NewTaskSending" xml:space="preserve">
+    <value>You received this email because was registered on the website Avelango.com and subscribed to the newsletter messages in selected categories.</value>
+  </data>
+  <data name="NewTaskUnsubscribe" xml:space="preserve">
+    <value>If you do not want to receive the newsletter - change the settings by logging in to your account in the "Groups and Subscriptions" menu.</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>instant notifications</value>
+  </data>
+  <data name="Orders" xml:space="preserve">
+    <value>500 new tasks every day</value>
+  </data>
+  <data name="Possibility" xml:space="preserve">
+    <value>This is an opportunity to create jobs and immediately receive offers from executors or perform tasks, earning money.</value>
+  </data>
+  <data name="Recovery" xml:space="preserve">
+    <value />
+  </data>
+  <data name="RecoveryIgnore" xml:space="preserve">
+    <value>If you do not do this – ignore this letter </value>
+  </data>
+  <data name="RecoveryMail" xml:space="preserve">
+    <value>Restoring access to Avelango.com</value>
+  </data>
+  <data name="RecoveryMessage" xml:space="preserve">
+    <value>To regain access to your account - click the link below</value>
+  </data>
+  <data name="RecoveryRequest" xml:space="preserve">
+    <value>You received this message because the completed request for password recovery on the site Avelango.com</value>
+  </data>
+  <data name="Registration" xml:space="preserve">
+    <value>Check in</value>
+  </data>
+  <data name="Social" xml:space="preserve">
+    <value>Sign in with a social network</value>
+  </data>
+  <data name="SocialDisable" xml:space="preserve">
+    <value>The ability to log in via the social network does not</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Registration on the site is successful</value>
+  </data>
+  <data name="TaskResponse" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TaskResponseMail" xml:space="preserve">
+    <value>Came the response from the Executive on Avelango.com</value>
+  </data>
+  <data name="Unsubscribe" xml:space="preserve">
+    <value>If you did not do - give up by clicking on the link below</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value />
+  </data>
+  <data name="WarningMail" xml:space="preserve">
+    <value>Notification of Avelango.com</value>
+  </data>
+  <data name="Wellcome" xml:space="preserve">
+    <value>Welcome to Avelango.com</value>
+  </data>
+  <data name="YouReceive" xml:space="preserve">
+    <value>You have received this email as it registered on the site Avelango.com</value>
+  </data>
+  <data name="YourTime" xml:space="preserve">
+    <value>Save your time</value>
+  </data>
+  <data name="YouWasReceived" xml:space="preserve">
+    <value>You received this email because have been registered on the website Avelango.com.</value>
+  </data>
+</root>

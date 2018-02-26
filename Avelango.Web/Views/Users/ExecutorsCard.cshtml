@@ -1,0 +1,141 @@
+﻿@{
+    Layout = null;
+}
+<div class="item-cart" ng-show="!openExecutorsWindow">
+    <a ng-click="closeCurentExecutor()" id="filterclose" class="filterclose" href="#" title="Закрыть фильтр">close</a>
+    <div class="item-cart-about clearfix">
+        <div class="img-box-holder">
+            <div class="img-box">
+                <img ng-src="{{executorsData.UserLogoPath}}" width="175" height="175" class="item-img" alt="" />
+                <span class="item-status item-online">
+                    <i>online</i>
+                </span>
+            </div>
+            <div class="raiting">
+                <i class="staryellow"></i>
+                <i class="staryellow"></i>
+                <i class="staryellow"></i>
+                <i class="staryellow"></i>
+                <i class="staryellow"></i>
+            </div>
+        </div>
+        <div class="about-box-holder">
+            <div class="about-box">
+                <h4 class="item-title">{{executorsData.Name}} {{executorsData.SurName}}</h4>
+                <span class="item-location">Харьковская область, Украина</span>
+                <p class="item-about">Я в отличии от других исполнителей быстрее всех отвожу посылки по скольку у меня есть ракета в которой скорость движения достигает скорости света она работает от генератора черной дыры</p>
+                <div> <a href="#" class="btn-green">Предложить задание</a> </div>
+            </div>
+        </div>
+        <div class="teh-box-holder">
+            <div class="clearfix">
+                <a class="izbr izbradded" href="#" title="исполнитель в избранном">В избранном</a>
+                <div class="rait">33</div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix item-tabs">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li id="openexecutor" role="presentation" class="active"><a href="#" aria-controls="home" role="tab" data-toggle="tab" ng-click ="changeExecutorOpenPage('aboutexecutor', true)">Обо мне</a></li>
+            <li id="openportfolioexecutor" role="presentation"><a href="#" aria-controls="profile" role="tab" data-toggle="tab" ng-click ="changeExecutorOpenPage('portfolio', true)">Портфолио</a></li>
+            <li id="openotziviexecutor" role="presentation"><a href="#" aria-controls="messages" role="tab" data-toggle="tab" ng-click ="changeExecutorOpenPage('otzivi', true)">Отзывы</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="resumeexecutor" ng-show="Aboutme">
+                <div class="maintext">
+                    <p>Перечислить самые существенные компоненты описания проекта несложно. В этом документе официально объявляется о запуске проекта и назначении менеджера проекта. Также в нем обычно указывается номер счета, куда поступают выделенные на проект средства. Кроме того, содержится краткая аргументация задач последнего, то есть его обоснование.</p>
+                    <ul>
+                        <li>список переменных входящих в валгаллу</li>
+                        <li>устрицы и креветки это часть достояние книжной полки при выполнения задания</li>
+                        <li>завершающий	 элемент списка</li>
+                    </ul>
+                    <p>Есть у описания проекта одна любопытная особенность: составить его должен менеджер проекта, а вот подписывать предстоит тому, кто отвечает за создание и финансирование проекта. Передавать полномочия по составлению концепции и ее утверждению одному и тому же человеку - менеджеру проекта - не имело бы никакого смыла. И тем не менее описание должен составлять именно менеджер проекта, ведь для него это возможность с самого начала обозначить свое видение.</p>
+                    <h2>Ограничения и предположения</h2>
+                    <p>Помимо выше перечисленного, в описании проекта необходимо указать имеющиеся ограничения по всем предусмотренным направлениям. На начальной стадии проекта следует обозначить сроки реализации отдельных работ или отдельные статьи бюджета. В ходе планирования проекта должен быть сформулирован ряд предположений относительно доступности ресурсов, выбора поставщиков, сроков начала работ, подписания договоров и пр. Предположения вообще весьма полезны. Нам ежедневно приходится выдвигать и проверять определенные гипотезы. Встав утром с постели, мы заранее предполагаем, что в ванной исправно загорится свет, а из кранов польется вода. Чтобы успешно спланировать проект, гипотез должно быть выработано великое множество, иначе невозможно начать проект.</p>
+                    <h3>Заинтересованные лица - кто они?</h3>
+                    <p>Под <strong>заинтересованными лицами</strong> подразумеваются все, кто в ходе реализации проекта что-то приобретет или, наоборот, потеряет. Если учесть все последствия, которые способен повлечь проект, то станет очевидно, что заинтересованных лиц в большинстве случаев довольно много.</p>
+                    <ol>
+                        <li>Инвестор</li>
+                        <li>Менеджер проекта</li>
+                        <li>Исполнитель</li>
+                        <li>Викинг</li>
+                    </ol>
+                    <p>Необходимо в той или иной степени отметить всех заинтересованных лиц. Основное внимание, однако, должно быть направлено на ключевые фигуры из числа заинтересованных лиц. Проблема в том, как их выбрать.</p>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="portfolioexecutor" ng-show="Portfolio">
+                <ul class="item-portfolio" style="height: 395px; overflow: scroll;">
+                    <li><a href="ajax/portfolio.html" title="узреть больше" data-toggle="modal" data-target="#myModal"> <img src="../../Images/portfolio/port01.jpg" width="140" alt="описание работы" /> <span>Доставка игрушек ручной работы в подарок на 8марта в другой город</span> </a> </li>
+                    <li><a href="ajax/portfolio.html" title="узреть больше" data-toggle="modal" data-target="#myModal"> <img src="../../Images/portfolio/port02.jpg" width="140" alt="описание работы" /> <span>Доставка игрушек ручной работы в подарок на 8марта в другой город</span> </a></li>
+                    <li><a href="ajax/portfolio.html" title="узреть больше" data-toggle="modal" data-target="#myModal"> <img src="../../Images/portfolio/port03.jpg" width="140" alt="описание работы" /> <span>Доставка игрушек ручной работы в подарок на 8марта в другой город</span> </a></li>
+                    <li><a href="ajax/portfolio.html" title="узреть больше" data-toggle="modal" data-target="#myModal"> <img src="../../Images/portfolio/port04.jpg" width="140" alt="описание работы" /> <span>Доставка игрушек ручной работы в подарок на 8марта в другой город</span> </a></li>
+                    <li><a href="ajax/portfolio.html" title="узреть больше" data-toggle="modal" data-target="#myModal"> <img src="../../Images/portfolio/port06.jpg" width="140" alt="описание работы" /> <span>Доставка игрушек ручной работы в подарок на 8марта в другой город</span> </a></li>
+                    <li><a href="ajax/portfolio.html" title="узреть больше" data-toggle="modal" data-target="#myModal"> <img src="../../Images/portfolio/port07.jpg" width="140" alt="описание работы" /> <span>Доставка игрушек ручной работы в подарок на 8марта в другой город</span> </a></li>
+                    <li><a href="ajax/portfolio.html" title="узреть больше" data-toggle="modal" data-target="#myModal"> <img src="../../Images/portfolio/port09.jpg" width="140" alt="описание работы" /> <span>Доставка игрушек ручной работы в подарок на 8марта в другой город</span> </a></li>
+                    <li><a href="ajax/portfolio.html" title="узреть больше" data-toggle="modal" data-target="#myModal"> <img src="../../Images/portfolio/port10.jpg" width="140" alt="описание работы" /> <span>Доставка игрушек ручной работы в подарок на 8марта в другой город</span> </a></li>
+                    <li><a href="ajax/portfolio.html" title="узреть больше" data-toggle="modal" data-target="#myModal"> <img src="../../Images/portfolio/port11.jpg" width="140" alt="описание работы" /> <span>Доставка игрушек ручной работы в подарок на 8марта в другой город</span> </a></li>
+                    <li><a href="ajax/portfolio.html" title="узреть больше" data-toggle="modal" data-target="#myModal"> <img src="../../Images/portfolio/port13.jpg" width="140" alt="описание работы" /> <span>Доставка игрушек ручной работы в подарок на 8марта в другой город</span> </a></li>
+                </ul>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="commentsexecutor" ng-show="Otzivi">
+                <div class="comments">
+                    <div class="list-block">
+                        <div class="list-item ">
+                            <div class="img-box-holder">
+                                <div class="img-box"> <img src="../../Images/img/img4.jpg" width="100" height="100" class="item-img" alt="" /> <span class="item-status item-online"><i>online</i></span> </div>
+                            </div>
+                            <div class="about-box-holder">
+                                <div class="about-box">
+                                    <h4 class="item-title">Артем Сидоренко</h4>
+                                    <p class="item-about">Для фирмы требуется создать мессенеджер для сотрудников, с картографией, и позиционированием.Дополнительный функционал будет оговорен при личном общении.Приложение должно быть удобное </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-item comment">
+                            <div class="img-box-holder">
+                                <div class="img-box"> <img src="../../Images/img/img2.jpg" width="100" height="100" class="item-img" alt="" /> <span class="item-status item-online"><i>online</i></span> </div>
+                            </div>
+                            <div class="about-box-holder">
+                                <div class="about-box">
+                                    <h4 class="item-title">Анна Федюкова-Герасименко</h4>
+                                    <p class="item-about">Я в отличии от других исполнителей быстрее всех отвожу посылки по скольку у меня есть ракета в которой скорость движения достигает скорости света она работает от генератора черной дыры Для фирмы требуется создать мессенеджер для сотрудников, с картографией, и позиционированием.Дополнительный функционал будет оговорен при личном общении.Приложение должно быть удобное </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-item comment">
+                            <div class="img-box-holder">
+                                <div class="img-box"> <img src="../../Images/img/img1.jpg" width="100" height="100" class="item-img" alt="" /> <span class="item-status item-online"><i>online</i></span> </div>
+                            </div>
+                            <div class="about-box-holder">
+                                <div class="about-box">
+                                    <h4 class="item-title">Василиса Егоровна</h4>
+                                    <p class="item-about">Для фирмы требуется создать мессенеджер для сотрудников, с картографией, и позиционированием.Дополнительный функционал будет оговорен при личном общении.Приложение должно быть удобное </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="addcoment">
+                        <form action="#">
+                            <div>
+                                <textarea placeholder="сделайте клик для начала ввода комментария"></textarea>
+                                <button type="submit" class="btn-orange">оставить комментарий</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix attachmentfiles">
+        <ul>
+            <li><a href="" class="file-doc"></a></li>
+            <li><a href="" class="file-img"></a></li>
+            <li><a href="" class="file-pdf"></a></li>
+            <li><a href="" class="file-file"></a></li>
+        </ul>
+    </div>
+</div>
+

@@ -1,0 +1,266 @@
+﻿//Вид контроллера
+function () {
+    'use strict';
+
+    angular
+        .module('app.pages')
+        .controller('OrderFormController', OrderFormController);
+
+    OrderFormController.$inject = ['$http', '$rootScope', '$location', '$scope', '$rootScope'];
+    function OrderFormController($http, $location, $scope, $rootScope) {
+        var vm = this;
+
+        activate();
+
+        ////////////////
+
+        function activate() {
+            
+
+        }
+    }
+})();
+
+
+//Варианты запросов
+$http
+               .get('/Account/LogOff')
+               .then(function () {
+                   // assumes if ok, response is an object with some data, if not, a string with error
+                   // customize according to your api
+                       window.location = '/';
+                       //$location.path(response.data.Path);
+               });
+            };
+			
+$resource('/MyUser/GetMyInfo', {}, { 'query': { method: 'GET', isArray: false } }).query().$promise.then(function(persons) {
+                       vm.account = persons;
+            });
+			
+
+$http
+                      .post('/Account/Login', { UserName: vm.account.email, Password: vm.account.password, RememberMe: vm.account.remember })
+                      .then(function (response) {
+
+                      }, function () {
+                          vm.authMsg = 'Server Request Error';
+                      });			
+			
+//Отправка формы			
+			vm.login = function () {
+                vm.count = true;
+                vm.authMsg = '';
+
+                if (vm.loginForm.$valid) {
+
+                    $http
+                      .post('/Account/Login', { UserName: vm.account.email, Password: vm.account.password, RememberMe: vm.account.remember })
+                      .then(function (response) {
+                          // assumes if ok, response is an object with some data, if not, a string with error
+                          // customize according to your api
+                          if (!response.data.IsEnabled) {
+                              vm.authMsg = 'Incorrect credentials.';
+                          } else if (response.data.RedirectPath) {
+                              $rootScope.ParlourPath = response.data.Path;
+                              $rootScope.IsAuthanticated = response.data.IsEnabled;
+                              $rootScope.ImagePath = response.data.ImagePath;
+                              $location.path(response.data.RedirectPath);
+                          } else {
+                              $rootScope.ParlourPath = response.data.Path;
+                              $rootScope.IsAuthanticated = response.data.IsEnabled;
+                              $rootScope.ImagePath = response.data.ImagePath;
+                              $location.path(response.data.Path);
+                          }
+                      }, function () {
+                          vm.authMsg = 'Server Request Error';
+                      });
+                }
+                else {
+                    // set as dirty if the user click directly to login so we show the validation messages
+                    /*jshint -W106*/
+                    vm.loginForm.account_email.$dirty = true;
+                    vm.loginForm.account_password.$dirty = true;
+                }
+            };
+			
+//Варианты событий			
+	$rootScope.$emit("acceptGreet", message);
+	$scope.$broadcast('parent', 'Some data'); // идет вниз!
+	var updateGreetingMessage = function (text) {
+                $scope.text = text;
+            }
+			
+    $rootScope.$on("acceptGreet", function (e, message) {
+                $scope.$apply(function () {
+                    updateGreetingMessage(message);
+                });
+            });
+	
+	 $rootScope.$on("closeModal", function (e, message) {
+                $uibModalInstance.close('closed');
+                });
+//Цикл				
+switch (a) {
+  case 3:
+    alert( 'Маловато' );
+    break;
+  case 4:
+    alert( 'В точку!' );
+    break;
+  case 5:
+    alert( 'Перебор' );
+    break;
+  default:
+    alert( 'Я таких значений не знаю' );
+}
+vm.currentPage = function(page) {
+
+                switch (page) {
+                    case 'portfolio':
+                        vm.path='/userPortfolio.html';
+                       break;
+                    case 'userpage':
+                        vm.path = '/userPage.html';
+                        break;
+                    case 5:
+                        alert('Перебор');
+                        break;
+                    default:
+                       vm.path = '/userPortfolio.html';
+                }
+                return vm.path;
+            };
+			
+ <div class="row">
+      <div ng-repeat="pan in panels" class="col-lg-4">
+         <!-- START panel-->
+         <div id="{{pan.id}}" class="panel panel-default">
+            <div class="panel-heading">{{pan.title}}
+               <paneltool tool-refresh="standard" tool-collapse="tool-collapse" tool-dismiss="tool-dismiss"></paneltool>
+            </div>
+            <div uib-collapse="{{pan.id}}" class="panel-wrapper">
+               <div class="panel-body">
+                  <p>{{pan.body}}</p>
+               </div>
+            </div>
+         </div>
+         <!-- END panel-->
+
+      </div>
+   </div>
+//Варианты директив
+.directive('disableNgAnimate', ['$animate', function ($animate) {
+            return {
+                restrict: 'A',
+                link: function (scope, element) {
+                    $animate.enabled(false, element);
+                }
+            };
+        }]).directive("disableAnimate", function ($animate) {
+            return function (scope, element) {
+                $animate.enabled(false, element);
+            };
+        });
+
+//Формирование даты
+                var date = new Date(null);
+                date.setTime(topicaltoo);
+                var mm = date.getMonth() + 1,
+                    dd = date.getDate(),
+                    hh = date.getHours(),
+                    min = date.getMinutes(); 
+                
+                vm.topicalto = date.getFullYear() + '-' + (mm < 10 ? "0" + mm : mm) + '-' + (dd < 10 ? "0" + dd : dd) + '  ' + (hh < 10 ? "0" + hh : hh) + "-" + (min < 10 ? "0" + min : min);
+                };	
+// Замена даты в массиве
+vm.dataForModerators = response.data.Tasks.map(function (item) {
+                          var newitem = item;
+                          newitem.Created = item.Created.replace(/\D+/g, '');
+                          newitem.TopicalTo = item.TopicalTo.replace(/\D+/g, '');
+                          return newitem;
+                      });	
+
+
+//Максимальное значение
+ Math.max.apply(null, [1,3,5,-1,8,0]);
+ 
+var getObjWithMaxDate = function(arr){ var date = Math.max.apply(Math, arr.map(function(o){return o.a;})); return arr.filter(function(v) { return v.a == date;})[0]; } 
+
+                var min = vm.dataForModerators[0];
+                vm.dataForModerators.forEach(function (item, i, arr) {
+                    min = (min.Created < item.Created) ? min : item;
+                });
+
+//удаление определенного элемента
+                vm.dataForModerators = vm.dataForModerators.filter(function (item) {
+                    return item.PublicKey !== message;
+                });
+
+//Событие загрузки страницы
+$rootScope.$on('$locationChangeSuccess', function () {
+                vm.groups = JSON.parse(main.getAttribute('data-groups'));
+            });
+//Доступ к детскому $scope
+в родителе
+            $scope.child = {};
+в ребенке
+var parentScope = $scope.$parent;
+            parentScope.child = {orderlen:10};
+			или
+			в родителе
+$scope.setName = function(name){
+        $scope.name = name;
+    };
+	в ребенке
+	setTimeout(function(){
+      $scope.setName('Alice');
+    });
+// Установка и отправка подгрупп
+	var groups = [];
+                        angular.forEach(response.Groups, function(value, key) {
+                            var self = this;
+                            var nv = function newvalue(value) {
+                                value.SubGroups.forEach(function(item, i, arr) {
+                                    if (chekedGroups.indexOf(item.Name) >= 0) {
+                                        value.SubGroups[i].Cheked = true;
+                                    }
+                                });
+                                return value;
+                            }
+                            self.push(nv(value));
+                        }, groups);
+                        vm.groups = groups;
+						
+	var log = [];
+                angular.forEach(vm.groups, function (value, key) {
+                    var self = this;
+                    value.SubGroups.forEach(function (item, i, arr) {
+                        if (item.Cheked === true) {
+                            self.push(item.Name);
+                        }
+                    });                  
+                }, log);
+                var chekedgroups = JSON.stringify(log);
+				
+//Выбор подгрупп
+<div class="form-group">
+                        <label class="col-lg-2 control-label">Категория</label>
+
+                        <div class="col-lg-4">
+                            <select class="selectpicker" ng-model="mmm.sendMessage.Group" ng-change="mmm.numbergroups(mmm.sendMessage.Group)">
+                                <option ng-repeat="x in mmm.groups" value="{{x.Name}}" translate="{{x.Name}}">{{x.Text}}</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-4">
+                            <select class="selectpicker" ng-model="mmm.sendMessage.SubGroup">
+                                <option ng-repeat="x in mmm.groups[mmm.count].SubGroups" value="{{x.Name}}" translate="{{x.Name}}">{{x.Text}}</option>
+                            </select>
+                        </div>
+                    </div>
+					
+//Изменение размера экрана
+$scope.height = $window.innerHeight;
+            angular.element($window).bind('resize', function () {
+                $scope.height = $window.innerHeight;
+                $scope.$digest();
+            });

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3d2fb85b65094a88a961fb0211ec0ee8" Name="Diagram1" ZoomLevel="48" >
+        <EntityTypeShape EntityType="AvelangoDbModel.ChatMessages" Width="1.5" PointX="5.25" PointY="29.75" />
+        <EntityTypeShape EntityType="AvelangoDbModel.Chats" Width="1.5" PointX="3" PointY="29.875" />
+        <EntityTypeShape EntityType="AvelangoDbModel.CommonAdvertising" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AvelangoDbModel.CommonNews" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="AvelangoDbModel.Events" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AvelangoDbModel.Mails" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AvelangoDbModel.Notifications" Width="1.5" PointX="6" PointY="17" />
+        <EntityTypeShape EntityType="AvelangoDbModel.PortfolioJobImages" Width="1.5" PointX="7.5" PointY="33.5" />
+        <EntityTypeShape EntityType="AvelangoDbModel.PortfolioJobs" Width="1.5" PointX="5.25" PointY="33.5" />
+        <EntityTypeShape EntityType="AvelangoDbModel.Portfolios" Width="1.5" PointX="3" PointY="33.5" />
+        <EntityTypeShape EntityType="AvelangoDbModel.RialtoAction" Width="1.5" PointX="3" PointY="39.625" />
+        <EntityTypeShape EntityType="AvelangoDbModel.RialtoChat" Width="1.5" PointX="5.75" PointY="7.75" />
+        <EntityTypeShape EntityType="AvelangoDbModel.RialtoState" Width="1.5" PointX="7.75" PointY="7.75" />
+        <EntityTypeShape EntityType="AvelangoDbModel.RialtoUserAssets" Width="1.5" PointX="3" PointY="19.5" />
+        <EntityTypeShape EntityType="AvelangoDbModel.RialtoUsersStates" Width="1.5" PointX="3" PointY="9.5" />
+        <EntityTypeShape EntityType="AvelangoDbModel.SmsSending" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="AvelangoDbModel.TaskAttachments" Width="1.5" PointX="6" PointY="4.375" />
+        <EntityTypeShape EntityType="AvelangoDbModel.TaskBids" Width="1.5" PointX="6" PointY="13.125" />
+        <EntityTypeShape EntityType="AvelangoDbModel.TaskOffers" Width="1.5" PointX="6" PointY="21.375" />
+        <EntityTypeShape EntityType="AvelangoDbModel.TaskPreWorkers" Width="1.5" PointX="3" PointY="15.375" />
+        <EntityTypeShape EntityType="AvelangoDbModel.Tasks" Width="1.5" PointX="3.75" PointY="2.875" />
+        <EntityTypeShape EntityType="AvelangoDbModel.TempUserData" Width="1.5" PointX="3" PointY="36.625" />
+        <EntityTypeShape EntityType="AvelangoDbModel.Users" Width="1.5" PointX="0.75" PointY="13.625" />
+        <AssociationConnector Association="AvelangoDbModel.FK__ChatMessa__Belon__45F365D3" />
+        <AssociationConnector Association="AvelangoDbModel.FK__Chats__BelongsTo__46E78A0C" />
+        <AssociationConnector Association="AvelangoDbModel.FK__Chats__BelongsTo__47DBAE45" />
+        <AssociationConnector Association="AvelangoDbModel.FK__Notificat__Belon__48CFD27E" />
+        <AssociationConnector Association="AvelangoDbModel.FK__Notificat__Belon__49C3F6B7" />
+        <AssociationConnector Association="AvelangoDbModel.FK__Notificat__Belon__4AB81AF0" />
+        <AssociationConnector Association="AvelangoDbModel.FK__Portfolio__Belon__4BAC3F29" />
+        <AssociationConnector Association="AvelangoDbModel.FK__Portfolio__Belon__4CA06362" />
+        <AssociationConnector Association="AvelangoDbModel.FK__Portfolio__Belon__4D94879B" />
+        <AssociationConnector Association="AvelangoDbModel.FK__RialtoAct__Belon__4E88ABD4" />
+        <AssociationConnector Association="AvelangoDbModel.FK__RialtoUse__Belon__4F7CD00D" />
+        <AssociationConnector Association="AvelangoDbModel.FK__RialtoUse__Belon__5070F446" />
+        <AssociationConnector Association="AvelangoDbModel.FK__TaskAttac__Belon__5165187F" />
+        <AssociationConnector Association="AvelangoDbModel.FK__TaskBids__Belong__52593CB8" />
+        <AssociationConnector Association="AvelangoDbModel.FK__TaskBids__Belong__534D60F1" />
+        <AssociationConnector Association="AvelangoDbModel.FK__TaskOffer__Belon__5441852A" />
+        <AssociationConnector Association="AvelangoDbModel.FK__TaskOffer__Belon__5535A963" />
+        <AssociationConnector Association="AvelangoDbModel.FK__TaskPreWo__Belon__5629CD9C" />
+        <AssociationConnector Association="AvelangoDbModel.FK__TaskPreWo__Belon__571DF1D5" />
+        <AssociationConnector Association="AvelangoDbModel.FK__TempUserD__Belon__5812160E" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

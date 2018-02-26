@@ -1,0 +1,396 @@
+﻿@Scripts.Render("~/bundles/tasksScripts")
+<div class="row bg" ng-controller="TaskController as taskc" id="tasckContrainer" data-chekedgroup="@ViewBag.Subgroup" data-choosenpk="@ViewBag.PublicKey">
+    @*<script type="text/ng-template" id="sidebar-renderer.html">
+            <a ng-click="toggleCollapse(item.Name)">
+                <em ng-hide="inSubmenu" class="{{item.Ico}}"></em>
+                <span translate="{{item.Name}}"></span>
+            </a>
+            <ul ng-if="item.SubGroups" uib-collapse="!(item.Name === activeElement)" class="nav sidebar-subnav">
+                <li ng-repeat="item in item.SubGroups" ng-init="level2Index = $index">
+                    <span><input type="checkbox" ng-model="item.Cheked" ng-change="taskc.checkFilter(level1Index, level2Index)">{{item.Name | translate}}</span>
+                </li>
+            </ul>
+        </script>*@
+    @*<div class="asidefilters col-md-2">
+        <div > @*ng-style="{ width: contr.asideToggled? '7.5%' : '20%' }"*@
+
+
+    @* <div class="aside-inner" ng-controller="SidebarController">
+        <img class="hide close2" ng-class="{show:!(contr.asideToggled)}" src="" alt="x" ng-click="contr.asideToggled = true">
+
+             <nav class="sidebar" style="overflow: auto; width: auto" >
+
+                        <ul class="nav" style="height: 700px; overflow: auto;">
+                            <li ng-class="getMenuItemPropClasses(item)" ng-repeat="item in taskc.groups" ng-init="level1Index = $index" ng-include="'sidebar-renderer.html'" ng-click="contr.asideToggled = false">
+
+                            </li>
+                        </ul>
+
+
+                        <div class="hide" ng-class="{show:!(contr.asideToggled)}">
+                            <div>
+                                <span ng-class="{show:(taskc.showValidatemessage)}" class="text-danger hide">Выберете местоположение из подсказок</span>
+                                <input id="search" ng-model="taskc.chosenPlace" class="form-control" ng-change="taskc.myValidation()"/>
+                            </div>
+                           <div>
+                                <label><input type="radio" ng-model="taskc.justActual" value="1">Актуальные</label>
+                                <label><input type="radio" ng-model="taskc.justActual" value="0">Все</label>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-primary" ng-click="taskc.getFilteredTasks('getFilteredTasks')">Применить фильтры</button>
+                            </div>
+                        </div>
+
+                    </nav>
+                </div>
+            </div>
+        </div>*@
+
+    @*<div class="col-md-7 hide" ng-class="{show:!(openWindow)}">
+        <div class="tasks_block">
+            <div class="gray_block" ng-repeat="job in taskc.viewedJobs" ng-click="taskc.openCurentJob($index)" ng-class="{show:(taskc.jobs)}">
+
+                <div class="foto ">
+                    <p>
+                        <img ng-src="{{job.Customer.UserLogoPath}}" alt="img" class="avatar">
+                    </p>
+
+                    <i aria-hidden="true" class="fa  text-warning" ng-class="star" ng-repeat="star in job.Customer.RatingMas track by $index"></i>
+
+                </div>
+
+                <div class="text_block ">
+                    <h2>{{job.Name}}</h2>
+                    <div class="location">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>{{job.PlaceName}}
+                    </div>
+                    <p class="pd_15">{{job.Description.ShortDescription}}</p>
+                </div>
+
+                <div class="price ">
+                    <p class="text-right">${{job.Price}}</p>
+                    <div class="bl1">10 </div>
+                    <div class="bl2"><span>{{job.TopicalTo | date:"yyyy-MM-dd HH:mm"}}</span></div>
+                    <div class="bl3">Избранное</div>
+                </div>
+            </div><!--gray_block-->
+        </div>*@
+
+
+
+
+
+
+    @*<nav aria-label="..." ng-controller="PaginationDemoCtrl as pag" class="row text-center">
+            <uib-pagination previous-text="<" next-text=">" direction-links="true" data-items-per-page="taskc.dataItemsPerPage"
+                            total-items="taskc.jobs.length" ng-model="pag.bigCurrentPage" max-size="5" boundary-links="true" rotate="false"
+                            num-pages="" class="pagination-sm" ng-change="taskc.pagination(pag.bigCurrentPage)">
+
+            </uib-pagination>
+        </nav>*@
+    @*</div>*@
+
+
+
+
+
+    @*<div class="col-md-7 hide" ng-class="{show:openWindow}">
+
+
+        <div class="wr_block">
+            <div class="gray_block ">
+                <img src="" alt="x" class="close2" ng-click="taskc.closeCurentJob()">
+
+                <div class="col-md-3 obya text-center">
+                    <div><img ng-src="{{taskc.viewedJobs[ind].Customer.UserLogoPath}}" alt="img" class="avatar">
+                    </div>
+                    <i aria-hidden="true" class="fa  text-warning" ng-class="star" ng-repeat="star in taskc.viewedJobs[ind].Customer.RatingMas track by $index"></i>
+                    <p>{{taskc.viewedJobs[ind].Customer.Name}}</p>
+                </div>
+
+                <div class="col-md-6 obya ">
+                    <h2>{{taskc.viewedJobs[ind].Name}}</h2>
+                    <div class="location"><i class="fa fa-map-marker" aria-hidden="true"></i>{{taskc.viewedJobs[ind].PlaceName}}
+                    </div>
+                    <p class="cena">$20 000</p>
+                    <a href=""ng-disabled="taskc.viewedJobs[ind].AlreadyBided || taskc.viewedJobs[ind].Customer.Pk===contr.SessionId" class="link2"
+                       ng-click="taskc.bidTask(taskc.viewedJobs[ind].Name, taskc.viewedJobs[ind].Price, taskc.viewedJobs[ind].PublicKey)">Оставить предложение</a>
+                    <button ng-disabled="taskc.jobs[ind].AlreadyBided || taskc.jobs[ind].Customer.Pk===contr.SessionId" class="link2 hide"
+                            ng-class="{'show':(contr.IsAuthanticated)}" ng-click="taskc.bidTask(taskc.jobs[ind].Name, taskc.jobs[ind].Price, taskc.jobs[ind].PublicKey)">
+                        Оставить предложение
+                    </button>
+                </div>
+
+                <div class="col-md-3 text-center ">
+                    <div class="bl4">
+                        <div><img src="img/icon-favorite.jpg" alt="">
+                        </div>
+                        <p>Избранное</p>
+                    </div>
+
+                    <div class="bl2">5д 15ч</div>
+                </div>
+            </div><!--gray_block-->
+        </div>*@
+
+
+
+    @*<div class="tabs">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab_a" data-toggle="tab">Описание проекта</a></li>
+            <li><a href="#tab_b" data-toggle="tab">Коментарии</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="tab_a">
+                <div class="tab_text">
+                    {{taskc.viewedJobs[ind].Description.Description}}
+                </div>
+            </div>
+
+
+            <div class="tab-pane fade" id="tab_b">
+                <div class="tab_text">
+                    <p>Коментарии</p>
+                </div>
+            </div>
+
+        </div>*@
+    <!-- tab content -->
+    @*</div>*@
+
+
+    <!-- end of tabs -->
+    <!--my new avelango-->
+
+    <div id="ple_load" ng-show="myloading" ng-cloak class='ng-cloak'>
+        <div class="contpretasks">
+            <span class="svg_anmtasks"></span><br>Подождите<br><small>идет загрузка</small>
+        </div>
+    </div>
+
+    <div ng-controller="SidebarController as sideBar">
+        <a id="filteropen" class="filteropen" href="#" title="Открыть фильтр" ng-click="openCurentSideBar()" ng-show="!closeSideBarWindow">
+            <img src="~/Images/icons/close-modal.png" alt="" />
+        </a>
+        <div class="aside-inner" id="filter" ng-show="closeSideBarWindow">
+            <div id="leftside">
+                <a ng-click="closeCurentSideBar()" id="filterclose" class="filterclose" href="#" title="Закрыть фильтр">
+                    <img src="~/Images/icons/close-modal.png" alt="" />
+                </a>
+                <div>
+                    <form action="#">
+                        <div class="filter">
+                            <div id="test" class="filterholder">
+                                <div>
+                                    <a ng-click="sideBar.up()" id="btnUP" class="btnbulet active btnup">Вверх</a>
+                                </div>
+
+                                <uib-accordion close-others="true">
+                                    <ul class="filterlist" style="height: 595px; overflow: hidden;">
+                                        <li ng-repeat="group in sideBar.filtergroups" @*ng-click="accordion.current = group.Text"*@>
+                                            <uib-accordion-group class="group-accordion">
+                                                <uib-accordion-heading>
+                                                    <span class="grouphead {{group.Ico}}">{{group.Text}}</span>
+                                                    @*<input type="checkbox" id="{{group.Id}}" name="{{group.Id}}">
+                                                        <label for="{{group.Id}}" class="groupcontrol"></label>*@
+                                                </uib-accordion-heading>
+                                                <input type="checkbox" id="{{group.Id}}" name="{{group.Id}}">
+                                                <label for="{{group.Id}}" class="groupcontrol"></label>
+                                                <ul @*ng-show="accordion.current == group.Text"*@>
+                                                    <li ng-repeat="subGroup in group.SubGroups">
+                                                        <input type="checkbox" id="{{subGroup.Id}}" name="{{subGroup.Id}}">
+                                                        <label for="{{subGroup.Id}}">{{subGroup.Text}}</label>
+                                                    </li>
+                                                </ul>
+                                            </uib-accordion-group>
+                                        </li>
+                                    </ul>
+                                </uib-accordion>
+
+                                <div>
+                                    <a ng-click="sideBar.down()" id="btnDown" class="btnbulet active btndown">Вниз</a>
+                                </div>
+                            </div>
+                            <div>
+                                <span ng-class="{show:(taskc.showValidatemessage)}" class="text-danger hide">Выберете местоположение из подсказок</span>
+                                <input id="search" ng-model="taskc.chosenPlace" ng-change="taskc.myValidation()" class="findplace" type="text" placeholder="Выбор расположения">
+                            </div>
+                            <div class="clearfix">
+                                <button class="resetfilter" type="reset">Сброс</button>
+                                <div class="onlinebtn">
+                                    <input ng-model="taskc.justActual" value="1" type="checkbox" id="onn" name="onn">
+                                    <label for="onn">Оnline</label>
+                                </div>
+                            </div>
+                            <button ng-click="taskc.getFilteredTasks('getFilteredTasks')" type="button" class="apllybtn">Фильтровать</button>
+                            <p class="allcat">
+                                <a ng-model="taskc.justActual" value="0" href="#">Все категории</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="rightside">
+        <div class="side-world">
+            <h3 class="world-advert">Международные объявления</h3>
+            <div class="item-int advert">
+                <div class="item-int-img-box"> <img src="../../Images/img/img11.jpg" width="85" height="85" class="item-int-img" alt="" /><span class="item-status item-online"><i>online</i></span></div>
+                <div class="about-box">
+                    <h4 class="item-int-title">Hedge fund slide presentation</h4>
+                </div>
+                <div class="info-box">
+                    <div class="price">&#36; 3 187</div>
+                    <div class="item-int-location">Texas state, USA</div>
+                </div>
+            </div>
+            <div class="item-int advert">
+                <div class="item-int-img-box"> <img src="../../Images/img/img22.jpg" width="85" height="85" class="item-int-img" alt="" /> <span class="item-status item-offline"><i>offline</i></span></div>
+                <div class="about-box">
+                    <h4 class="item-int-title">Научить медведя танцевать на одной ноге при этом пить настойку на клюкве и играть на балалайке</h4>
+                </div>
+                <div class="info-box">
+                    <div class="price">&#8381; 1 155</div>
+                    <div class="item-int-location">Кемеровская область, Российская Федерация</div>
+                </div>
+            </div>
+            <div class="item-int advert">
+                <div class="item-int-img-box"> <img src="../../Images/img/img33.jpg" width="85" height="85" class="item-int-img" alt="" /> <span class="item-status item-online"><i>online</i></span></div>
+                <div class="about-box">
+                    <h4 class="item-int-title">Потрібно роздрукувати 20 000 листівок та рознести їх по поштовим скринькам</h4>
+                </div>
+                <div class="info-box">
+                    <div class="price">&#8372; 221 554</div>
+                    <div class="item-int-location">Івано-Франківська область, Україна</div>
+                </div>
+            </div>
+            <div class="item-int advert">
+                <div class="item-int-img-box"> <img src="../../Images/img/img44.jpg" width="85" height="85" class="item-int-img" alt="" /> <span class="item-status item-offline"><i>offline</i></span></div>
+                <div class="about-box">
+                    <h4 class="item-int-title">Google Adword/Analytics and Social medial marketing optimization (Twitter, Linkedin, Facebook) </h4>
+                </div>
+                <div class="info-box">
+                    <div class="price">&#8364; 23 014</div>
+                    <div class="item-int-location">Freie Hansestadt Bremen, Deutschland</div>
+                </div>
+            </div>
+            <div class="item-int advert">
+                <div class="item-int-img-box"> <img src="../../Images/img/img55.jpg" width="85" height="85" class="item-int-img" alt="" /> <span class="item-status item-offline"><i>offline</i></span></div>
+                <div class="about-box">
+                    <h4 class="item-int-title">Design a simple membership site for clients to login and view information</h4>
+                </div>
+                <div class="info-box">
+                    <div class="price">&#163; 2 553</div>
+                    <div class="item-int-location">Yorkshire and the Humber, Great Britain</div>
+                </div>
+            </div>
+            <div class="wr_link text-center">
+                <a href="#" class=" link">Хочу попасть в топ</a>
+            </div>
+        </div>
+    </div>
+    <div class="content-holder">
+        <div id="content">
+            <div id="ticketContent"></div>
+            <div class="list-block" ng-show="openTaskWindow">
+                <div ng-if="taskc.showByIds(job)" ng-repeat="job in taskc.jobs" class="list-item advert" ng-click="taskc.showTaskContent(job.PublicKey)">
+                    <div class="img-box-holder">
+                        <div class="img-box">
+                            <img ng-src="{{job.Customer.UserLogoPath}}" width="100" height="100" class="item-img" alt="" />
+                            <span class="item-status item-offline"><i>offline</i></span>
+                        </div>
+                        <div class="raiting">
+                            <i class="staryellow"></i>
+                            <i class="stargrey"></i>
+                            <i class="stargrey"></i>
+                            <i class="stargrey"></i>
+                            <i class="stargrey"></i>
+                        </div>
+                    </div>
+                    <div class="about-box-holder">
+                        <div class="about-box">
+                            <h4 class="item-title">{{job.Name}}</h4>
+                            <span class="item-location">{{job.PlaceName}}</span>
+                            <p class="item-about">{{job.Description}}</p>
+                        </div>
+                    </div>
+                    <div class="teh-box-holder">
+                        <div class="price">&#163; {{job.Price}}</div>
+                        <div class="clearfix">
+                            <a class="izbr" href="#" title="добавить в избранное">В избранное</a>
+                            <div class="bids">213</div>
+                            <div class="deadlinetime">
+                                <div ng-show="job.show">
+                                    <span>{{job.days}}</span>
+                                    <span>d</span>
+                                    <span>{{job.hours}}</span>
+                                    <span>h</span>
+                                    <span>{{job.minutes}}</span>
+                                    <span>m</span>
+                                </div>
+                                <div ng-show="!job.show">
+                                    <span>Джигурда !!!</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="paginator">
+                    <li ng-click=taskc.stepBack()><a href="#">&lt;</a></li>
+                    <li class="active"><a href="#" ng-click="taskc.stepByCount(taskc.pagenationButton1)">{{taskc.pagenationButton1}}</a></li>
+                    <li><a href="#" ng-click="taskc.stepByCount(taskc.pagenationButton2)">{{taskc.pagenationButton2}}</a></li>
+                    <li><a href="#" ng-click="taskc.stepByCount(taskc.pagenationButton3)">{{taskc.pagenationButton3}}</a></li>
+                    <li><i>...</i></li>
+                    <li><a href="#" ng-click="taskc.stepByCount(taskc.pagenationButton4)">{{taskc.pagenationButton4}}</a></li>
+                    <li><a href="#" ng-click=taskc.stepForward()>&gt;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    @*<div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content"></div>
+            </div>
+        </div>*@
+</div>
+
+<!--Модалка для взятия задания-->
+@*<script type="text/ng-template" id="/bidTaskModal.html">
+        <form role="form" ng-submit="bidTaskRequest()" novalidate="" class="form-validate mb-lg">
+            <div class="modal-header">Взять задание &nbsp"{{title}}"</div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-sm-9 control-label"><span>Предлагаемая цена</span></label>
+                    <input type="text" class="form-control" ng-model="price" required="" ng-pattern="/^[\d]{1,12}$/" />
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-9 control-label"><span>Сообщение автору</span></label>
+                    <textarea rows="10" cols="30" class="form-control" ng-model="messageForBid"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Взять задание</button>
+                <button type="button" ng-click="cancel()" class="btn btn-warning"><span translate="BTNCANCEL"></span></button>
+            </div>
+        </form>
+    </script>*@
+
+<!--Просмотрщик картинок-->
+@*<script type="text/ng-template" id="/imageTaskModal.html">
+        <div class="modal-header">{{showedImgTitle}}<button type="button" class="close" ng-click="cancel()">x</button></div>
+        <div class="modal-body text-center">
+            <img style="max-width: 550px;" ng-src="{{showedImgUrl}}">
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary text-center" ng-click="previewOrNextImage(showedImgId - 1)"><</button><button type="submit" class="btn btn-primary text-center" ng-click="previewOrNextImage(showedImgId+ 1)">></button>
+        </div>
+    </script>*@
+@*</div>*@
+
+
+
+

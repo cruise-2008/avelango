@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="A" xml:space="preserve">
+    <value>Курьеры</value>
+  </data>
+  <data name="A1" xml:space="preserve">
+    <value>Автокурьер</value>
+  </data>
+  <data name="A2" xml:space="preserve">
+    <value>Круглосуточно</value>
+  </data>
+  <data name="A3" xml:space="preserve">
+    <value>Междугородные</value>
+  </data>
+  <data name="A4" xml:space="preserve">
+    <value>Международные</value>
+  </data>
+  <data name="A5" xml:space="preserve">
+    <value>Пешие и вело</value>
+  </data>
+  <data name="A6" xml:space="preserve">
+    <value>Другие</value>
+  </data>
+  <data name="B" xml:space="preserve">
+    <value>Поручения</value>
+  </data>
+  <data name="B1" xml:space="preserve">
+    <value>Купить и доставить</value>
+  </data>
+  <data name="B2" xml:space="preserve">
+    <value>Междугородные</value>
+  </data>
+  <data name="B3" xml:space="preserve">
+    <value>Международные</value>
+  </data>
+  <data name="B4" xml:space="preserve">
+    <value>Поздравления и подарки</value>
+  </data>
+  <data name="B5" xml:space="preserve">
+    <value>Срочные</value>
+  </data>
+  <data name="B6" xml:space="preserve">
+    <value>Другие</value>
+  </data>
+  <data name="C" xml:space="preserve">
+    <value>Быт</value>
+  </data>
+  <data name="C1" xml:space="preserve">
+    <value>Бытовой ремонт</value>
+  </data>
+  <data name="C10" xml:space="preserve">
+    <value>Погладить, постирать</value>
+  </data>
+  <data name="C11" xml:space="preserve">
+    <value>Пошив и ремонт изделий</value>
+  </data>
+  <data name="C12" xml:space="preserve">
+    <value>Приготовление еды</value>
+  </data>
+  <data name="C13" xml:space="preserve">
+    <value>Ремонт техники</value>
+  </data>
+  <data name="C2" xml:space="preserve">
+    <value>Сад, огород</value>
+  </data>
+  <data name="C3" xml:space="preserve">
+    <value>Сторойка, ремонт</value>
+  </data>
+  <data name="C4" xml:space="preserve">
+    <value>Уборка</value>
+  </data>
+  <data name="C5" xml:space="preserve">
+    <value>Другое</value>
+  </data>
+  <data name="C6" xml:space="preserve">
+    <value>Домработницы</value>
+  </data>
+  <data name="C7" xml:space="preserve">
+    <value>Изготовление и ремонт мебели</value>
+  </data>
+  <data name="C8" xml:space="preserve">
+    <value>Мелкий ремонт</value>
+  </data>
+  <data name="C9" xml:space="preserve">
+    <value>Няни, сиделки</value>
+  </data>
+  <data name="D" xml:space="preserve">
+    <value>Перевозки</value>
+  </data>
+  <data name="D1" xml:space="preserve">
+    <value>Вывоз мусора</value>
+  </data>
+  <data name="D2" xml:space="preserve">
+    <value>Грузоперевозки</value>
+  </data>
+  <data name="D3" xml:space="preserve">
+    <value>Грузчики</value>
+  </data>
+  <data name="D4" xml:space="preserve">
+    <value>Международные перевозки</value>
+  </data>
+  <data name="D5" xml:space="preserve">
+    <value>Пассажирские перевозки</value>
+  </data>
+  <data name="D6" xml:space="preserve">
+    <value>Переезды</value>
+  </data>
+  <data name="D7" xml:space="preserve">
+    <value>Эвакуатор, буксировка</value>
+  </data>
+  <data name="D8" xml:space="preserve">
+    <value>Другие</value>
+  </data>
+  <data name="E" xml:space="preserve">
+    <value>Клининг</value>
+  </data>
+  <data name="E1" xml:space="preserve">
+    <value>Генеральная уборка</value>
+  </data>
+  <data name="E2" xml:space="preserve">
+    <value>Легкая уборка</value>
+  </data>
+  <data name="E3" xml:space="preserve">
+    <value>Мойка машин</value>
+  </data>
+  <data name="E4" xml:space="preserve">
+    <value>Мытье окон</value>
+  </data>
+  <data name="E5" xml:space="preserve">
+    <value>Регулярная уборка</value>
+  </data>
+  <data name="E6" xml:space="preserve">
+    <value>Специальная уборка</value>
+  </data>
+  <data name="E7" xml:space="preserve">
+    <value>Уборка территорий, ландшафт</value>
+  </data>
+  <data name="E8" xml:space="preserve">
+    <value>Чистка оборудования</value>
+  </data>
+  <data name="E9" xml:space="preserve">
+    <value>Другое</value>
+  </data>
+  <data name="F" xml:space="preserve">
+    <value>IT</value>
+  </data>
+  <data name="F1" xml:space="preserve">
+    <value>Дизайн</value>
+  </data>
+  <data name="F10" xml:space="preserve">
+    <value>Сайты</value>
+  </data>
+  <data name="F2" xml:space="preserve">
+    <value>Другое</value>
+  </data>
+  <data name="F3" xml:space="preserve">
+    <value>Игры</value>
+  </data>
+  <data name="F4" xml:space="preserve">
+    <value>Копирайт и рерайт</value>
+  </data>
+  <data name="F5" xml:space="preserve">
+    <value>Переводы</value>
+  </data>
+  <data name="F6" xml:space="preserve">
+    <value>Поиск информации</value>
+  </data>
+  <data name="F7" xml:space="preserve">
+    <value>Приложения</value>
+  </data>
+  <data name="F8" xml:space="preserve">
+    <value>Продвижение</value>
+  </data>
+  <data name="F9" xml:space="preserve">
+    <value>Программы</value>
+  </data>
+  <data name="G" xml:space="preserve">
+    <value>Бизнес</value>
+  </data>
+  <data name="G1" xml:space="preserve">
+    <value>Адвокаты</value>
+  </data>
+  <data name="G10" xml:space="preserve">
+    <value>Переводы</value>
+  </data>
+  <data name="G11" xml:space="preserve">
+    <value>Регистрация и ликвидация компаний</value>
+  </data>
+  <data name="G12" xml:space="preserve">
+    <value>Реклама и продвижение</value>
+  </data>
+  <data name="G2" xml:space="preserve">
+    <value>Таможня</value>
+  </data>
+  <data name="G3" xml:space="preserve">
+    <value>Юридическая поддержка</value>
+  </data>
+  <data name="G4" xml:space="preserve">
+    <value>Другое</value>
+  </data>
+  <data name="G5" xml:space="preserve">
+    <value>Безопасность</value>
+  </data>
+  <data name="G6" xml:space="preserve">
+    <value>Бугхалтерия и финансы</value>
+  </data>
+  <data name="G7" xml:space="preserve">
+    <value>Видео и фото улуги</value>
+  </data>
+  <data name="G8" xml:space="preserve">
+    <value>Кадры и рекрутинг</value>
+  </data>
+  <data name="G9" xml:space="preserve">
+    <value>Консалтинг</value>
+  </data>
+  <data name="H" xml:space="preserve">
+    <value>Образование</value>
+  </data>
+  <data name="H1" xml:space="preserve">
+    <value>Для маленьких детей</value>
+  </data>
+  <data name="H2" xml:space="preserve">
+    <value>Задать вопрос</value>
+  </data>
+  <data name="H3" xml:space="preserve">
+    <value>Курсы, тренинги и семинары</value>
+  </data>
+  <data name="H4" xml:space="preserve">
+    <value>Логопед</value>
+  </data>
+  <data name="H5" xml:space="preserve">
+    <value>Переводы</value>
+  </data>
+  <data name="H6" xml:space="preserve">
+    <value>Репетиторы и преподаватели</value>
+  </data>
+  <data name="H7" xml:space="preserve">
+    <value>Рефераты, курсовые и пр.</value>
+  </data>
+  <data name="H8" xml:space="preserve">
+    <value>Другое</value>
+  </data>
+  <data name="I" xml:space="preserve">
+    <value>Здоровье</value>
+  </data>
+  <data name="I10" xml:space="preserve">
+    <value>Психолоия и психиатрия</value>
+  </data>
+  <data name="I11" xml:space="preserve">
+    <value>Семейный врач</value>
+  </data>
+  <data name="I2" xml:space="preserve">
+    <value>Врачи и вызов на дом</value>
+  </data>
+  <data name="I3" xml:space="preserve">
+    <value>Другое</value>
+  </data>
+  <data name="I4" xml:space="preserve">
+    <value>Детский доктор</value>
+  </data>
+  <data name="I5" xml:space="preserve">
+    <value>Диетологи</value>
+  </data>
+  <data name="I6" xml:space="preserve">
+    <value>Лечебный массаж</value>
+  </data>
+  <data name="I7" xml:space="preserve">
+    <value>Лечение зависимостей</value>
+  </data>
+  <data name="I8" xml:space="preserve">
+    <value>Лечение зарубежом</value>
+  </data>
+  <data name="I9" xml:space="preserve">
+    <value>Народная медицина</value>
+  </data>
+  <data name="J" xml:space="preserve">
+    <value>Красота</value>
+  </data>
+  <data name="J1" xml:space="preserve">
+    <value>Визаж и макияж</value>
+  </data>
+  <data name="J10" xml:space="preserve">
+    <value>Пластика, импланты</value>
+  </data>
+  <data name="J11" xml:space="preserve">
+    <value>Стиль и имидж</value>
+  </data>
+  <data name="J2" xml:space="preserve">
+    <value>Тату и бодиарт</value>
+  </data>
+  <data name="J3" xml:space="preserve">
+    <value>Другое</value>
+  </data>
+  <data name="J4" xml:space="preserve">
+    <value>Волосы</value>
+  </data>
+  <data name="J5" xml:space="preserve">
+    <value>Дерматология</value>
+  </data>
+  <data name="J6" xml:space="preserve">
+    <value>Задать вопрос</value>
+  </data>
+  <data name="J7" xml:space="preserve">
+    <value>Косметология</value>
+  </data>
+  <data name="J8" xml:space="preserve">
+    <value>Массаж</value>
+  </data>
+  <data name="J9" xml:space="preserve">
+    <value>Ногти</value>
+  </data>
+  <data name="K" xml:space="preserve">
+    <value>Мероприятия</value>
+  </data>
+  <data name="K1" xml:space="preserve">
+    <value>Выставки, семинары, презентации</value>
+  </data>
+  <data name="K10" xml:space="preserve">
+    <value>BTL</value>
+  </data>
+  <data name="K2" xml:space="preserve">
+    <value>Другое</value>
+  </data>
+  <data name="K3" xml:space="preserve">
+    <value>Дни рождения, корпоративы</value>
+  </data>
+  <data name="K4" xml:space="preserve">
+    <value>Кейтеринг</value>
+  </data>
+  <data name="K5" xml:space="preserve">
+    <value>Организация встреч, сопровождение</value>
+  </data>
+  <data name="K6" xml:space="preserve">
+    <value>Оформление и декорирование</value>
+  </data>
+  <data name="K7" xml:space="preserve">
+    <value>Спорт</value>
+  </data>
+  <data name="K8" xml:space="preserve">
+    <value>Флешмоб</value>
+  </data>
+  <data name="K9" xml:space="preserve">
+    <value>Экскурсии</value>
+  </data>
+  <data name="L" xml:space="preserve">
+    <value>Животные</value>
+  </data>
+  <data name="L1" xml:space="preserve">
+    <value>Аквариум, террариум</value>
+  </data>
+  <data name="L2" xml:space="preserve">
+    <value>Гостиницы для животных</value>
+  </data>
+  <data name="L3" xml:space="preserve">
+    <value>Дресировка</value>
+  </data>
+  <data name="L4" xml:space="preserve">
+    <value>Клиники и ветеринары</value>
+  </data>
+  <data name="L5" xml:space="preserve">
+    <value>Красота</value>
+  </data>
+  <data name="L6" xml:space="preserve">
+    <value>Случка</value>
+  </data>
+  <data name="L7" xml:space="preserve">
+    <value>Уход за животными, выгул</value>
+  </data>
+  <data name="L8" xml:space="preserve">
+    <value>Другое</value>
+  </data>
+  <data name="M" xml:space="preserve">
+    <value>Другое</value>
+  </data>
+  <data name="M1" xml:space="preserve">
+    <value>Вопрос на любую тему</value>
+  </data>
+  <data name="M2" xml:space="preserve">
+    <value>Знакомства</value>
+  </data>
+  <data name="M3" xml:space="preserve">
+    <value>Массаж</value>
+  </data>
+</root>

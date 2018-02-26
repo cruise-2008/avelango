@@ -1,0 +1,539 @@
+﻿@Scripts.Render("~/bundles/executorsScripts")
+<div class="row" ng-controller="ExecutorsController as execut">
+    <div id="ple_load" ng-show="myloadingexecutors" ng-cloak class='ng-cloak'>
+        <div class="contpretasks">
+            <span class="svg_anmtasks"></span><br>Подождите<br><small>идет загрузка</small>
+        </div>
+    </div>
+<div ng-controller="SidebarController as sideBar">
+    <a id="filteropen" class="filteropen" href="#" title="Открыть фильтр" ng-click="openCurentSideBar()" ng-show="!closeSideBarWindow">
+        <img src="~/Images/icons/close-modal.png" alt=""/>
+    </a>
+    <div class="aside-inner" id="filter" ng-show="closeSideBarWindow">
+        <div id="leftside">
+            <a ng-click="closeCurentSideBar()" id="filterclose" class="filterclose" href="#" title="Закрыть фильтр">
+                <img src="~/Images/icons/close-modal.png" alt=""/>
+            </a>
+            <div>
+                <form action="#">
+                    <div class="filter">
+                        <div id="test" class="filterholder">
+                            <div>
+                                <a ng-click="sideBar.up()" id="btnUP" class="btnbulet active btnup">Вверх</a>
+                            </div>
+                            <uib-accordion close-others="true">
+                                <ul class="filterlist" style="height: 595px; overflow: hidden;">
+                                    <li ng-repeat="group in sideBar.filtergroups" @*ng-click="accordion.current = group.Text"*@>
+                                        <uib-accordion-group class="group-accordion">
+                                            <uib-accordion-heading>
+                                                <span class="grouphead {{group.Ico}}">{{group.Text}}</span>
+                                                @*<input type="checkbox" id="{{group.Id}}" name="{{group.Id}}">
+                            <label for="{{group.Id}}" class="groupcontrol"></label>*@
+                                            </uib-accordion-heading>
+                                            <input type="checkbox" id="{{group.Id}}" name="{{group.Id}}">
+                                            <label for="{{group.Id}}" class="groupcontrol"></label>
+                                            <ul @*ng-show="accordion.current == group.Text"*@>
+                                                <li ng-repeat="subGroup in group.SubGroups">
+                                                    <input type="checkbox" id="{{subGroup.Id}}" name="{{subGroup.Id}}">
+                                                    <label for="{{subGroup.Id}}">{{subGroup.Text}}</label>
+                                                </li>
+                                            </ul>
+                                        </uib-accordion-group>
+                                    </li>
+                                </ul>
+                            </uib-accordion>
+                            @*<uib-accordion close-others="true">
+                                <ul class="filterlist" style="height: 595px; overflow: hidden;">
+                                    <li ng-repeat="group in sideBar.filtergroups">
+                                        <uib-accordion-group class="group-accordion">
+                                            <uib-accordion-heading>
+                                                <input type="checkbox" id="{{group.Id}}" name="{{group.Id}}">
+                                                <label for="{{group.Id}}"><img src={{group.Ico}} width="21px" alt="">{{group.Text}}</label>
+                                            </uib-accordion-heading>
+                                            <ul>
+                                                <li ng-repeat="subGroup in group.SubGroups">
+                                                    <input type="checkbox" id="{{subGroup.Id}}" name="{{subGroup.Id}}">
+                                                    <label for="{{subGroup.Id}}">{{subGroup.Text}}</label>
+                                                </li>
+                                            </ul>
+                                        </uib-accordion-group>
+                                    </li>
+                                </ul>
+                            </uib-accordion>*@
+                            <div>
+                                <a ng-click="sideBar.down()" id="btnDown" class="btnbulet active btndown">Вниз</a>
+                            </div>
+                        </div>
+                        <div>
+                            <span ng-class="{show:(taskc.showValidatemessage)}" class="text-danger hide">Выберете местоположение из подсказок</span>
+                            <input id="search" ng-model="taskc.chosenPlace" ng-change="taskc.myValidation()" class="findplace" type="text" placeholder="Выбор расположения">
+                        </div>
+                        <div class="clearfix">
+                            <button class="resetfilter" type="reset">Сброс</button>
+                            <div class="onlinebtn">
+                                <input ng-model="taskc.justActual" value="1" type="checkbox" id="onn" name="onn">
+                                <label for="onn">Оnline</label>
+                            </div>
+                        </div>
+                        <button ng-click="taskc.getFilteredTasks('getFilteredTasks')" type="button" class="apllybtn">Фильтровать</button>
+                        <p class="allcat">
+                            <a ng-model="taskc.justActual" value="0" href="#">Все категории</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="rightside">
+    <div class="side-world">
+        <h3 class="world-person">Международные исполнители</h3>
+        <div class="item-int person">
+            <div class="item-int-img-box"> <img src="../../Images/img/img33.jpg" width="85" height="85" class="item-int-img" alt=""/>
+            </div>
+            <div class="about-box">
+                <h4 class="item-int-title">Степан Буряк</h4>
+                <div class="item-int-product"><img src="../../Images/i/icon/icon-car-gre.svg" width="20px" alt="">Перевозки
+                </div>
+                <div class="item-int-location">Texas state, USA</div>
+            </div>
+            <div class="info-box">
+                <div class="raiting"> <i class="staryellow"></i> <i class="staryellow"></i> <i class="staryellow"></i> <i class="staryellow"></i> <i class="stargrey"></i>
+                </div>
+                <div class="rait"> 415</div>
+            </div>
+        </div>
+        <div class="item-int person">
+            <div class="item-int-img-box"> <img src="../../Images/img/img55.jpg" width="85" height="85" class="item-int-img" alt=""/>
+            </div>
+            <div class="about-box">
+                <h4 class="item-int-title">Васелиса Нестерова</h4>
+                <div class="item-int-product"><img src="../../Images/i/icon/icon-car-gre.svg" width="20px" alt="">Перевозки
+                </div>
+                <div class="item-int-location">Волгоградская область, Российская Федерация</div>
+            </div>
+            <div class="info-box">
+                <div class="raiting"> <i class="staryellow"></i> <i class="staryellow"></i> <i class="staryellow"></i> <i class="stargrey"></i> <i class="stargrey"></i>
+                </div>
+                <div class="rait"> 210</div>
+            </div>
+        </div>
+        <div class="item-int person">
+            <div class="item-int-img-box"> <img src="../../Images/img/img11.jpg" width="85" height="85" class="item-int-img" alt=""/>
+            </div>
+            <div class="about-box">
+                <h4 class="item-int-title">Эдуард Пихни</h4>
+                <div class="item-int-product"><img src="../../Images/i/icon/icon-car-gre.svg" width="20px" alt="">Перевозки
+                </div>
+                <div class="item-int-location">Івано-Франківська область, Україна</div>
+            </div>
+            <div class="info-box">
+                <div class="raiting"> <i class="staryellow"></i> <i class="staryellow"></i> <i class="stargrey"></i> <i class="stargrey"></i> <i class="stargrey"></i>
+                </div>
+                <div class="rait"> 55</div>
+            </div>
+        </div>
+        <div class="item-int person">
+            <div class="item-int-img-box"> <img src="../../Images/img/img22.jpg" width="85" height="85" class="item-int-img" alt=""/>
+            </div>
+            <div class="about-box">
+                <h4 class="item-int-title">Михаил Масловский</h4>
+                <div class="item-int-product"><img src="../../Images/i/icon/icon-car-gre.svg" width="20px" alt=""/> Перевозки
+                </div>
+                <div class="item-int-location">Yorkshire and the Humber, Great Britain</div>
+            </div>
+            <div class="info-box">
+                <div class="raiting"> <i class="staryellow"></i> <i class="staryellow"></i> <i class="staryellow"></i> <i class="staryellow"></i> <i class="staryellow"></i>
+                </div>
+                <div class="rait"> 518</div>
+            </div>
+        </div>
+        <div class="item-int person">
+            <div class="item-int-img-box"> <img src="../../Images/img/img44.jpg" width="85" height="85" class="item-int-img" alt=""/>
+            </div>
+            <div class="about-box">
+                <h4 class="item-int-title">Ванесса Мэй</h4>
+                <div class="item-int-product"><img src="../../Images/i/icon/icon-car-gre.svg" width="20px" alt=""/>Перевозки
+                </div>
+                <div class="item-int-location">Freie Hansestadt Bremen, Deutschland</div>
+            </div>
+            <div class="info-box">
+                <div class="raiting"> <i class="staryellow"></i> <i class="stargrey"></i> <i class="stargrey"></i> <i class="stargrey"></i> <i class="stargrey"></i>
+                </div>
+                <div class="rait"> 258</div>
+            </div>
+        </div>
+        <div class="wr_link text-center">
+            <a href="#" class=" link">Хочу попасть в топ</a>
+        </div>
+    </div>
+</div>
+<div class="content-holder">
+    <div id="content">
+        <div id="executorContent"></div>
+        <div class="list-block" ng-show="openExecutorsWindow">
+            <div ng-if="execut.showByIds(job)" ng-repeat="job in execut.jobs" class="list-item person " ng-click="execut.showExecutorsContent(job.Pk)">
+                <div class="img-box-holder">
+                    <div class="img-box">
+                        <img src="{{job.UserLogoPath}}" width="100" height="100" class="item-img" alt=""/>
+                        <span class="item-status item-offline">
+                                <i>offline</i>
+                            </span>
+                    </div>
+                </div>
+                <div class="about-box-holder">
+                    <div class="about-box">
+                        <h4 class="item-title">{{job.Name}} {{job.SurName}}</h4>
+                        <span class="item-location">@*{{job.PlaceName}}*@ Село Кукуево, Волгодонская Область.</span>
+                        <p class="item-about">Я в отличии от других исполнителей быстрее всех отвожу посылки по скольку у меня есть ракета в которой скорость движения достигает скорости света она работает от генератора черной дыры</p>
+                    </div>
+                </div>
+                <div class="teh-box-holder">
+                    <div class="raiting">
+                        <i class="staryellow"></i>
+                        <i class="staryellow"></i>
+                        <i class="staryellow"></i>
+                        <i class="stargrey"></i>
+                        <i class="stargrey"></i>
+                    </div>
+                    <div class="clearfix">
+                        <a class="izbr" href="#" title="добавить в избранное">В избранное</a>
+                        <div class="rait">215</div>
+                    </div>
+                </div>
+            </div>
+            <ul class="paginator">
+                <li ng-click=execut.stepBack()><a href="#">&lt;</a></li>
+                <li class="active"><a href="#" ng-click="execut.stepByCount(execut.pagenationButton1)">{{execut.pagenationButton1}}</a></li>
+                <li><a href="#" ng-click="execut.stepByCount(execut.pagenationButton2)">{{execut.pagenationButton2}}</a></li>
+                <li><a href="#" ng-click="execut.stepByCount(execut.pagenationButton3)">{{execut.pagenationButton3}}</a></li>
+                <li><i>...</i></li>
+                <li><a href="#" ng-click="execut.stepByCount(execut.pagenationButton4)">{{execut.pagenationButton4}}</a></li>
+                <li><a href="#" ng-click=execut.stepForward()>&gt;</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content"></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">
+        <aside class="aside offsidebar profile" data-ng-controller="PanelsCtrl as panel">*@
+
+@*<div class="panel panel-default marginclass">
+        <div class="topsubnavbar-wrapper">
+            <button type="button" class="btn btn-primary" ng-click="execut.getFilteredTasks('getFilteredTasks')">Применить фильтры</button>
+        </div>
+
+        <div>
+            <span ng-class="{show:(taskc.showValidatemessage)}" class="text-danger hide">Выберете местоположение из подсказок</span>
+            <input id="search" ng-model="taskc.chosenPlace" class="form-control" ng-change="execut.myValidation()" />
+        </div>*@
+
+@*<uib-accordion close-others="true">
+        <uib-accordion-group ng-repeat="group in execut.groups" ng-init="level1Index = $index" class="b0">
+            <uib-accordion-heading>
+                <span translate="{{group.Name}}"></span>
+            </uib-accordion-heading>
+            <p>
+                <div class="checkbox c-checkbox" ng-repeat="subgr in group.SubGroups" ng-init="level2Index = $index" @*ng-click="execut.hidebuttonMoreTasks()">*@
+@*<label><input type="checkbox" ng-model="subgr.Cheked" ng-change="execut.checkGroup2(level1Index, level2Index)"><span class="fa fa-check" ng-checked="sub.Cheked"></span>{{subgr.Name | translate}}</label>
+                    </div>
+                </p>
+            </uib-accordion-group>
+        </uib-accordion>*@
+
+@*<div class="filter">
+            <div class="form-group">
+                <div class="checkbox c-checkbox needsclick">
+                    <label class="needsclick">
+                        <input type="checkbox" value="" class="needsclick" ng-model="execut.isOnline">
+                        <span class="fa fa-check"></span>Online
+                    </label>
+                </div>
+            </div>
+        </div>*@
+@*</div>
+        </aside>*@
+<!--aside section is finished-->
+@*</div>*@
+
+@*<div class="col-md-4 marginclass">
+
+        <div class="topsubnavbar-wrapper">
+            <div class="input-group" style="width: 205px;"><input type="text" class="form-control"><span class="input-group-addon"><em class="icon-magnifier"></em></span></div>
+        </div>
+
+            <div class="panel panel-default" ng-repeat="job in execut.jobs" ng-click="execut.openCurentJob($index)">
+                <div class="panel-heading tasks_color_panel_head">
+                    <a href="#" class="">
+                        <p ng-bind="job.Name">Мария Аннтуанетта</p>
+                    </a>
+                </div>
+                <div class="panel-body tasks_color_panel_body">
+                    <div class="row row_tasks_users">
+                        <div class="col-xs-2">
+                            <img src="/Storage/Avatars/defaultuser.png">
+                        </div>
+                        <div class="col-xs-3">
+                            <p ng-bind="">Мастер на все руки</p>
+                            <div class="row lead row_tasks_users">
+                                <div id="stars" class="starrr"> </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div>
+                                Рейтинг Заказчика<br>
+                                <em class="fa fa-lg  text-warning" ng-class="star" ng-repeat="star in job.RatingMas track by $index"></em>
+                            </div>
+                        </div>
+                        <div class="col-xs-3">
+                            <div class="tasks_date">
+                                Рейтинг Исполнителя<br>*@
+@*<em class="fa fa-lg  text-warning" ng-class="star" ng-repeat="star in job.Executor.RatingMas track by $index"></em>*@
+@*</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>*@
+
+@*<div class="col-md-6 marginclass">
+
+        <ul class="nav nav-pills topsubnavbar-wrapper" style="height: 38px; overflow: auto; background-color: rgba(255, 255, 255, 0);">
+            <li style="margin-top: 3px;" class="label label-primary" ng-repeat="f in execut.chekedfilters">
+                <span translate="{{f.Name}}"></span>
+                <span class="fa fa-times" ng-click="execut.removeFilter(f.GroupId, f.SubgroupId)"></span>
+            </li>
+        </ul>
+
+        <section class="profile-section hide" ng-class="{show:openWindow}">
+            <div class="content-wrapper">
+                <div class="user-profile">
+                    <div class="main-description">
+                        <div class="ava-block">
+                            <div class="ava-wrap off">
+                                <img src="Storage/Avatars/defaultuser.png" alt="Avatar"/>
+                            </div>
+                            <div class="btn-block">
+                                <div class="btn-wrap">
+                                    <a href="#">Награды</a>
+                                </div>
+                                <div class="btn-wrap">
+                                    <a href="#">Экзамены</a>
+                                </div>
+                            </div>
+                            <button class="hire btn btn-success btn-lg" ng-click="execut.getMyOpenTasks()">Предложить задание</button>
+                        </div>
+                        <div class="text-block">
+                            <h3 ng-bind="execut.jobs[ind].Name">Рюрик Лана Иоановна</h3>
+                            <h3>25 лет</h3>
+                            <h3>г. Львов, <span>Украина</span></h3>
+
+                            <p class="date">на сайте 2 мес. с 11.04.2016 г.</p>
+
+                            <div class="customer-rating">
+                                <p>Рейтинг Заказчика</p>
+                                <a href="#" class="reviews">Отзывы</a>
+                            </div>
+                            <div class="contractor-rating">
+                                <p>Рейтинг Исполнителя</p>
+                                <a href="#" class="reviews">Отзывы</a>
+                            </div>
+                            <h4>Инженер-электрик</h4>
+
+                            <p>
+                                Cras ultricies ligula sed magna dictum porta. Donec rutrum congue leo eget malesuada.
+                                Donec rutrum congue leo eget malesuada. Vestibulum ac diam sit amet quam
+                                vehicula
+                            </p>
+
+                            <p>
+                                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit
+                                amet
+                                quam vehicula elementum sed sit amet dui.
+                            </p>
+
+                            <p>
+                                Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus
+                                nibh.
+                            </p>
+
+                            <p>
+                                Cras ultricies ligula sed magna dictum porta. Donec rutrum congue leo eget malesuada.
+                                Donec rutrum congue leo eget malesuada. Vestibulum ac diam sit amet quam
+                                vehicula
+                            </p>
+
+                            <p>
+                                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit
+                                amet
+                                quam vehicula elementum sed sit amet dui.
+                            </p>
+
+                            <p>
+                                Quisque velit nisi, pretium ut lacinia in, elementum id enim. Sed porttitor lectus
+                                nibh.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <h4>Группы</h4>
+                        </div>
+                        <div class="col-md-10">
+                            <ul class="groups">
+                                <li><a href="#">Уборка</a></li>
+                                <li><a href="#">События и мероприятия</a></li>
+                                <li><a href="#">Красота и здоровье</a></li>
+                                <li><a href="#">Курьерские услуги</a></li>
+                                <li><a href="#">Стройка и ремонт </a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <h4>Портфолио</h4>
+                        </div>
+                        <div class="col-md-10">
+                            <div id="panelDemo11" class="panel panel-default">
+                                <div class="img-block">
+                                    <img src="Storage/Avatars/defaultuser.png" alt="Portfolio image"/>
+                                </div>
+                                <div ng-class="{'panel-heading-collapsed':panelDemo11}" class="panel-heading">
+                                    Курьерские услуги
+                                    <paneltool tool-collapse="tool-collapse"></paneltool>
+                                </div>
+                                <div uib-collapse="panelDemo11" class="panel-wrapper">
+                                    <div class="panel-body">
+                                        <p>Curabitur aliquet quam id dui posuere blandit.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="panelDemo11" class="panel panel-default">
+                                <div class="img-block">
+                                    <img src="Storage/Avatars/defaultuser.png" alt="Portfolio image"/>
+                                </div>
+                                <div ng-class="{'panel-heading-collapsed':panelDemo11}" class="panel-heading">
+                                    Стройка и ремонт
+                                    <paneltool tool-collapse="tool-collapse"></paneltool>
+                                </div>
+                                <div uib-collapse="panelDemo11" class="panel-wrapper">
+                                    <div class="panel-body">
+                                        <p>
+                                            Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
+                                            Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum
+                                            ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                                            Curae;
+                                        </p>
+                                        <div class="portfolio-images">
+                                            <div class="images-block">
+                                                <img src="Storage/Avatars/defaultuser.png" alt="Portfolio image">
+                                            </div>
+                                            <div class="images-block">
+                                                <img src="Storage/Avatars/defaultuser.png" alt="Portfolio image">
+                                            </div>
+                                            <div class="images-block">
+                                                <img src="Storage/Avatars/defaultuser.png" alt="Portfolio image">
+                                            </div>
+                                            <div class="images-block">
+                                                <img src="Storage/Avatars/defaultuser.png" alt="Portfolio image">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>*@
+</div>
+
+<!--Модалка для предолжения таска-->
+@*<script type="text/ng-template" id="/proposeTaskModal.html">
+            <div ng-class="{show:(myOpenTasks.length>0)}" class="hide">
+                <div class="modal-header"><strong>Предложить задание</strong></div>
+                <div class="modal-body">
+                    <center>
+                        <table style="border: 1px solid grey; border-collapse: collapse; padding: 15px;">
+                            <tr ng-repeat="tsk in myOpenTasks" style="border-collapse: collapse; padding: 15px;">
+                                <td style="border: 1px solid grey; border-collapse: collapse; padding: 15px;"><strong>{{tsk.Name}}</strong></td>
+                                <td style="border: 1px solid grey; border-collapse: collapse; padding: 15px;">{{tsk.Price}} </td>
+                                <td style="border: 1px solid grey; border-collapse: collapse; padding: 15px;">{{tsk.Created | date:'yyyy-MM-dd HH:mm'}}</td>
+                                <td style="border: 1px solid grey; border-collapse: collapse; padding: 15px;"><input type="checkbox" ng-model="myOpenChekedTasks[$index]" /></td>
+                            </tr>
+                        </table>
+                    </center>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" ng-click="ok()" class="btn btn-primary">Ok</button>
+                    <button type="button" ng-click="$uibModalInstance.dismiss('cancel');" class="btn btn-warning">Cancel</button>
+                </div>
+            </div>
+            <div ng-class="{show:(!myOpenTasks.length)}" class="hide">
+                <h3 class="text-center">У вас пока нет ни одного задания</h3>
+                <div class="modal-footer">
+                    <button type="button" ng-click="$uibModalInstance.dismiss('cancel');" class="btn btn-warning">Cancel</button>
+                </div>
+            </div>
+    </script>
+
+    </div>*@

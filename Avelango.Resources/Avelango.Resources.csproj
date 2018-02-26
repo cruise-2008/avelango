@@ -1,0 +1,985 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{74923E76-3EDC-4FA6-95F6-739576D10C20}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Avelango.Resources</RootNamespace>
+    <AssemblyName>Avelango.Resources</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Causes\De\Content.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Content.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Causes\En\Content.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Content.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Causes\Es\Content.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Content.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Causes\Fr\Content.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Content.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Causes\Ru\Content.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Content.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Causes\Ua\Content.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Content.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Default\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Settings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Email\Bodies.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bodies.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Email\Common.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Common.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Email\De\Content.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Content.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Email\En\Content.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Content.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Email\Es\Content.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Content.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Email\Fr\Content.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Content.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Email\Ru\Content.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Content.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Email\Connection.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Connection.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Email\Image.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Image.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Email\Ua\Content.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Content.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorMessages\De\Errors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Errors.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorMessages\En\Errors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Errors.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorMessages\Es\Errors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Errors.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorMessages\Fr\Errors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Errors.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorMessages\Ru\Errors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Errors.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorMessages\Ua\Errors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Errors.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Groups\De\Groups.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Groups.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Groups\En\Groups.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Groups.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Groups\Es\Groups.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Groups.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Groups\Fr\Groups.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Groups.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Groups\GroupIcons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GroupIcons.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Groups\Ru\Groups.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Groups.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Groups\Ua\Groups.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Groups.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Locations\De\Cities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cities.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Locations\De\Countries.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Countries.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Locations\En\Cities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cities.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Locations\En\Countries.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Countries.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Locations\Es\Cities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cities.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Locations\Es\Countries.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Countries.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Locations\Fr\Cities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cities.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Locations\Fr\Countries.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Countries.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Locations\Ru\Cities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cities.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Locations\Ru\Countries.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Countries.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Locations\Ua\Cities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cities.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Locations\Ua\Countries.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Countries.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Notifications\De\NotifyContext1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotifyContext.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Notifications\En\NotifyContext1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotifyContext.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Notifications\Es\NotifyContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotifyContext.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Notifications\Fr\NotifyContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotifyContext.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Notifications\Ru\NotifyContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotifyContext.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Notifications\Ua\NotifyContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotifyContext.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\De\Admin.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Admin.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\De\Layout.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Layout.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\De\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\De\Login.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\De\Moderator.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Moderator.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\De\Registration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Registration.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\De\User.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\En\Admin.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Admin.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\En\Layout.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Layout.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\En\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\En\Login.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\En\Moderator.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Moderator.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\En\Registration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Registration.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\En\User.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Es\Admin.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Admin.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Es\Layout.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Layout.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Es\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Es\Login.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Es\Moderator.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Moderator.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Es\Registration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Registration.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Es\User.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Fr\Admin.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Admin.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Fr\Layout.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Layout.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Fr\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Fr\Login.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Fr\Moderator.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Moderator.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Fr\Registration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Registration.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Fr\User.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Ru\Admin.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Admin.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Ru\Layout.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Layout.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Ru\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Ru\Login.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Ru\Moderator.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Moderator.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Ru\Registration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Registration.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Ru\User.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Ua\Admin.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Admin.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Ua\Layout.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Layout.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Ua\Index.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Index.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Ua\Login.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Ua\Moderator.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Moderator.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Ua\Registration.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Registration.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Ua\User.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>User.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modals\De\CreateOrder.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateOrder.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modals\En\CreateOrder.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateOrder.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modals\Es\CreateOrder.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateOrder.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modals\Fr\CreateOrder.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateOrder.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modals\Ru\CreateOrder.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateOrder.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Modals\Ua\CreateOrder.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CreateOrder.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneCodes\PhoneCodes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhoneCodes.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Socials\Vkontakte.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Vkontakte.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Storage\Localization.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localization.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Causes\De\Content.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Content.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Causes\En\Content.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Content.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Causes\Es\Content.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Content.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Causes\Fr\Content.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Content.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Causes\Ru\Content.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Content.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Causes\Ua\Content.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Content.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Default\Settings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Email\Bodies.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Bodies.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Email\Common.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Common.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Email\De\Content.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Content.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Email\En\Content.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Content.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Email\Es\Content.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Content.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Email\Fr\Content.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Content.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Email\Ru\Content.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Content.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Email\Connection.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Connection.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Email\Image.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Image.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Email\Ua\Content.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Content.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorMessages\De\Errors.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Errors.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorMessages\En\Errors.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Errors.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorMessages\Es\Errors.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Errors.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorMessages\Fr\Errors.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Errors.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorMessages\Ru\Errors.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Errors.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorMessages\Ua\Errors.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Errors.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Groups\De\Groups.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Groups.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Groups\En\Groups.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Groups.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Groups\Es\Groups.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Groups.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Groups\Fr\Groups.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Groups.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Groups\GroupIcons.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GroupIcons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Groups\Ru\Groups.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Groups.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Groups\Ua\Groups.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Groups.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locations\De\Cities.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Cities.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locations\De\Countries.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Countries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locations\En\Cities.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Cities.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locations\En\Countries.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Countries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locations\Es\Cities.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Cities.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locations\Es\Countries.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Countries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locations\Fr\Cities.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Cities.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locations\Fr\Countries.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Countries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locations\Ru\Cities.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Cities.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locations\Ru\Countries.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Countries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locations\Ua\Cities.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Cities.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Locations\Ua\Countries.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Countries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notifications\De\NotifyContext.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NotifyContext1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notifications\En\NotifyContext.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NotifyContext1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notifications\Es\NotifyContext.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NotifyContext.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notifications\Fr\NotifyContext.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NotifyContext.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notifications\Ru\NotifyContext.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NotifyContext.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notifications\Ua\NotifyContext.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>NotifyContext.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\De\Admin.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Admin.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\De\Layout.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Layout.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\De\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\De\Login.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Login.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\De\Moderator.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Moderator.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\De\Registration.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Registration.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\De\User.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>User.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\En\Admin.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Admin.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\En\Layout.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Layout.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\En\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\En\Login.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Login.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\En\Moderator.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Moderator.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\En\Registration.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Registration.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\En\User.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>User.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Es\Admin.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Admin.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Es\Layout.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Layout.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Es\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Es\Login.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Login.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Es\Moderator.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Moderator.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Es\Registration.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Registration.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Es\User.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>User.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Fr\Admin.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Admin.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Fr\Layout.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Layout.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Fr\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Fr\Login.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Login.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Fr\Moderator.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Moderator.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Fr\Registration.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Registration.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Fr\User.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>User.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Ru\Admin.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Admin.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Ru\Layout.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Layout.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Ru\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Ru\Login.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Login.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Ru\Moderator.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Moderator.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Ru\Registration.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Registration.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Ru\User.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>User.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Ua\Admin.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Admin.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Ua\Layout.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Layout.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Ua\Index.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Index.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Ua\Login.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Login.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Ua\Moderator.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Moderator.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Ua\Registration.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Registration.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Ua\User.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>User.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modals\De\CreateOrder.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CreateOrder.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modals\En\CreateOrder.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CreateOrder.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modals\Es\CreateOrder.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CreateOrder.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modals\Fr\CreateOrder.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CreateOrder.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modals\Ru\CreateOrder.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CreateOrder.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modals\Ua\CreateOrder.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CreateOrder.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhoneCodes\PhoneCodes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PhoneCodes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Socials\Vkontakte.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Vkontakte.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Storage\Localization.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category.html" />
+    <Content Include="Resources\EmailConfirm.html" />
+    <Content Include="Resources\EmailDeactAccount.html" />
+    <Content Include="Resources\EmailDeleteAccount.html" />
+    <Content Include="Resources\EmailNews.html" />
+    <Content Include="Resources\EmailNewTask.html" />
+    <Content Include="Resources\EmailPasswordRecovery.html" />
+    <Content Include="Resources\EmailTaskResponse.html" />
+    <Content Include="Resources\EmailWarning.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

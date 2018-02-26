@@ -1,0 +1,786 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AD" xml:space="preserve">
+    <value>+376</value>
+  </data>
+  <data name="AE" xml:space="preserve">
+    <value>+971</value>
+  </data>
+  <data name="AF" xml:space="preserve">
+    <value>+93</value>
+  </data>
+  <data name="AG" xml:space="preserve">
+    <value>+1268</value>
+  </data>
+  <data name="AI" xml:space="preserve">
+    <value>+1264</value>
+  </data>
+  <data name="AL" xml:space="preserve">
+    <value>+355</value>
+  </data>
+  <data name="AM" xml:space="preserve">
+    <value>+374</value>
+  </data>
+  <data name="AN" xml:space="preserve">
+    <value>+599</value>
+  </data>
+  <data name="AO" xml:space="preserve">
+    <value>+244</value>
+  </data>
+  <data name="AR" xml:space="preserve">
+    <value>+54</value>
+  </data>
+  <data name="AS" xml:space="preserve">
+    <value>+1684</value>
+  </data>
+  <data name="AT" xml:space="preserve">
+    <value>+43</value>
+  </data>
+  <data name="AU" xml:space="preserve">
+    <value>+61</value>
+  </data>
+  <data name="AW" xml:space="preserve">
+    <value>+297</value>
+  </data>
+  <data name="AZ" xml:space="preserve">
+    <value>+994</value>
+  </data>
+  <data name="BA" xml:space="preserve">
+    <value>+387</value>
+  </data>
+  <data name="BB" xml:space="preserve">
+    <value>+1246</value>
+  </data>
+  <data name="BD" xml:space="preserve">
+    <value>+880</value>
+  </data>
+  <data name="BE" xml:space="preserve">
+    <value>+32</value>
+  </data>
+  <data name="BF" xml:space="preserve">
+    <value>+226</value>
+  </data>
+  <data name="BG" xml:space="preserve">
+    <value>+359</value>
+  </data>
+  <data name="BH" xml:space="preserve">
+    <value>+973</value>
+  </data>
+  <data name="BI" xml:space="preserve">
+    <value>+257</value>
+  </data>
+  <data name="BJ" xml:space="preserve">
+    <value>+229</value>
+  </data>
+  <data name="BM" xml:space="preserve">
+    <value>+1441</value>
+  </data>
+  <data name="BN" xml:space="preserve">
+    <value>+673</value>
+  </data>
+  <data name="BO" xml:space="preserve">
+    <value>+591</value>
+  </data>
+  <data name="BR" xml:space="preserve">
+    <value>+55</value>
+  </data>
+  <data name="BS" xml:space="preserve">
+    <value>+1242</value>
+  </data>
+  <data name="BT" xml:space="preserve">
+    <value>+975</value>
+  </data>
+  <data name="BW" xml:space="preserve">
+    <value>+267</value>
+  </data>
+  <data name="BY" xml:space="preserve">
+    <value>+375</value>
+  </data>
+  <data name="BZ" xml:space="preserve">
+    <value>+501</value>
+  </data>
+  <data name="CA" xml:space="preserve">
+    <value>+1</value>
+  </data>
+  <data name="CC" xml:space="preserve">
+    <value>+61</value>
+  </data>
+  <data name="CD" xml:space="preserve">
+    <value>+243</value>
+  </data>
+  <data name="CF" xml:space="preserve">
+    <value>+236</value>
+  </data>
+  <data name="CG" xml:space="preserve">
+    <value>+242</value>
+  </data>
+  <data name="CH" xml:space="preserve">
+    <value>+41</value>
+  </data>
+  <data name="CK" xml:space="preserve">
+    <value>+682</value>
+  </data>
+  <data name="CL" xml:space="preserve">
+    <value>+56</value>
+  </data>
+  <data name="CM" xml:space="preserve">
+    <value>+237</value>
+  </data>
+  <data name="CN" xml:space="preserve">
+    <value>+86</value>
+  </data>
+  <data name="CO" xml:space="preserve">
+    <value>+57</value>
+  </data>
+  <data name="CR" xml:space="preserve">
+    <value>+506</value>
+  </data>
+  <data name="CU" xml:space="preserve">
+    <value>+53</value>
+  </data>
+  <data name="CV" xml:space="preserve">
+    <value>+238</value>
+  </data>
+  <data name="CX" xml:space="preserve">
+    <value>+61</value>
+  </data>
+  <data name="CY" xml:space="preserve">
+    <value>+537</value>
+  </data>
+  <data name="CZ" xml:space="preserve">
+    <value>+420</value>
+  </data>
+  <data name="DE" xml:space="preserve">
+    <value>+49</value>
+  </data>
+  <data name="DJ" xml:space="preserve">
+    <value>+253</value>
+  </data>
+  <data name="DK" xml:space="preserve">
+    <value>+45</value>
+  </data>
+  <data name="DM" xml:space="preserve">
+    <value>+1767</value>
+  </data>
+  <data name="DO" xml:space="preserve">
+    <value>+1809</value>
+  </data>
+  <data name="DZ" xml:space="preserve">
+    <value>+213</value>
+  </data>
+  <data name="EC" xml:space="preserve">
+    <value>+593</value>
+  </data>
+  <data name="EE" xml:space="preserve">
+    <value>+372</value>
+  </data>
+  <data name="EG" xml:space="preserve">
+    <value>+20</value>
+  </data>
+  <data name="ER" xml:space="preserve">
+    <value>+291</value>
+  </data>
+  <data name="ES" xml:space="preserve">
+    <value>+34</value>
+  </data>
+  <data name="ET" xml:space="preserve">
+    <value>+251</value>
+  </data>
+  <data name="FI" xml:space="preserve">
+    <value>+358</value>
+  </data>
+  <data name="FJ" xml:space="preserve">
+    <value>+679</value>
+  </data>
+  <data name="FK" xml:space="preserve">
+    <value>+500</value>
+  </data>
+  <data name="FM" xml:space="preserve">
+    <value>+691</value>
+  </data>
+  <data name="FO" xml:space="preserve">
+    <value>+298</value>
+  </data>
+  <data name="FR" xml:space="preserve">
+    <value>+33</value>
+  </data>
+  <data name="GA" xml:space="preserve">
+    <value>+241</value>
+  </data>
+  <data name="GB" xml:space="preserve">
+    <value>+44</value>
+  </data>
+  <data name="GD" xml:space="preserve">
+    <value>+1473</value>
+  </data>
+  <data name="GE" xml:space="preserve">
+    <value>+995</value>
+  </data>
+  <data name="GF" xml:space="preserve">
+    <value>+594</value>
+  </data>
+  <data name="GH" xml:space="preserve">
+    <value>+233</value>
+  </data>
+  <data name="GI" xml:space="preserve">
+    <value>+350</value>
+  </data>
+  <data name="GL" xml:space="preserve">
+    <value>+299</value>
+  </data>
+  <data name="GM" xml:space="preserve">
+    <value>+220</value>
+  </data>
+  <data name="GN" xml:space="preserve">
+    <value>+224</value>
+  </data>
+  <data name="GP" xml:space="preserve">
+    <value>+590</value>
+  </data>
+  <data name="GQ" xml:space="preserve">
+    <value>+240</value>
+  </data>
+  <data name="GR" xml:space="preserve">
+    <value>+30</value>
+  </data>
+  <data name="GS" xml:space="preserve">
+    <value>+500</value>
+  </data>
+  <data name="GT" xml:space="preserve">
+    <value>+502</value>
+  </data>
+  <data name="GU" xml:space="preserve">
+    <value>+1671</value>
+  </data>
+  <data name="GW" xml:space="preserve">
+    <value>+245</value>
+  </data>
+  <data name="GY" xml:space="preserve">
+    <value>+595</value>
+  </data>
+  <data name="HK" xml:space="preserve">
+    <value>+852</value>
+  </data>
+  <data name="HN" xml:space="preserve">
+    <value>+504</value>
+  </data>
+  <data name="HR" xml:space="preserve">
+    <value>+385</value>
+  </data>
+  <data name="HT" xml:space="preserve">
+    <value>+509</value>
+  </data>
+  <data name="HU" xml:space="preserve">
+    <value>+36</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>+62</value>
+  </data>
+  <data name="IE" xml:space="preserve">
+    <value>+353</value>
+  </data>
+  <data name="IL" xml:space="preserve">
+    <value>+972</value>
+  </data>
+  <data name="IN" xml:space="preserve">
+    <value>+91</value>
+  </data>
+  <data name="IO" xml:space="preserve">
+    <value>+246</value>
+  </data>
+  <data name="IQ" xml:space="preserve">
+    <value>+964</value>
+  </data>
+  <data name="IR" xml:space="preserve">
+    <value>+98</value>
+  </data>
+  <data name="IS" xml:space="preserve">
+    <value>+354</value>
+  </data>
+  <data name="IT" xml:space="preserve">
+    <value>+39</value>
+  </data>
+  <data name="JM" xml:space="preserve">
+    <value>+1876</value>
+  </data>
+  <data name="JO" xml:space="preserve">
+    <value>+962</value>
+  </data>
+  <data name="JP" xml:space="preserve">
+    <value>+81</value>
+  </data>
+  <data name="KE" xml:space="preserve">
+    <value>+254</value>
+  </data>
+  <data name="KG" xml:space="preserve">
+    <value>+996</value>
+  </data>
+  <data name="KH" xml:space="preserve">
+    <value>+855</value>
+  </data>
+  <data name="KI" xml:space="preserve">
+    <value>+686</value>
+  </data>
+  <data name="KM" xml:space="preserve">
+    <value>+269</value>
+  </data>
+  <data name="KP" xml:space="preserve">
+    <value>+850</value>
+  </data>
+  <data name="KR" xml:space="preserve">
+    <value>+82</value>
+  </data>
+  <data name="KW" xml:space="preserve">
+    <value>+965</value>
+  </data>
+  <data name="KY" xml:space="preserve">
+    <value>+345</value>
+  </data>
+  <data name="KZ" xml:space="preserve">
+    <value>+77</value>
+  </data>
+  <data name="LA" xml:space="preserve">
+    <value>+856</value>
+  </data>
+  <data name="LB" xml:space="preserve">
+    <value>+961</value>
+  </data>
+  <data name="LI" xml:space="preserve">
+    <value>+423</value>
+  </data>
+  <data name="LK" xml:space="preserve">
+    <value>+94</value>
+  </data>
+  <data name="LR" xml:space="preserve">
+    <value>+231</value>
+  </data>
+  <data name="LS" xml:space="preserve">
+    <value>+266</value>
+  </data>
+  <data name="LT" xml:space="preserve">
+    <value>+370</value>
+  </data>
+  <data name="LU" xml:space="preserve">
+    <value>+352</value>
+  </data>
+  <data name="LV" xml:space="preserve">
+    <value>+371</value>
+  </data>
+  <data name="LY" xml:space="preserve">
+    <value>+218</value>
+  </data>
+  <data name="MA" xml:space="preserve">
+    <value>+212</value>
+  </data>
+  <data name="MC" xml:space="preserve">
+    <value>+377</value>
+  </data>
+  <data name="MD" xml:space="preserve">
+    <value>+373</value>
+  </data>
+  <data name="ME" xml:space="preserve">
+    <value>+382</value>
+  </data>
+  <data name="MG" xml:space="preserve">
+    <value>+261</value>
+  </data>
+  <data name="MH" xml:space="preserve">
+    <value>+692</value>
+  </data>
+  <data name="MK" xml:space="preserve">
+    <value>+389</value>
+  </data>
+  <data name="ML" xml:space="preserve">
+    <value>+223</value>
+  </data>
+  <data name="MM" xml:space="preserve">
+    <value>+95</value>
+  </data>
+  <data name="MN" xml:space="preserve">
+    <value>+976</value>
+  </data>
+  <data name="MO" xml:space="preserve">
+    <value>+853</value>
+  </data>
+  <data name="MP" xml:space="preserve">
+    <value>+1670</value>
+  </data>
+  <data name="MQ" xml:space="preserve">
+    <value>+596</value>
+  </data>
+  <data name="MR" xml:space="preserve">
+    <value>+222</value>
+  </data>
+  <data name="MS" xml:space="preserve">
+    <value>+1664</value>
+  </data>
+  <data name="MT" xml:space="preserve">
+    <value>+356</value>
+  </data>
+  <data name="MU" xml:space="preserve">
+    <value>+230</value>
+  </data>
+  <data name="MV" xml:space="preserve">
+    <value>+960</value>
+  </data>
+  <data name="MW" xml:space="preserve">
+    <value>+265</value>
+  </data>
+  <data name="MX" xml:space="preserve">
+    <value>+52</value>
+  </data>
+  <data name="MY" xml:space="preserve">
+    <value>+60</value>
+  </data>
+  <data name="NA" xml:space="preserve">
+    <value>+264</value>
+  </data>
+  <data name="NC" xml:space="preserve">
+    <value>+687</value>
+  </data>
+  <data name="NE" xml:space="preserve">
+    <value>+227</value>
+  </data>
+  <data name="NF" xml:space="preserve">
+    <value>+672</value>
+  </data>
+  <data name="NG" xml:space="preserve">
+    <value>+234</value>
+  </data>
+  <data name="NI" xml:space="preserve">
+    <value>+505</value>
+  </data>
+  <data name="NL" xml:space="preserve">
+    <value>+31</value>
+  </data>
+  <data name="NO" xml:space="preserve">
+    <value>+47</value>
+  </data>
+  <data name="NP" xml:space="preserve">
+    <value>+977</value>
+  </data>
+  <data name="NR" xml:space="preserve">
+    <value>+674</value>
+  </data>
+  <data name="NU" xml:space="preserve">
+    <value>+683</value>
+  </data>
+  <data name="NZ" xml:space="preserve">
+    <value>+64</value>
+  </data>
+  <data name="OM" xml:space="preserve">
+    <value>+968</value>
+  </data>
+  <data name="PA" xml:space="preserve">
+    <value>+507</value>
+  </data>
+  <data name="PE" xml:space="preserve">
+    <value>+51</value>
+  </data>
+  <data name="PF" xml:space="preserve">
+    <value>+689</value>
+  </data>
+  <data name="PG" xml:space="preserve">
+    <value>+675</value>
+  </data>
+  <data name="PH" xml:space="preserve">
+    <value>+63</value>
+  </data>
+  <data name="PK" xml:space="preserve">
+    <value>+92</value>
+  </data>
+  <data name="PL" xml:space="preserve">
+    <value>+48</value>
+  </data>
+  <data name="PR" xml:space="preserve">
+    <value>+1787</value>
+  </data>
+  <data name="PS" xml:space="preserve">
+    <value>+970</value>
+  </data>
+  <data name="PT" xml:space="preserve">
+    <value>+351</value>
+  </data>
+  <data name="PW" xml:space="preserve">
+    <value>+680</value>
+  </data>
+  <data name="PY" xml:space="preserve">
+    <value>+595</value>
+  </data>
+  <data name="QA" xml:space="preserve">
+    <value>+974</value>
+  </data>
+  <data name="RE" xml:space="preserve">
+    <value>+262</value>
+  </data>
+  <data name="RO" xml:space="preserve">
+    <value>+40</value>
+  </data>
+  <data name="RS" xml:space="preserve">
+    <value>+381</value>
+  </data>
+  <data name="RU" xml:space="preserve">
+    <value>+7</value>
+  </data>
+  <data name="RW" xml:space="preserve">
+    <value>+250</value>
+  </data>
+  <data name="SA" xml:space="preserve">
+    <value>+966</value>
+  </data>
+  <data name="SB" xml:space="preserve">
+    <value>+677</value>
+  </data>
+  <data name="SC" xml:space="preserve">
+    <value>+248</value>
+  </data>
+  <data name="SD" xml:space="preserve">
+    <value>+249</value>
+  </data>
+  <data name="SE" xml:space="preserve">
+    <value>+46</value>
+  </data>
+  <data name="SG" xml:space="preserve">
+    <value>+65</value>
+  </data>
+  <data name="SI" xml:space="preserve">
+    <value>+386</value>
+  </data>
+  <data name="SK" xml:space="preserve">
+    <value>+421</value>
+  </data>
+  <data name="SL" xml:space="preserve">
+    <value>+232</value>
+  </data>
+  <data name="SM" xml:space="preserve">
+    <value>+378</value>
+  </data>
+  <data name="SN" xml:space="preserve">
+    <value>+221</value>
+  </data>
+  <data name="SR" xml:space="preserve">
+    <value>+597</value>
+  </data>
+  <data name="SV" xml:space="preserve">
+    <value>+503</value>
+  </data>
+  <data name="SY" xml:space="preserve">
+    <value>+963</value>
+  </data>
+  <data name="SZ" xml:space="preserve">
+    <value>+268</value>
+  </data>
+  <data name="TC" xml:space="preserve">
+    <value>+1649</value>
+  </data>
+  <data name="TD" xml:space="preserve">
+    <value>+235</value>
+  </data>
+  <data name="TG" xml:space="preserve">
+    <value>+228</value>
+  </data>
+  <data name="TH" xml:space="preserve">
+    <value>+66</value>
+  </data>
+  <data name="TJ" xml:space="preserve">
+    <value>+992</value>
+  </data>
+  <data name="TK" xml:space="preserve">
+    <value>+690</value>
+  </data>
+  <data name="TL" xml:space="preserve">
+    <value>+670</value>
+  </data>
+  <data name="TM" xml:space="preserve">
+    <value>+993</value>
+  </data>
+  <data name="TN" xml:space="preserve">
+    <value>+216</value>
+  </data>
+  <data name="TO" xml:space="preserve">
+    <value>+676</value>
+  </data>
+  <data name="TR" xml:space="preserve">
+    <value>+90</value>
+  </data>
+  <data name="TT" xml:space="preserve">
+    <value>+18</value>
+  </data>
+  <data name="TV" xml:space="preserve">
+    <value>+688</value>
+  </data>
+  <data name="TW" xml:space="preserve">
+    <value>+886</value>
+  </data>
+  <data name="TZ" xml:space="preserve">
+    <value>+255</value>
+  </data>
+  <data name="UA" xml:space="preserve">
+    <value>+38</value>
+  </data>
+  <data name="UG" xml:space="preserve">
+    <value>+256</value>
+  </data>
+  <data name="US" xml:space="preserve">
+    <value>+1</value>
+  </data>
+  <data name="UY" xml:space="preserve">
+    <value>+598</value>
+  </data>
+  <data name="UZ" xml:space="preserve">
+    <value>+998</value>
+  </data>
+  <data name="VE" xml:space="preserve">
+    <value>+58</value>
+  </data>
+  <data name="VG" xml:space="preserve">
+    <value>+1284</value>
+  </data>
+  <data name="VI" xml:space="preserve">
+    <value>+1340</value>
+  </data>
+  <data name="VN" xml:space="preserve">
+    <value>+84</value>
+  </data>
+  <data name="VU" xml:space="preserve">
+    <value>+678</value>
+  </data>
+  <data name="WF" xml:space="preserve">
+    <value>+681</value>
+  </data>
+  <data name="WS" xml:space="preserve">
+    <value>+685</value>
+  </data>
+  <data name="YE" xml:space="preserve">
+    <value>+967</value>
+  </data>
+  <data name="YT" xml:space="preserve">
+    <value>+262</value>
+  </data>
+  <data name="ZA" xml:space="preserve">
+    <value>+27</value>
+  </data>
+  <data name="ZM" xml:space="preserve">
+    <value>+260</value>
+  </data>
+  <data name="ZW" xml:space="preserve">
+    <value>+263</value>
+  </data>
+</root>

@@ -1,0 +1,355 @@
+﻿@{
+    //if (!ViewBag.Refresh) { Layout = null; }
+}
+
+
+    <div class="wrapper">
+        <aside class="aside">
+            <!-- Inline template with sidebar items markup and ng-directives-->
+            <script type="text/ng-template" id="sidebar-renderer.html">
+                <span ng-if="item.heading">{{(item.translate | translate) || item.text}}</span>
+                <a ng-if="!item.heading" ng-href="{{$state.href(item.sref, item.params)}}" title="{{item.text}}"><em ng-hide="inSubmenu" class="{{item.icon}}"></em><div ng-if="item.alert" ng-class="item.label || 'label label-success'" class="pull-right">{{item.alert}}</div><span>{{(item.translate | translate) || item.text}}</span></a>
+                <ul ng-if="item.submenu" uib-collapse="isCollapse(pIndex)" ng-init="addCollapse(pIndex, item)" class="nav sidebar-subnav"><li class="sidebar-subnav-header">{{(item.translate | translate) || item.text}}</li><li ng-repeat="item in item.submenu" ng-include="'sidebar-renderer.html'" ng-class="getMenuItemPropClasses(item)" ng-init="pIndex=(pIndex+'-'+$index); inSubmenu = true" ng-click="toggleCollapse(pIndex)"></li></ul>
+            </script>
+            <!-- START Sidebar (left)-->
+            <div class="aside-inner" ng-controller="SidebarController">
+                <nav sidebar="" sidebar-anyclick-close="" ng-class="{'show-scrollbar': app.layout.asideScrollbar}" class="sidebar">
+                    <!-- START sidebar nav-->
+                    <ul class="nav">
+                        <!-- START user info-->
+                        <!-- END user info-->
+                        <!-- Iterates over all sidebar items-->
+                        <li ng-class="getMenuItemPropClasses(item)" ng-repeat="item in menuItems" ng-init="pIndex = $index" ng-include="'sidebar-renderer.html'" ng-click="toggleCollapse(pIndex, true)"></li>
+                    </ul>
+                    <!-- END sidebar nav-->
+                </nav>
+            </div>
+            <!-- END Sidebar (left)-->
+        </aside>
+
+        <section style="padding-left: 20px">
+            <h2>Кабинет администратора</h2>
+            <div data-ui-view="" data-autoscroll="false" class="">@*<div ng-include="'moderator.tables.html'"></div>*@</div>
+            <!-- Manage moderators block -->
+            
+            <script type="text/ng-template" id="moderator.tables.html">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Datatables |
+                        <small>Chaning data</small>
+                    </div>
+                    <div class="panel-body">
+                        <div ng-controller="DataTableController as table2">
+                            <form ng-submit="table2.addPerson()" class="form-inline">
+                                <table datatable="ng" dt-options="table2.dtOptions" dt-column-defs="table2.dtColumnDefs" class="row-border hover">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                @*<div class="form-group">
+                                                    <label>
+                                                        <input type="number" name="id" ng-model="table2.person2Add.id" value="" class="form-control" />
+                                                    </label>
+                                                </div>*@
+                                            </th>
+                                            <th>
+                                                @*<div class="form-group">
+                                                    <label>
+                                                        <input type="text" name="firstName" ng-model="table2.person2Add.firstName" value="" class="form-control" />
+                                                    </label>
+                                                </div>*@
+                                            </th>
+                                            <th>
+                                                @*<div class="form-group">
+                                                    <label>
+                                                        <input type="text" name="lastName" ng-model="table2.person2Add.lastName" value="" class="form-control" />
+                                                    </label>
+                                                </div>*@
+                                            </th>
+                                            <th>
+                                                @*<div class="form-group">
+                                                    <label>
+                                                        <input type="text" name="lastName" ng-model="table2.person2Add.email" value="" class="form-control" />
+                                                    </label>
+                                                </div>*@
+                                            </th>
+                                            <th>
+                                                @*<div class="form-group">
+                                                    <label>
+                                                        <input type="text" name="lastName" ng-model="table2.person2Add.subscribeToGroups" value="" class="form-control" />
+                                                    </label>
+                                                </div>*@
+                                            </th>
+                                            <th>
+                                                @*<div class="form-group">
+                                                    <label>
+                                                        <input type="text" name="lastName" ng-model="table2.person2Add.logo" value="" class="form-control" />
+                                                    </label>
+                                                </div>*@
+                                            </th>
+                                            <th>
+                                                @*<div class="form-group">
+                                                    <label>
+                                                        <input type="text" name="lastName" ng-model="table2.person2Add.jobsDone" value="" class="form-control" />
+                                                    </label>
+                                                </div>*@
+                                            </th>
+                                            <th>
+                                                @*<div class="form-group">
+                                                    <label>
+                                                        <input type="text" name="lastName" ng-model="table2.person2Add.createdJobs" value="" class="form-control" />
+                                                    </label>
+                                                </div>*@
+                                            </th>
+                                            <th>
+                                                @*<div class="form-group">
+                                                    <label>
+                                                        <input type="text" name="lastName" ng-model="table2.person2Add.ratingWorker" value="" class="form-control" />
+                                                    </label>
+                                                </div>*@
+                                            </th>
+                                            <th>
+                                                @*<div class="form-group">
+                                                    <label>
+                                                        <input type="text" name="lastName" ng-model="table2.person2Add.ratingCustomer" value="" class="form-control" />
+                                                    </label>
+                                                </div>*@
+                                            </th>
+                                            <th>
+                                                @*<div class="form-group">
+                                                    <label>
+                                                        <input type="text" name="lastName" ng-model="table2.person2Add.confirmation" value="" class="form-control" />
+                                                    </label>
+                                                </div>*@
+                                            </th>
+                                            <th>
+                                                @*<div class="form-group">
+                                                    <label>
+                                                        <input type="text" name="lastName" ng-model="table2.person2Add.rewards" value="" class="form-control" />
+                                                    </label>
+                                                </div>*@
+                                            </th>
+                                            <th>
+                                                @*<div class="form-group">
+                                                    <label>
+                                                        <input type="text" name="lastName" ng-model="table2.person2Add.ballance " value="" class="form-control" />
+                                                    </label>
+                                                </div>*@
+                                            </th>
+
+                                            <th>
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-labeled btn-success">
+                                                        <span class="btn-label">
+                                                            <em class="fa fa-plus"></em>
+                                                        </span>Add
+                                                    </button>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>Hero ID</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Email</th>
+                                            <th>SubscribeToGroups</th>
+                                            <th>Logo</th>
+                                            <th>JobsDone</th>
+                                            <th>CreatedJobs</th>
+                                            <th>RatingWorker</th>
+                                            <th>RatingCustomer</th>
+                                            <th>Confirmation </th>
+                                            <th>Rewards</th>
+                                            <th>Ballance</th>
+
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="hero in table2.heroes">
+                                            <td>{{ hero.id }}</td>
+                                            <td>{{ hero.firstName }}</td>
+                                            <td>{{ hero.lastName }}</td>
+                                            <td>{{ hero.email }}</td>
+                                            <td>{{ hero.subscribeToGroups }}</td>
+                                            <td>{{ hero.logo }}</td>
+                                            <td>{{ hero.jobsDone }}</td>
+                                            <td>{{ hero.createdJobs }}</td>
+                                            <td>{{ hero.ratingWorker }}</td>
+                                            <td>{{ hero.ratingCustomer }}</td>
+                                            <td>{{ hero.confirmation }}</td>
+                                            <td>{{ hero.rewards }}</td>
+                                            <td>{{ hero.ballance }}</td>
+
+                                            <td>
+                                                <button ng-controller="ModalController as mod" type="button" ng-click="mod.open()" class="btn btn-sm btn-warning">
+                                                    <em class="fa fa-edit"></em>
+                                                </button>
+                                                <button type="button" ng-click="table2.removePerson($index, hero.id)" class="btn btn-sm btn-danger">
+                                                    <em class="fa fa-trash-o"></em>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                            <div ng-controller="ModalController as mod">
+
+
+                                <p>Launch Demo Modal</p>
+
+                                <button ng-click="mod.open()" class="btn btn-primary">Open me!</button>
+                                <div id="modal-state"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </script>
+            
+            <!-- /Manage user block -->
+            <script type="text/ng-template" id="users.tables.html">
+                <!-- Manage moderators block -->
+                <!-- Chaning data-->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Datatables |
+                        <small>Chaning data</small>
+                    </div>
+                    <div class="panel-body">
+                        <div ng-controller="DataTableControllerUserss as userss">
+                            <form ng-submit="userss.addPerson()" class="form-inline">
+                                <table datatable="ng" dt-options="table2.dtOptions" dt-column-defs="table2.dtColumnDefs" class="row-border hover">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                @*<div class="form-group">
+                                                    <label>
+                                                        <input type="number" name="id" ng-model="moder.person2Add.id" value="" class="form-control" />
+                                                    </label>
+                                                </div>*@
+                                            </th>
+                                            <th>
+                                                @*<div class="form-group">
+                                                    <label>
+                                                        <input type="text" name="firstName" ng-model="moder.person2Add.firstName" value="" class="form-control" />
+                                                    </label>
+                                                </div>*@
+                                            </th>
+                                            <th>
+                                                @*<div class="form-group">
+                                                    <label>
+                                                        <input type="text" name="lastName" ng-model="moder.person2Add.lastName" value="" class="form-control" />
+                                                    </label>
+                                                </div>*@
+                                            </th>
+                                            <th>
+                                                <div class="form-group">
+                                                    <button type="submit" class="btn btn-labeled btn-success">
+                                                        <span class="btn-label">
+                                                            <em class="fa fa-plus"></em>
+                                                        </span>Add
+                                                    </button>
+                                                </div>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>Hero ID</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="hero in userss.heroes">
+                                            <td>{{ hero.id }}</td>
+                                            <td>{{ hero.firstName }}</td>
+                                            <td>{{ hero.lastName }}</td>
+                                            <td>
+                                                <button type="button" ng-click="userss.open($index)" class="btn btn-sm btn-warning">
+                                                    <em class="fa fa-edit"></em>
+                                                </button>
+                                                <button type="button" ng-click="userss.removePerson($index)" class="btn btn-sm btn-danger">
+                                                    <em class="fa fa-trash-o"></em>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </script>
+
+            @*<script type="text/ng-template" id="/myModalContent.html">
+                <div class="modal-header"><button type="button" data-dismiss="modal" aria-hidden="true" class="close">Ч</button><h4 id="myModalLabel" class="modal-title">Modal title</h4></div>
+                <div class="modal-body">
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">ID</label>
+                            <div class="col-sm-10">
+                                <input type="text" placeholder="placeholder" class="form-control" />
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">First Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" placeholder="{{ hero.id }}" class="form-control" value="{{ hero.id }}" />
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Last Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" placeholder="placeholder" class="form-control" />
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="modal-footer"><button ng-click="ok()" class="btn btn-primary">OK</button><button ng-click="cancel()" class="btn btn-warning">Cancel</button></div>
+            </script>*@
+
+
+
+            @*<script type="text/ng-template" id="/myModalContent.html">
+                    <div class="modal-header"><button type="button" data-dismiss="modal" aria-hidden="true" class="close">Ч</button><h4 id="myModalLabel" class="modal-title">Modal title</h4></div>
+                    <div class="modal-body">
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">ID</label>
+                                <div class="col-sm-10">
+                                    <input type="text" placeholder="placeholder" class="form-control" />
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">First Name{{ items[1] }}</label>
+                                <div class="col-sm-10">
+                                    <input type="text" placeholder="{{ items[1] }}" class="form-control" value="{{ items[1] }}" />{{ items[1] }}
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Last Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" placeholder="placeholder" class="form-control" />
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="modal-footer"><button ng-click="ok()" class="btn btn-primary">OK</button><button ng-click="cancel()" class="btn btn-warning">Cancel</button></div>
+                </script>*@
+
+
+        </section>
+
+    </div>
+
+
+

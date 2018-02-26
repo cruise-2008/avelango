@@ -1,0 +1,41 @@
+
+
+            //$scope.items = ['item1', 'item2', 'item3'];
+            //vm.open = function (size) {
+
+            //    //vm.heroes.splice(index, 1, angular.copy(vm.person2Add));
+            //    //vm.person2Add = _buildPerson2Add(vm.person2Add.id + 1);
+
+            //    var modalInstance = $uibModal.open({
+            //        templateUrl: '/myModalContent.html',
+            //        controller: ModalInstanceCtrl,
+            //        size: size,
+            //        resolve: {
+            //            items: function () {
+            //                return $scope.items; 
+            //            }
+            //        }
+            //    });
+
+            //    var state = $('#modal-state');
+            //    modalInstance.result.then(function () {
+            //        state.text('Modal dismissed with OK status');
+            //    }, function () {
+            //        state.text('Modal dismissed with Cancel status');
+            //    });
+            //};
+
+            //// Please note that $uibModalInstance represents a modal window (instance) dependency.
+            //// It is not the same as the $uibModal service used above.
+
+            //ModalInstanceCtrl.$inject = ['$uibModalInstance', '$scope'];
+            //function ModalInstanceCtrl($scope, $uibModalInstance, items) {
+            //    $scope.items = items;
+            //    $scope.ok = function () {
+            //        $uibModalInstance.close('closed');
+            //    };
+
+            //    $scope.cancel = function () {
+            //        $uibModalInstance.dismiss('cancel');
+            //    };
+            //}

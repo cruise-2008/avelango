@@ -1,0 +1,88 @@
+﻿@model Avelango.Models.LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+@Scripts.Render("~/bundles/loginScripts")
+<div ng-controller="loginFormController as login" class="block-center mt-xl wd-xl">
+    <!-- START panel-->
+    <div class="panel panel-dark panel-flat">
+        <div class="panel-heading text-center">
+            <a href="#">
+                <img src="images/logo.png" alt="Image" class="block-center img-rounded"/>
+            </a>
+        </div>
+        <div class="panel-body">
+            <p class="text-center pv">SIGN IN TO CONTINUE</p>
+            @*<div class="panel-login-socials">
+                <ul class="login-socials">
+                    <li><a ng-click="login.slogin('Ig')"><em class="fa fa-instagram fa-2x"></em></a></li>
+                    <li><a ng-click="login.slogin('Go')"><em class="fa fa-google fa-2x"></em></a></li>
+                    <li><a ng-click="login.slogin('Vk')"><em class="fa fa-vk fa-2x"></em></a></li>
+                    <li><a ng-click="login.slogin('Tw')"><em class="fa fa-twitter fa-2x"></em></a></li>
+                    <li><a ng-click="login.slogin('Fb')"><em class="fa fa-facebook fa-2x"></em></a></li>
+                    <li><a ng-click="login.slogin('In')"><em class="fa fa-linkedin fa-2x"></em></a></li>
+                    <li><a ng-click="login.slogin('Yt')"><em class="fa fa-youtube-play fa-2x"></em></a></li>
+                </ul>
+            </div>*@
+
+            @*SOCIAL-NETWORK LOGIN MODAL*@
+            @*<script type="text/ng-template" id="/loginSocialModalContent.html">
+                <div id="socialhtml"></div>
+            </script>*@
+
+            <form role="form" ng-submit="login.login()" name="login.loginForm" novalidate="" class="form-validate mb-lg">
+                <div class="form-group has-feedback">
+                    <input id="exampleInputEmail1" type="email" name="account_email" placeholder="Enter email" autocomplete="off" ng-model="login.account.email" required="" class="form-control" ng-init="login.account.email='huckfin.7b@gmail.com'" value="huckfin.7b@gmail.com"/>
+                    <span class="fa fa-envelope form-control-feedback text-muted"></span>
+                    <span  class="text-danger hide" ng-class="{show:(login.loginForm.account_email.$dirty &amp;&amp; login.loginForm.account_email.$error.required)}">This field is required</span>
+                    <span class="text-danger hide" ng-class="{show:(login.loginForm.account_email.$dirty &amp;&amp; login.loginForm.account_email.$error.email)}">This field must be a valid email address</span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input id="exampleInputPassword1" type="password" name="account_password" placeholder="Passvord" ng-model="login.account.password" required="" class="form-control" ng-init="login.account.password='test'" value="test"/>
+                    <span class="fa fa-lock form-control-feedback text-muted"></span>
+                    <span class="text-danger hide" ng-class="{show:(login.loginForm.account_password.$dirty &amp;&amp; login.loginForm.account_password.$error.required)}">This field is required</span>
+                </div>
+                <div class="clearfix">
+                    <div class="checkbox c-checkbox pull-left mt0">
+                        <label>
+                            <input type="checkbox" value="" name="account_remember" ng-model="login.account.remember"/>
+                            <span class="fa fa-check"></span>Remember Me
+                        </label>
+                    </div>
+                    <div class="pull-right">
+                        <a ui-sref="passwordrecovery" class="text-muted">Forgot your password?</a>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-block btn-primary mt-lg" ng-init="login.count=false">
+                    <div class="ball-pulse hide" ng-class="{show:login.count}">
+                        <div class="ball-pulse-element"></div>
+                        <div class="ball-pulse-element"></div>
+                        <div class="ball-pulse-element"></div>
+                    </div>
+                    <span ng-if="login.count==false">Login</span>
+                </button>
+            </form>
+            <div class="alert alert-danger text-center hide" ng-class="{show:login.authMsg}" ng-bind="login.authMsg"></div>
+            <p class="pt-lg text-center">Need to Signup?</p><a ui-sref="register" class="btn btn-block btn-default">Register Now</a>
+        </div>
+    </div>
+    <!-- END panel-->
+    <div class="p-lg text-center">
+        <span>&copy;</span>
+        <span ng-bind="app.year"></span>
+        <span>-</span>
+        <span ng-bind="app.name"></span>
+        <br/>
+        <span ng-bind="app.description"></span>
+    </div>
+</div>
+
+<div style="text-align: center; margin-top: 30px; margin-right: 30px">
+    <ul style="list-style-type: none">
+        <li><span style="color: #0000ff">tolya@gmail.com</span></li>
+        <li><span style="color: #0000ff">tanya@gmail.com</span></li>
+        <li><span style="color: #0000ff">admin@gmail.com</span></li>
+        <li><span style="color: #0000ff">moder@gmail.com</span></li>
+        <li><span style="color: #0000ff">Password: zx</span></li>
+    </ul>
+</div>

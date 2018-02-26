@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Error";
+}
+
+<div class="abs-center wd-xl">
+    <!-- START panel-->
+    <div class="text-center mb-xl">
+        <div class="text-lg mb-lg">Server Error</div>
+        <p> Application <u>Critical</u> Error</p>
+    </div>
+    <ul class="list-inline text-center text-sm mb-xl">
+        <li>
+            <p class="lead">@ViewBag.Error</p>
+        </li>
+    </ul>
+    <div class="p-lg text-center">
+        <span>&copy;</span>
+        <span ng-bind="app.year"></span>
+        <span>-</span>
+        <span ng-bind="app.name"></span>
+        <br />
+        <span ng-bind="app.description"></span>
+    </div>
+</div>
+

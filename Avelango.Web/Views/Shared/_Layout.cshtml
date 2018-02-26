@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-ng-app="angle" id="avov">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="Avelango, job, work">
+
+    <title>@ViewBag.Title - Avelango</title>
+
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <base href="/">
+
+
+    <script type="text/javascript" src="https://www.google.com/jsapi" async defer></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCc0AVvpTx3fEdFnkqMHyn3donBqPF1ouI&libraries=places" async defer></script>
+
+    @Styles.Render("~/bundles/bootstrapStyles")
+    @Styles.Render("~/bundles/appStyles")
+    @Styles.Render("~/bundles/custom")
+    @Scripts.Render("~/bundles/startScripts")
+    @Scripts.Render("~/bundles/baseScripts")
+    @Scripts.Render("~/bundles/appScripts")
+    @Scripts.Render("~/bundles/signalR")
+
+</head>
+<body ng-cloak ng-controller="LayoutCtrl as layout" class="layout-fixed" data-ng-class="{ 'aside-collapsed' : layout.asideToggled, 'layout-boxed' : app.layout.isBoxed, 'layout-fs': app.useFullLayout, 'hidden-footer': app.hiddenFooter, 'layout-h': app.layout.horizontal, 'aside-float': app.layout.isFloat, 'offsidebar-open': app.offsidebarOpen, 'aside-toggled': app.asideToggled}">
+    <div id="main" ng-cloak ng-class="updateClass('/')">
+        <div id="header">
+            <div class="logo">
+                <a href="/" target="_self" title="AVELANGO - Качественнее! Быстрее! Дешевле!"></a>
+            </div>
+            <ul class="mainmenu">
+                <li ng-cloak ng-class="getClass('/Task/Tasks')">
+                    <a href="/Task/Tasks" target="_self" class="mainorders"><span translate="BTNORDERS"></span></a>
+                </li>
+                <li ng-cloak ng-class="getClass('/Users/Executors')">
+                    <a href="/Users/Executors" target="_self" class="mainexecutor"><span translate="BTNEXECUTORS"></span></a>
+                </li>
+            </ul>
+
+            <ul class="controlmenu">
+                <li>
+                    <a ng-click="OpenRialto()" ng-cloak class="exmainbtn" title="Биржа"></a>
+                </li>
+                <li uib-dropdown="dropdown" ng-cloak class="avatar ng-cloak" ng-class="{show: ($root.user.isAuthanticated||IsAuthanticated)}" ng-if="$root.user.isAuthanticated||IsAuthanticated">
+                    <img uib-dropdown-toggle="" ng-cloak class="ng-cloak" ng-src="{{ImagePath}}" title="Меню пользователя {{UserName}}" width="57" height="57" />
+                    <ul class="dropdown-menu animated fadeInUp" style="max-height: 400px; overflow: auto; padding: 15px;">
+                        <li><a href="/MyUser/Parlour" target="_self"><span translate="">Личный кабинет</span></a></li>
+                        <li class="menumain" is-open="language.listIsOpen">
+                            <a class="">
+                                <em class="fa-globe fa fa-2x"></em>
+                            </a>
+                            <ul role="menu" class="menumain-sub">
+                                <li ng-cloak ng-repeat="(localeId, langName) in language.available">
+                                    <a ng-cloak ng-click="language.set(localeId, $event)" href="#">{{langName}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="devider"></li>
+                        <li><a ng-cloak ng-click="layout.logoff()" class="btn"><span translate="BTNEXIT"></span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a ng-cloak ng-click="layout.openLoginModal()" ng-class="{hide: ($root.user.isAuthanticated||IsAuthanticated)}" class="enterbtn" href="" title="Вход" data-toggle="modal" data-target="#myModal">Вход</a>
+                    <div id="loginWizard"></div>
+                </li>
+                <li class="menumain" uib-dropdown="dropdown">
+                    <a uib-dropdown-toggle="" href="#" title="" class='icondots'><em><i></i></em><span>Меню</span></a>
+                    <div class="dropdown-menu animated">
+                        <ul class="menulist">
+                            <li><a href="">ответы на вопросы</a></li>
+                            <li><a href="" title="создать задание" data-toggle="modal" data-target="#myModal">дать задание</a></li>
+                            <li><a href="" title="Вход" data-toggle="modal" data-target="#myModal">взять работу</a></li>
+                            <li><a href="">события сайта</a></li>
+                            <li><a href="">связь с администрацией</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <div ng-controller="OpenWizardCtrl as wizard" class="add_adv" ng-cloak>
+                <a ng-cloak ng-click="wizard.openWizard()" ng-class="{'show':$root.user.isAuthanticated}" class="btn-blue btn-plus" href="" title="создать задание" data-toggle="modal" data-target="#myModal">Создать задание</a>
+                <div id="orderDynamicContent"></div>
+            </div>
+
+            @*<div class="add_adv_login">
+                <a ng-click="layout.OpenLogin()" ng-class="{hide: ($root.user.isAuthanticated||IsAuthanticated)}" href="" title="" class="btn-blue" data-toggle="modal" data-target="#myModal">Вход</a>
+                <div id="loginWizard"></div>
+            </div>*@
+
+            @*<ul class="userinfo" ng-class="{show: ($root.user.isAuthanticated||IsAuthanticated)}" ng-if="$root.user.isAuthanticated||IsAuthanticated">
+                <li uib-dropdown="dropdown" ng-controller="BellController as bell">
+                    <a uib-dropdown-toggle="" href="" class="message" title="У вас {{bell.countOfActualNotifications}} событий">
+                        <i ng-if="bell.countOfActualNotifications>0">{{bell.countOfActualNotifications}}</i>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInUp" style="max-height: 400px; overflow: auto; padding: 15px;">
+                        <li ng-click="bell.redirect(bell.actualNotifications[$index].PublicKey, $index, bell.actualNotifications[$index].NotificationType)" style="width: 200px;" ng-repeat="b in bell.actualNotificationsHtml track by $index" ng-bind-html="b"></li>
+                        <li style="width: 200px;"><strong>Посмотреть все</strong></li>
+                    </ul>
+                </li>
+                <li uib-dropdown="dropdown" class="avatar">
+                    <img uib-dropdown-toggle="" src="{{ImagePath}}" title="Меню пользователя {{UserName}}" width="57" height="57" />
+                    <ul class="dropdown-menu animated fadeInUp" style="max-height: 400px; overflow: auto; padding: 15px;">
+                        <li>
+                            <a href="/MyUser/Parlour" target="_self">
+                                <span translate="">Личный кабинет</span>
+                            </a>
+                        </li>
+                        <li><a href="/Rialto/Index" target="_self"><span translate="">Биржа</span></a></li>
+                        <li>
+                            <a ng-click="layout.logoff()" class="btn hide" ng-class="{show: ($root.user.isAuthanticated||IsAuthanticated)}" ng-if="$root.user.isAuthanticated||IsAuthanticated"><span translate="BTNEXIT"></span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>*@
+
+
+            @*LANG-DROP DOWN*@
+            <ul>
+                <li uib-dropdown="" is-open="language.listIsOpen" class="">
+                    <a uib-dropdown-toggle="" class="">
+                        <em class="fa-globe fa fa-2x"></em>
+                    </a>
+                    <ul role="menu" class="dropdown-menu dropdown-menu-right animated fadeInUpShort">
+                        <li ng-repeat="(localeId, langName) in language.available">
+                            <a ng-click="language.set(localeId, $event)" href="#">{{langName}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- App Content -->
+        <div data-ui-view="main" data-autoscroll="false" class="wrapper paddingtopAll" style="height: 100%">@RenderBody()</div>
+
+
+        <script src="~/Scripts/app/modules/pages/mylazyscripts.derectives.js"></script>
+        <script src="/Scripts/app/modules/elements/carousel.controller.js"></script>
+        <script src="/Scripts/app/modules/tables/moderator.orders.controller.js"></script>
+        <script src="/Scripts/app/modules/tables/moderator.users.controller.js"></script>
+        <script src="/Scripts/app/modules/pages/myuser.map.controller.js"></script>
+        <script src="/Scripts/app/modules/tables/datatable.myorder.controller.js"></script>
+        <script src="/Scripts/app/modules/tables/datatableuserjob.controller.js"></script>
+        <script src="/Scripts/app/modules/tables/datatablemessage.controller.js"></script>
+        <script src="/Scripts/app/modules/tables/datatable.money.controller.js"></script>
+        <script src="/Scripts/app/modules/tables/datatablefavorites.controller.js"></script>
+        <script src="/Scripts/app/modules/tables/datatablereviews.controller.js"></script>
+        <script src="/Scripts/app/modules/pages/access-login.controller.js"></script>
+        <script src="/Scripts/app/modules/tables/datatable.group.controller.js"></script>
+        <script src="/Scripts/app/modules/pages/tasks.controller.js"></script>
+        <script src="/Scripts/app/modules/pages/executors.controller.js"></script>
+        <script src="~/Scripts/app/modules/pages/main.moderator.controller.js"></script>
+        <script src="~/Scripts/app/modules/pages/access-register.controller.js"></script>
+
+
+        <div ng-controller="ToasterDemoCtrl as toast" class="panel-body">
+            <toaster-container toaster-options="{'position-class': 'toast-bottom-right', 'close-button':true}"></toaster-container>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+@*Reference the autogenerated SignalR hub script*@
+<script src="~/signalr/hubs"></script>

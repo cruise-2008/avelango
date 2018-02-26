@@ -1,0 +1,125 @@
+﻿@{
+    Layout = null;
+}
+<div ng-show="!openTaskWindow">
+    <div class="item-cart">
+        <a ng-click="closeCurentJob()" id="filterclose" class="filterclosed" href="#" title="Закрыть фильтр">close</a>
+        <div class="item-cart-about clearfix">
+            <div class="img-box-holder">
+                <div class="img-box">
+                    <img src="{{taskData.Customer.UserLogoPath}}" width="1431" height="804" class="item-img" alt=""/>
+                    <span class="item-status item-online">
+                        <i>online</i>
+                    </span>
+                </div>
+                <div class="raiting">
+                    <i class="staryellow"></i>
+                    <i class="staryellow"></i>
+                    <i class="staryellow"></i>
+                    <i class="staryellow"></i>
+                    <i class="staryellow"></i>
+                </div>
+                <p>{{taskData.Customer.Name}}</p>
+            </div>
+            <div class="about-box-holder">
+                <div class="about-box">
+                    <h4 class="item-title">{{taskData.Name}}</h4>
+                    <span class="item-location">{{taskData.PlaceName}}</span>
+                    <p class="price">&#8372; {{taskData.Price}}</p>
+                    <div>
+                        <a href="#" class="btn-green">Оставить предложение</a>
+                    </div>
+                </div>
+            </div>
+            <div class="teh-box-holder">
+                <div class="clearfix">
+                    <a class="izbr" href="#" title="добавить в избранное">В избранное</a>
+                    <div class="deadlinetime">
+                        <div ng-show="timeData.show">
+                            <span>{{timeData.d}}</span>
+                            <span>d</span>
+                            <span>{{timeData.h}}</span>
+                            <span>h</span>
+                            <span>{{timeData.m}}</span>
+                            <span>m</span>
+                        </div>
+                        <div ng-show="!timeData.show">
+                            <span>Джигурда !!!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix item-tabs">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li id="descriptionopentask" role="presentation" class="active"><a href="#" aria-controls="home" role="tab" data-toggle="tab" ng-click="changeTabsOpenTask('aboutProject', true)">О проекте</a></li>
+                <li id="commentopentask" role="presentation"><a href="#" aria-controls="messages" role="tab" data-toggle="tab" ng-click="changeTabsOpenTask('comments', true)">Коментарии</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="resume" ng-show="AboutProject">
+                    <div class="maintext">
+                        {{taskData.Description}}
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="comments" ng-show="Comments">
+                    <div class="comments">
+                        <div class="list-block" id="listblockopentask">
+                            <div class="list-item ">
+                                <div class="img-box-holder">
+                                    <div class="img-box"> <img src="../../Images/img/img4.jpg" width="100" height="100" class="item-img" alt=""/> <span class="item-status item-online"><i>online</i></span> </div>
+                                </div>
+                                <div class="about-box-holder">
+                                    <div class="about-box">
+                                        <h4 class="item-title">Артем Сидоренко</h4>
+                                        <p class="item-about">Для фирмы требуется создать мессенеджер для сотрудников, с картографией, и позиционированием.Дополнительный функционал будет оговорен при личном общении.Приложение должно быть удобное </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-item comment">
+                                <div class="img-box-holder">
+                                    <div class="img-box"> <img src="../../Images/img/img2.jpg" width="100" height="100" class="item-img" alt=""/> <span class="item-status item-online"><i>online</i></span> </div>
+                                </div>
+                                <div class="about-box-holder">
+                                    <div class="about-box">
+                                        <h4 class="item-title">Анна Федюкова-Герасименко</h4>
+                                        <p class="item-about">Я в отличии от других исполнителей быстрее всех отвожу посылки по скольку у меня есть ракета в которой скорость движения достигает скорости света она работает от генератора черной дыры Для фирмы требуется создать мессенеджер для сотрудников, с картографией, и позиционированием.Дополнительный функционал будет оговорен при личном общении.Приложение должно быть удобное </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-item comment">
+                                <div class="img-box-holder">
+                                    <div class="img-box"> <img src="../../Images/img/img1.jpg" width="100" height="100" class="item-img" alt=""/> <span class="item-status item-online"><i>online</i></span> </div>
+                                </div>
+                                <div class="about-box-holder">
+                                    <div class="about-box">
+                                        <h4 class="item-title">Василиса Егоровна</h4>
+                                        <p class="item-about">Для фирмы требуется создать мессенеджер для сотрудников, с картографией, и позиционированием.Дополнительный функционал будет оговорен при личном общении.Приложение должно быть удобное </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="addcoment">
+                            <form action="#">
+                                <div>
+                                    <textarea placeholder="сделайте клик для начала ввода комментария"></textarea>
+                                    <button type="submit" class="btn-orange">оставить комментарий</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix attachmentfiles">
+            <ul>
+                <li><a href="" class="file-doc"></a></li>
+                <li><a href="" class="file-img"></a></li>
+                <li><a href="" class="file-pdf"></a></li>
+                <li><a href="" class="file-file"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>

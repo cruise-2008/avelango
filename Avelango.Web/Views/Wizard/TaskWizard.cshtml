@@ -1,0 +1,168 @@
+﻿<!--First step-->
+<script type="text/ng-template" id="/taskWizardContent.html" defer="defer">
+        <div ng-hide="taskBlock">
+            <div class="modal-header">
+                <ul class="wizardsteps">
+                    <li class="active"><span>1</span></li>
+                    <li><span>2</span></li>
+                    <li><span>3</span></li>
+                </ul>
+                <button ng-click="closeModal()" type="button" class="modal-close" data-dismiss="modal"></button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <form action="#">
+                    <div class="wizard wizardstep1">
+                        <p class="wizardtitle">Введите название задания и описание</p>
+                        <p class =""></p>
+                        <input id="taskTheme" required type="text" placeholder="Введите название, например: грузоперевозка" ng-model="taskThemeWizardInputValue" ng-change="checkThemeWizardInputValue()">
+                        <textarea id="taskDescription" required placeholder="Введите описание"></textarea>
+                        <a href="#">Загрузить файл</a>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button ng-click="closeModal()" type="button" class="btn btn-default btn-prev">Отмена</button>
+                <button ng-click="wizardClick('task', true)" type="button" class="btn btn-default btn-next">Далее</button>
+            </div>
+        </div>
+        
+
+        <!--End First step-->
+        <!--Second step-->
+        <div ng-hide="locationBlock">
+            <div class="modal-header">
+                <ul class="wizardsteps">
+                    <li><span>1</span></li>
+                    <li class="active"><span>2</span></li>
+                    <li><span>3</span></li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <form action="#">
+                    <div class="wizard wizardstep2">
+                        <p class="wizardtitle">Введите местоположение</p>
+                        <input required id="wizardsearch" ng-model="wizard.chosenPlace" ng-change="wizard.myValidation()" type="text" placeholder="Введите ваше местоположение">
+                        <a href="#" title="Добавить ещё адресс">Добавить ещё адресс</a>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button ng-click="wizardClick('location', false)"  type="button" class="btn btn-default btn-prev">Назад</button>
+                <button ng-click="wizardClick('location', true)" type="button" class="btn btn-default btn-next">Далее</button>
+            </div>
+         </div>
+        <!--End Second step-->
+        <!--Third step-->
+        <div ng-hide="numberBlock">
+            <div class="modal-header">
+                <ul class="wizardsteps">
+                    <li><span>1</span></li>
+                    <li class="active"><span>2</span></li>
+                    <li><span>3</span></li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <form action="#">
+                    <div class="wizard wizardstep3">
+                        <p class="wizardtitle">Введите номер телефона</p>
+                        <input id="wizardphone" required ng-model="phone" type="text" placeholder="You phone number">
+                        <p class="helpertext">*Введите ваш номер для подтверждения заявки</p>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button ng-click="wizardClick('number', false)" type="button" class="btn btn-default btn-prev">Назад</button>
+                <button ng-click="wizardClick('number', true)" type="button" class="btn btn-default btn-next">Далее</button>
+            </div>
+        </div>
+        <!--End Third step-->
+        <!--Fourth-one step-->
+        <div ng-hide="passBlock">
+            <div class="modal-header">
+                <ul class="wizardsteps">
+                    <li><span>1</span></li>
+                    <li class="active"><span>2</span></li>
+                    <li><span>3</span></li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <form action="#">
+                    <div class="wizard wizardstep4">
+                        <p class="wizardtitle">Введите ваш пароль</p>
+                        <input required ng-model="pass" type="text" placeholder="********">
+                        <p class="helpertext">*Введите вашь пароль для подтверждения заявки</p>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button ng-click="wizardClick('pass', false)" type="button" class="btn btn-default btn-prev">Назад</button>
+                <button ng-click="wizardClick('pass', true)" type="button" class="btn btn-default btn-next">Далее</button>
+            </div>
+        </div>
+
+        <!--End Fourth step-->
+        <!--Fourth-second step-->
+
+        <div ng-hide="smsCodeBlock">
+            <div class="modal-header">
+                <ul class="wizardsteps">
+                    <li><span>1</span></li>
+                    <li class="active"><span>2</span></li>
+                    <li><span>3</span></li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <form action="#">
+                    <div class="wizard wizardstep4">
+                        <p class="wizardtitle">Введите  пароль из СМС и имя</p>
+                        <input required ng-model="smsCode" type="text" placeholder="Пароль из СМС">
+                        <input required ng-model="myName" type="text" placeholder="Ваше имя">
+                        <p class="helpertext">*Введите вашь пароль из сообшения на вашем телефоне и Ваше имя</p>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button ng-click="wizardClick('smsCode', false)" type="button" class="btn btn-default btn-prev">Назад</button>
+                <button ng-click="wizardClick('smsCode', true)" type="button" class="btn btn-default btn-next">Далее</button>
+            </div>
+        </div>
+
+        <!--End Second step-->
+        <!--Fifth step-->
+        <div ng-hide="finishBlock">
+            <div class="modal-header">
+                <ul class="wizardsteps">
+                    <li><span>1</span></li>
+                    <li><span>2</span></li>
+                    <li class="active"><span>3</span></li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <form action="#">
+                    <div class="wizard wizardstep5">
+                        <p class="wizardtitle">Укажите сроки задания и цену</p>
+                        <table>
+                            <tr>
+                                <td><input required type="datetime" placeholder="дата начала" class="datestart" name="datestart"></td>
+                                <td><input required type="datetime" placeholder="дата окончания" class="dateend" name="dateend"></td>
+                            </tr>
+                        </table>
+                        <input required type="text" class="zadprice" placeholder="стоимость">
+                        <p class="helpertext">*Укажите дату начала и завершения вашего задания и сумму за указанный проект</p>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button ng-click="wizardClick('finish', false)" type="button" class="btn btn-default btn-prev">Назад</button>
+                <button  type="button" class="btn btn-default btn-next">Готово</button>
+            </div>
+        </div>
+        
+<!--End Fifth step-->
+</script>

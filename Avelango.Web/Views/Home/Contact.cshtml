@@ -1,0 +1,140 @@
+﻿@{
+    //if (!ViewBag.Refresh) { Layout = null; }
+}
+
+<div class="h4 text-center">Контактная информация</div>
+<div class="row pv-lg">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="inputContact1" class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-10">
+                    <input id="inputContact1" type="text" placeholder="" value="Audrey Hunt" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputContact2" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                    <input id="inputContact2" type="email" value="mail" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputContact3" class="col-sm-2 control-label">Phone</label>
+                <div class="col-sm-10">
+                    <input id="inputContact3" type="text" value="(123) 465 789" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputContact4" class="col-sm-2 control-label">Mobile</label>
+                <div class="col-sm-10">
+                    <input id="inputContact4" type="text" value="(12) 123 987 465" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputContact5" class="col-sm-2 control-label">Website</label>
+                <div class="col-sm-10">
+                    <input id="inputContact5" type="text" value="http://some.wesbite.com" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputContact6" class="col-sm-2 control-label">Address</label>
+                <div class="col-sm-10">
+                    <textarea id="inputContact6" row="4" class="form-control">Some nice Street, 1234</textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputContact7" class="col-sm-2 control-label">Social</label>
+                <div class="col-sm-10">
+                    <input id="inputContact7" type="text" value="#Social" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputContact8" class="col-sm-2 control-label">Company</label>
+                <div class="col-sm-10">
+                    <input id="inputContact8" type="text" placeholder="No Company" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" />Favorite contact?
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-info">Update</button>
+                </div>
+            </div>
+        </form>
+        <div class="text-right">
+            <a href="" class="text-muted">Delete this contact?</a>
+        </div>
+    </div>
+</div>
+
+<div ng-controller="GMapController as gmap" class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Classic Map</div>
+                <div class="panel-body">
+                    <div ui-map="gmap.myMap1" ui-options="gmap.mapOptions1" class="gmap"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Custom zoom</div>
+                <div class="panel-body">
+                    <div ui-map="gmap.myMap2" ui-options="gmap.mapOptions2" class="gmap"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Different Map Type</div>
+                <div class="panel-body">
+                    <div ui-map="gmap.myMap3" ui-options="gmap.mapOptions3" class="gmap"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Multiple Markers</div>
+                <div class="panel-body">
+                    <div ui-map="gmap.myMap4" ui-options="gmap.mapOptions4" class="gmap"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Styled Maps</div>
+                <div class="panel-body">
+                    <div ui-map="gmap.myMap5" ui-options="gmap.mapOptions5" class="gmap"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <h4>Open map in a modal</h4>
+        <!-- Modal Controller-->
+        <div ng-controller="ModalGmapController as gmapmodal">
+            <!-- Button trigger modal -->
+            <button ng-click="gmapmodal.open()" class="btn btn-primary">Launch Modal</button>
+            <!-- Modal inline template-->
+            <script type="text/ng-template" id="/myModalContent.html">
+                <div class="modal-header"><button type="button" data-dismiss="modal" aria-hidden="true" ng-click="cancel()" class="close">×</button><h4 id="myMapModalLabel" class="modal-title">Google Map Modal</h4></div>
+                <div class="modal-body"><div ui-map="myMapModal" ui-options="mapOptionsModal" class="gmap"></div></div>
+                <div class="modal-footer"><button ng-click="ok()" class="btn btn-primary">OK</button></div>
+            </script>
+        </div>
+    </div>
+</div>

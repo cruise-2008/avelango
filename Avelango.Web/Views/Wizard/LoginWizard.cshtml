@@ -1,0 +1,116 @@
+﻿<script type="text/ng-template" id="/loginWizardContent.html">
+    <!--First step-->
+    <div class="modal-coord">
+        <div ng-show="wizard.position.currentPosition.phoneStep">
+            <div class="modal-header">
+                <ul class="wizardsteps">
+                    <li class="active"><span>1</span></li>
+                    <li><span>2</span></li>
+                </ul>
+                <button ng-click="wizard.action.cancel()" type="button" class="modal-close" data-dismiss="modal">X</button>
+            </div>
+            <div class="modal-body">
+                <form action="#">
+                    <div class="wizard wizardstep3" style="text-align: center">
+                        <p class="wizardtitle">Введите номер телефона</p>
+                        <div class="col col-md-9 col-lg-9">
+                            <div class="col col-md-4 col-lg-4">
+                                <input ng-model="phoneCode" type="text" placeholder="+00" handle-enter="wizard.action.stepUp()"/>
+                            </div>
+                            <div class="col col-md-8 col-lg-8">
+                                <input ng-model="phoneNumber" type="text" name="phone" placeholder="0987654321" required autocomplete="tel" handle-enter="wizard.action.stepUp()"/>
+                            </div>
+                        </div>
+                        <div class="col col-md-12 col-lg-12">
+                            <p ng-show="!formErrorPhone" class="helpertext">* Введите номер мобильного телефона для авторизации или быстрой регистрации</p>
+                            <p ng-show="formErrorPhone && formerrorValidation" class="helpertexterror">* Введите код страны и номер мобильного телефона в формате 000-000-00-00</p>
+                            <p ng-show="formErrorPhone && formerrorServerError" class="helpertexterror">* Ошибка при проверке номера, убедитесь что код страны указан верно</p>
+                            <p ng-show="formErrorPhone && formerrorSmsLimit" class="helpertexterror">* Вы исчерпали лимит отправки SMS, попробуйте снова через 24 часа</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button ng-click="wizard.action.cancel()" type="button" class="btn btn-default btn-prev">Отмена</button>
+                <button ng-click="wizard.action.stepUp()" type="button" class="btn btn-default btn-next">Далее</button>
+            </div>
+        </div>
+        <!--End First step-->
+        <!--Second step-->
+        <div ng-show="wizard.position.currentPosition.passwordStep">
+            <div class="modal-header">
+                <ul class="wizardsteps">
+                    <li><span>1</span></li>
+                    <li class="active"><span>2</span></li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <form action="#">
+                    <div class="wizard wizardstep4">
+                        <p class="wizardtitle">Введите ваш пароль</p>
+                        <div class="col col-md-5 col-lg-5">
+                            <input ng-model="password" type="password" placeholder="********"  handle-enter="wizard.action.stepUp()">
+                        </div>
+                        <div class="col col-md-12 col-lg-12">
+                            <p ng-show="!formErrorPassword" class="helpertext">* Для авторизации введите пароль от вашего личного кабинета</p>
+                            <p ng-show="formErrorPassword && formerrorIncorrectPassword" class="helpertexterror">* Неверный пароль. Проверьте CapsLock.</p>
+                        </div>
+                        <div class="col col-md-12 col-lg-12">
+                            <a href="#" class="helpertextLink">Восстановление пароля</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button ng-click="wizard.action.stepDown()" type="button" class="btn btn-default btn-prev">Назад</button>
+                <button ng-click="wizard.action.stepUp()" @*ng-class="{show: (!login.IsAuthanticated&&!IsAuthanticated)}" *@ type="button" class="btn btn-default btn-next">Готово</button>
+            </div>
+        </div>
+        <!--End Second step-->
+        <!--Third step-->
+        <div ng-show="wizard.position.currentPosition.codeStep">
+            <div class="modal-header">
+                <ul class="wizardsteps">
+                    <li><span>1</span></li>
+                    <li class="active"><span>2</span></li>
+                </ul>
+            </div>
+            <div class="modal-body">
+                <form action="#">
+                    <div class="wizard wizardstep4">
+                        <p class="wizardtitle">Введите  пароль из СМС и имя</p>
+                        <div class="row">
+                            <div class="col col-md-3 col-lg-3">
+                                <input id="smsCode1" ng-model="smsCode1" type="text" placeholder="00" maxlength="2" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-change="autoFocus(1, smsCode1)" handle-enter="wizard.action.stepUp()">
+                            </div>
+                            <div class="col col-md-3 col-lg-3">
+                                <input id="smsCode2" ng-model="smsCode2" type="text" placeholder="00" maxlength="2" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-change="autoFocus(2, smsCode2)" handle-enter="wizard.action.stepUp()">
+                            </div>
+                            <div class="col col-md-3 col-lg-3">
+                                <input id="smsCode3" ng-model="smsCode3" type="text" placeholder="00" maxlength="2" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-change="autoFocus(3, smsCode3)" handle-enter="wizard.action.stepUp()">
+                            </div>
+                            <div class="col col-md-3 col-lg-3">
+                                <input id="smsCode4" ng-model="smsCode4" type="text" placeholder="00" maxlength="2" onkeypress='return event.charCode >= 48 && event.charCode <= 57' ng-change="autoFocus(4, smsCode4)" handle-enter="wizard.action.stepUp()">
+                            </div>
+                        </div>
+                        <div class="col col-md-6 col-lg-6">
+                            <input id="userName" ng-model="userName" type="text" placeholder="Ваше имя" ng-change="setUpperCase(userName)"  handle-enter="wizard.action.stepUp()">
+                        </div>
+                        <div class="col col-md-12 col-lg-12">
+                            <p ng-show="!formErrorCode" class="helpertext">*Введите пароль из SMS и Ваше имя</p>
+                            <p ng-show="formErrorCode && formerrorCodeValidation" class="helpertexterror">* Неверный формат кода из SMS.</p>
+                            <p ng-show="formErrorCode && formerrorNameValidation" class="helpertexterror">* Имя должно быть не менее трех символов и содержать буквы.</p>
+                            <p ng-show="formErrorCode && formerrorDoubleError" class="helpertexterror">* Неверный формат кода из SMS и имя должно быть не менее трех символов и содержать буквы.</p>
+                            <p ng-show="formErrorCode && formerrorCodeNotMatch" class="helpertexterror">* Неверный код из SMS.</p>
+                        </div>   
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button ng-click="wizard.action.stepDown()" type="button" class="btn btn-default btn-prev">Назад</button>
+                <button ng-click="wizard.action.stepUp()" @*ng-class="{show: (!login.IsAuthanticated&&!IsAuthanticated)}" *@ type="button" class="btn btn-default btn-next">Готово</button>
+            </div>
+        </div>
+        <!--End Third step-->
+    </div>
+</script>
